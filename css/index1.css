@@ -1,0 +1,15 @@
+.index_header {
+    height: 0.44rem;
+    font-size: 0.18rem;
+    color: white;
+    text-align: center;
+    line-height: 0.44rem;
+    background: #0F1322;
+}
+
+
+/* 图表 */
+.sheet {
+    width: 3.6rem;
+    height: 2.2rem;
+}

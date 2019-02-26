@@ -6,19 +6,19 @@
 }
 
 .require_header {
+    width: 100%;
     height: 0.44rem;
     font-size: 0.18rem;
     color: white;
     text-align: center;
     line-height: 0.44rem;
-    position: relative;
+    position: fixed;
+    top: 0;
+    z-index: 111;
+    background: #0F1322;
 }
 
-.require_header span:nth-child(2) {
-    position: absolute;
-    top: 0;
-    left: 0.1rem;
-}
+
 
 /* foot */
 .require_foot {
@@ -30,14 +30,15 @@
     bottom: 0;
     padding: 0.13rem 0;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 }
 
 .require_foot_one {
-    width: 0.18rem;
-    height: 0.2rem;
-    background: skyblue;
-    margin: 0.01rem 0.15rem 0 0.16rem;
+    width: 0.3rem;
+    height: 0.34rem;
+    background: url(../img/back.png)no-repeat;
+    background-size: 100% 100%;
+    margin: 0 0.15rem 0 0.16rem;
 }
 
 .require_foot_two {
@@ -62,12 +63,14 @@
     height: 0.22rem;
     background: skyblue;
     margin-right: 0.15rem;
+    float: right;
 }
 
 
 /* main */
 .require_main {
     width: 100%;
+    padding-top: 0.59rem;
 }
 
 .require_main_banner {
@@ -76,15 +79,28 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 0.15rem;
+    margin:0.25rem 0 0.21rem 0;
 }
 
-.require_main_banner p {
+.require_main_title p:nth-child(1) {
     font-size: 0.18rem;
     font-family: PingFangSC-Medium;
     font-weight: 500;
     color: rgba(255, 255, 255, 1);
     line-height: 0.25rem;
-    line-height: 0.65rem;
+}
+
+.require_main_title p:nth-child(2) {
+    width: 1.7rem;
+    height: 0.2rem;
+    background: rgba(49, 57, 84, 1);
+    border-radius: 0.04rem;
+    font-size: 0.12rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 148, 49, 1);
+    text-align: center;
+    line-height: 0.2rem;
 }
 
 .require_main_banner span {
@@ -96,7 +112,7 @@
 
 .require_chat {
     width: 3.35rem;
-    height: 4.9rem;
+    height: 5.1rem;
     margin: 0 auto;
     background: white;
     border-radius: 0.3rem 0.3rem 0 0;
@@ -162,4 +178,39 @@
     border-radius: 0px 0.2rem 0.2rem 0.2rem;
     text-align: center;
     line-height: 0.4rem;
+}
+
+
+.require_process {
+    width: 3.45rem;
+    height: 0.1rem;
+    background: rgba(49, 57, 84, 1);
+    border-radius: 0.05rem;
+    margin: 0 auto;
+}
+
+.require_process .bar {
+    width: 2.4rem;
+    height: 0.1rem;
+    background: rgba(101, 192, 198, 1);
+    border-radius: 0.05rem;
+    font-size: 0;
+    position: relative;
+}
+
+.require_process .bar span {
+    display: inline-block;
+    width: 0.47rem;
+    height: 0.2rem;
+    background: rgba(255, 167, 85, 1);
+    border-radius: 0.04rem;
+    font-size: 0.12rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    line-height: 0.2rem;
+    position: absolute;
+    right: -0.51rem;
+    top: -0.05rem;
 }

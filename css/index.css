@@ -5,14 +5,9 @@
     text-align: center;
     line-height: 0.44rem;
     background: #0F1322;
-    position: relative;
+   
 }
 
-.index_header span:nth-child(2) {
-    position: absolute;
-    top: 0;
-    left: 0.1rem;
-}
 
 /* main */
 .index_main {

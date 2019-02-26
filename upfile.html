@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/upfile.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="up_header">
+            <span>上传文件</span>
+            <!-- <span>×</span> -->
+        </div>
+
+        <div class="up_main">
+            <div class="up_main_top">
+                <div class="up_main_left">
+
+                </div>
+                <div class="up_main_right">
+                    <div class="up_main_title" @click="editNickname" v-show="isName">
+                        <span>编辑文件名称</span>
+                        <img src="img/笔.png" alt="">
+                    </div>
+                    <div class="up_input" v-show="!isName">
+                        <input type="text" class="editor" >
+                        <span>确认</span>
+                    </div>
+                    <p>2019.12.12. 12:23:34 创建</p>
+                </div>
+            </div>
+
+            <div class="up_main_bot">
+            </div>
+
+            <div class="up_foot">
+                <span></span>
+                <span>重新文件</span>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/vue.min.js"></script>
+<script src="js/upfile.js"></script>

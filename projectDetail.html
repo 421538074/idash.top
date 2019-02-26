@@ -21,7 +21,7 @@
         <div class="project_scoll">
             <div class="project_banner">
                 <ul>
-                    <li>需求</li>
+                    <li class="blue">需求</li>
                     <li>原型</li>
                     <li>设计</li>
                     <li>前端</li>
@@ -29,7 +29,7 @@
                 </ul>
             </div>
         </div>
-        <div class="project_main">
+        <div class="project_main" v-show="isshow">
             <div class="project_per">
                 <span></span>
                 <span></span>
@@ -46,12 +46,22 @@
             </div>
         </div>
         <div class="back">
-        </div>
-        <div class="project_btn">
-            文件
+            <span></span>
+            <span></span>
         </div>
 
 
+
+        <!-- 文件 -->
+        <div class="project_file" v-show="isfile"> 
+            <ul class="uu">
+                <li v-for="item in title">
+                    <img src="img/文件.png" alt="">
+                    <span>待办事项标题</span>
+                    <span></span>
+                </li>
+            </ul>
+        </div>
 
     </div>
 </body>

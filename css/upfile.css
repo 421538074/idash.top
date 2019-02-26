@@ -1,0 +1,131 @@
+.up_header {
+    height: 0.44rem;
+    font-size: 0.18rem;
+    color: white;
+    text-align: center;
+    line-height: 0.44rem;
+    background: #0F1322;
+    position: relative;
+}
+
+.up_header span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0.1rem;
+}
+
+/* main */
+.up_main {
+    width: 100px;
+    background: white;
+    width: 100%;
+    padding: 0.2rem 0;
+}
+
+.up_main_top {
+    display: flex;
+    margin: 0 0 0.22rem 0.15rem;
+}
+
+.up_main_left {
+    width: 0.4rem;
+    height: 0.4rem;
+    background: #D8D8D8;
+}
+
+.up_main_right {
+    font-size: 0.18rem;
+    margin-left: 0.1rem;
+}
+
+.up_main_title {
+    display: flex;
+    align-items: center;
+}
+
+.up_main_right .up_main_title span {
+    font-size: 0.18rem;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 1);
+    line-height: 0.25rem;
+}
+
+.up_main_title img {
+    width: 0.26rem;
+    height: 0.26rem;
+}
+
+.up_main_right p {
+    font-size: 0.12rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #A5A5A5;
+    line-height: 0.17rem;
+}
+
+
+.up_main_bot {
+    width: 3.45rem;
+    height: 5.05rem;
+    background: #ECECEC;
+    margin: 0 auto;
+}
+
+.up_foot {
+    position: fixed;
+    bottom: 0.2rem;
+    left: 0.2rem;
+    font-size: 0.2rem;
+}
+
+.up_foot span:nth-child(1) {
+    display: inline-block;
+    width: 0.44rem;
+    height: 0.44rem;
+    background: url(../img/back1.png)no-repeat;
+    background-size: 100% 100%
+}
+
+.up_foot span:nth-child(2) {
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.36rem;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 0.2rem;
+    background: #48A1A7;
+    font-size: 0.14rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 0.2rem;
+    text-align: center;
+    line-height: 0.36rem;
+    vertical-align: top;
+    margin-left: 0.8rem;
+}
+
+
+.editor {
+    width: 2.31rem;
+    height: 0.2rem;
+    border-radius: 0.04rem;
+    border: 1px dashed #D0D0D0;
+    outline: none;
+    padding: 0.03rem 0 0.03rem 0.06rem;
+}
+
+.up_input span {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.26rem;
+    background: #48A1A7;
+    border-radius: 0.04rem;
+    text-align: center;
+    line-height: 0.26rem;
+    font-size: 0.14rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    margin-left: 0.1rem;
+}

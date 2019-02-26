@@ -1,33 +1,46 @@
 .header {
     background: #1e2439;
     width: 100vw;
-    height: 100vh;  
+    height: 100vh;
 }
+
 .index_banner {
     position: absolute;
     top: 30%;
     left: 8%;
 }
+
 .index_logo {
-    height: 0.8rem; 
+    height: 0.8rem;
     font-size: 0.14rem;
+    position: relative;
 }
 
-.index_logo img {
+.index_logo span:nth-child(1) {
+    display: inline-block;
     width: 0.8rem;
     height: 0.8rem;
     border-radius: 0.24rem;
 }
 
-.index_logo span {
+.index_logo span img {
+    width: 100%;
+    height: 100%;
+}
+
+.index_logo span:nth-child(2) {
     font-size: 0.14rem;
     color: white;
+    position: absolute;
+    top: 0.6rem;
+    left: 1rem;
 }
 
 .index_title {
     font-size: 0.24rem;
     color: #fff;
     line-height: 0.33rem;
+    margin-top: 0.2rem;
 }
 
 .index_title p:nth-child(2) {

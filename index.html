@@ -17,7 +17,7 @@
         </div>
 
         <div class="index_main">
-            <div class="index_main_one" v-for="item in list">
+            <div class="index_main_one" v-for="item in list" @click="goStudy(item.id)">
                 <div class="index_main_left">
                 </div>
                 <span class="divde"></span>
@@ -38,8 +38,7 @@
             </div>
         </div>
 
-        <div class="index_btn">
-
+        <div class="index_btn" @click="goUser">
         </div>
     </div>
 </body>

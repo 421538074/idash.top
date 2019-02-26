@@ -16,7 +16,14 @@ var xm =new Vue({
             {},
         ]
     },
-    methods:{},
+    methods:{
+        goUser(){
+            window.location.href="userInfo.html"
+        },
+        goStudy(id){
+            window.location.href="projectDetail.html"
+        }
+    },
     
 })
 

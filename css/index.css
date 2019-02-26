@@ -5,7 +5,7 @@
     text-align: center;
     line-height: 0.44rem;
     background: #0F1322;
-   
+
 }
 
 
@@ -97,11 +97,16 @@
 }
 
 .index_main_right {
+    width: 1.3rem;
+    height: 0.18rem;
+    background: rgba(246, 246, 246, 1);
+    border-radius: 0.02rem;
+    text-align: center;
     font-size: 0.12rem;
     font-family: PingFangSC-Regular;
     font-weight: 400;
     color: rgba(136, 136, 136, 1);
-    line-height: 0.17rem;
+    line-height: 0.18rem;
     margin-left: 0.1rem;
     margin-top: -0.55rem;
 }
@@ -109,8 +114,8 @@
 .index_btn {
     width: 0.4rem;
     height: 0.4rem;
-    border-radius: 100%;
-    background: #65C0C6;
+    background: url(../img/个人信息.png)no-repeat;
+    background-size: 100% 100%;
     position: fixed;
     bottom: 0.15rem;
     right: 0.15rem;

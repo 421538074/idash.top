@@ -14,7 +14,7 @@
     <div id="app">
         <div class="project_header">
             <span>某某项目</span>
-            <span>×</span>
+            <!-- <span>×</span> -->
         </div>
 
 
@@ -31,11 +31,11 @@
         </div>
         <div class="project_main" v-show="isshow">
             <div class="project_per">
-                <span></span>
-                <span></span>
+                <div class="bar"></div>
+                <span>20%</span>
             </div>
             <div class="project_work">
-                <div class="work_one" v-for="item in list">
+                <div class="work_one" v-for="item in list" @click="goRequire">
                     <div class="work_one_left">
                     </div>
                     <div class="work_one_right">
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="back">
-            <span></span>
+            <span @click="goback"></span>
             <span></span>
         </div>
 
@@ -55,7 +55,7 @@
         <!-- 文件 -->
         <div class="project_file" v-show="isfile"> 
             <ul class="uu">
-                <li v-for="item in title">
+                <li v-for="item in title" >
                     <img src="img/文件.png" alt="">
                     <span>待办事项标题</span>
                     <span></span>

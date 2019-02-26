@@ -70,14 +70,32 @@
     background: white;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
     border-radius: 0.05rem;
+    position: relative;
 }
 
-.project_per span:nth-child(1) {
+.project_per .bar {
     width: 0.69rem;
     height: 0.1rem;
-    display: inline-block;
     background: rgba(101, 192, 198, 1);
     border-radius: 0.05rem;
+    font-size: 0;
+}
+
+.project_per span {
+    display: inline-block;
+    width: 0.47rem;
+    height: 0.2rem;
+    background: rgba(255, 167, 85, 1);
+    border-radius: 0.04rem;
+    font-size: 0.12rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    line-height: 0.2rem;
+    position: absolute;
+    left: 22%;
+    top: -0.06rem;
 }
 
 

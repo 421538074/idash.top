@@ -14,6 +14,25 @@ var xm = new Vue({
             {},
         ]
     },
-    methods: {},
+    methods: {
+        goback(){
+            window.history.back()
+        },
+        goRequire(){
+            window.location.href="requirement.html"
+        },
+    },
 
 })
+
+
+$(function() {
+    $(".project_banner ul li").each(function(index) {
+        $(this).click(function() {
+            $("li.blue").removeClass("blue"); 
+            $(this).addClass("blue"); 
+            // $(".tab-content div.active-txt").removeClass("active-txt");
+            // $(".tab-content div").eq(index).addClass("active-txt");
+        });
+    })
+});

@@ -1,11 +1,11 @@
-var xm = new Vue({
-    el: "#app",
-    data: {},
-    methods: {
+var xm =new Vue({
+    el:"#app",
+    data:{
+    },
+    methods:{
         goback(){
             window.history.back()
         },
-      
     },
-
+    
 })

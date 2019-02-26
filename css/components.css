@@ -1,0 +1,97 @@
+html,body{
+    font-size: calc(100vw / 25);
+    background-color: #FFFFFF;
+}
+/**
+*根组件app
+*/
+div#app{
+    padding: 1rem;
+    line-height: 1rem;
+}
+/**
+*返回键
+*/
+button.cp-back {
+    border: none;
+    background: url(../img/back1.png) no-repeat;
+    background-size: 100%;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
+    outline: 0;
+}
+/**
+*tab页
+*/
+ul.cp-tabbar {
+    display: block;
+    overflow-x: scroll;
+    overflow-y:hidden;
+    white-space: nowrap;
+}
+ul.cp-tabbar::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+li.cp-tabbar-item {
+    background: #f6f6f6;
+    color: #888888;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    display: inline-block;
+}
+li.cp-tabbar-item.active {
+    background: #65c0c6;
+    color: #FFFFFF;
+}
+li.cp-tabbar-item:not(:first-child) {
+    margin-left: 1rem;
+}
+/**
+*项目列表
+*/
+ul.cp-list::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+ul.cp-list {
+    height: calc(100vh - 5.2rem);
+    overflow: scroll;
+    margin-top: 0.2rem;
+    padding: 0.2rem;
+}
+li.cp-list-item {
+    display: flex;
+    align-items: center;
+}
+img.item-icon {
+    width: 2.5rem;
+}
+li.cp-list-item.arrow-right {
+    background: url(../img/arrow-right.png) no-repeat;
+    background-position: 98%;
+    background-size: 0.8rem;
+    padding: 1rem 0.5rem;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.20);
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+li.cp-list-item:active {
+    background-color: #f6f6f6;
+}
+p.item-title {
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5rem;
+    white-space: nowrap;
+    padding-right: 1rem;
+}

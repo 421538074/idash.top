@@ -61,9 +61,10 @@
 .require_foot_three {
     width: 0.24rem;
     height: 0.22rem;
-    background: skyblue;
     margin-right: 0.15rem;
     float: right;
+    background: url(../img/file.png)no-repeat;
+    background-size: 100% 100%;
 }
 
 
@@ -79,7 +80,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 0.15rem;
-    margin:0.25rem 0 0.21rem 0;
+    margin: 0.25rem 0 0.21rem 0;
 }
 
 .require_main_title p:nth-child(1) {
@@ -107,7 +108,8 @@
     display: inline-block;
     width: 0.24rem;
     height: 0.22rem;
-    background: #65C0C6;
+    background: url(../img/file.png)no-repeat;
+    background-size: 100% 100%;
 }
 
 .require_chat {

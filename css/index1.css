@@ -11,5 +11,150 @@
 /* 图表 */
 .sheet {
     width: 3.6rem;
-    height: 2.2rem;
+    height: 3.31rem;
+}
+
+.nav {
+    width: 3.45rem;
+    height: 1.13rem;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 0.04rem;
+    margin: 0 auto;
+}
+
+.nav_top {
+    height: 0.42em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #F6F6F6;
+}
+
+.nav_top p {
+    font-size: 0.16rem;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 1);
+    line-height: 0.22rem;
+    margin-left: 0.1rem;
+}
+
+.nav_top_more {
+    font-size: 0.12rem;
+    margin-right: 0.11rem;
+    display: flex;
+    align-items: center;
+}
+
+.nav_top_more span {
+    font-size: 0.12rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(101, 192, 198, 1);
+    line-height: 0.17rem;
+    margin-right: 0.04rem;
+}
+
+.nav_top_more img {
+    width: 0.14rem;
+    height: 0.14rem;
+}
+
+
+.nav_bot ul {
+    padding: 0.1rem 0 0 0.1rem;
+}
+
+.nav_bot ul li {
+    font-size: 0.14rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(136, 136, 136, 1);
+    line-height: 0.2rem;
+    margin-bottom: 0.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.nav_bot ul li span:nth-child(1) {
+    display: inline-block;
+    width: 0.08rem;
+    height: 0.08rem;
+    background: rgba(255, 167, 85, 1);
+    border-radius: 0.02rem;
+    margin-right: 0.1rem;
+}
+
+/* content */
+.content {
+    margin: 0.19rem 0 0 0.15rem;
+}
+
+.content_logo {
+    font-size: 0.1rem;
+    position: relative;
+    height: 0.4rem;
+}
+
+.content_logo img {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 0.06rem;
+}
+
+.content_logo span {
+    font-size: 0.1rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1);
+    line-height: 0.14rem;
+    position: absolute;
+    top: 0.19rem;
+    left: 0.5rem;
+}
+
+.content p:nth-child(2) {
+    font-size: 0.18rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1);
+    line-height: 0.25rem;
+    margin-top: 0.1rem;
+}
+
+.content p:nth-child(3) {
+    font-size: 0.12rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #888888;
+    line-height: 0.17rem;
+}
+
+.content_pre {
+    width: 1rem;
+    height: 0.06rem;
+    background: rgba(255, 236, 236, 1);
+    border-radius: 0.06rem;
+}
+
+.content_bar {
+    width: 0.3rem;
+    height: 0.06rem;
+    background: rgba(255, 53, 53, 1);
+    border-radius: 0.06rem;
+}
+.content_bot {
+    display: flex;
+    align-items: center;
+    margin-top: 0.16rem;
+}
+
+.content_bot span {
+    font-size: 0.12rem;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(255, 53, 53, 1);
+    line-height: 0.17rem;
+    margin-left: 0.1rem;
 }

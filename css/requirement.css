@@ -1,0 +1,165 @@
+.require_banner {
+    width: 100%;
+    background: linear-gradient(360deg,
+        rgba(39, 45, 70, 1) 0%,
+        rgba(17, 21, 37, 1) 100%);
+}
+
+.require_header {
+    height: 0.44rem;
+    font-size: 0.18rem;
+    color: white;
+    text-align: center;
+    line-height: 0.44rem;
+    position: relative;
+}
+
+.require_header span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0.1rem;
+}
+
+/* foot */
+.require_foot {
+    width: 100%;
+    height: 0.22rem;
+    background: rgba(39, 45, 70, 1);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    bottom: 0;
+    padding: 0.13rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.require_foot_one {
+    width: 0.18rem;
+    height: 0.2rem;
+    background: skyblue;
+    margin: 0.01rem 0.15rem 0 0.16rem;
+}
+
+.require_foot_two {
+    border-left: 1px solid #424B6A;
+    height: 0.22rem;
+    width: 76%;
+    font-size: 0;
+}
+
+.require_foot_two input {
+    width: 90%;
+    height: 100%;
+    padding-left: 0.2rem;
+    outline: none;
+    border: 0;
+    background: transparent;
+    color: white;
+}
+
+.require_foot_three {
+    width: 0.24rem;
+    height: 0.22rem;
+    background: skyblue;
+    margin-right: 0.15rem;
+}
+
+
+/* main */
+.require_main {
+    width: 100%;
+}
+
+.require_main_banner {
+    height: 0.65rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.15rem;
+}
+
+.require_main_banner p {
+    font-size: 0.18rem;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    line-height: 0.25rem;
+    line-height: 0.65rem;
+}
+
+.require_main_banner span {
+    display: inline-block;
+    width: 0.24rem;
+    height: 0.22rem;
+    background: #65C0C6;
+}
+
+.require_chat {
+    width: 3.35rem;
+    height: 4.9rem;
+    margin: 0 auto;
+    background: white;
+    border-radius: 0.3rem 0.3rem 0 0;
+    padding: 0.2rem 0.1rem 0;
+}
+
+.chat_one {
+    font-size: 0.14rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(15, 19, 34, 1);
+    line-height: 0.2rem;
+    display: flex;
+    margin-bottom: 0.2rem;
+}
+
+.chat_one span:nth-child(1) {
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background: white;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 0.12rem;
+    margin-right: 0.1rem;
+}
+
+.chat_one span:nth-child(2) {
+    display: inline-block;
+    width: 1.29rem;
+    height: 0.4rem;
+    background: #F0F0F0;
+    border-radius: 0px 0.16rem 0.16rem 0.16rem;
+    text-align: center;
+    line-height: 0.4rem;
+}
+
+
+.chat_two {
+    font-size: 0.14rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(15, 19, 34, 1);
+    line-height: 0.2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.chat_two span:nth-child(2) {
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background: white;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 0.12rem;
+    margin-left: 0.1rem;
+}
+
+.chat_two span:nth-child(1) {
+    display: inline-block;
+    width: 1.29rem;
+    height: 0.4rem;
+    background: #87B5ED;
+    border-radius: 0px 0.2rem 0.2rem 0.2rem;
+    text-align: center;
+    line-height: 0.4rem;
+}

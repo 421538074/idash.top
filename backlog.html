@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/backlog.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="backlog_header">
+            <span>待办事项文件</span>
+            <span>×</span>
+        </div>
+
+        <div class="backlog_foot">
+            <span>返回</span>
+            <span>上传文件</span>
+        </div>
+
+
+        <div class="backlog_main">
+            <div class="main_one" v-for="(item,index) in list">
+                <div class="main_left">
+                    <img src="" alt="">
+                </div>
+                <div class="main_mid">
+                    <p>需求1</p>
+                    <p>2019.12.12. 12:23:34</p>
+                </div>
+                <div class="main_right">
+                    <span>下载</span>
+                    <span>></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/vue.min.js"></script>
+<script src="js/backlog.js"></script>

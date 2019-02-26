@@ -1,0 +1,99 @@
+.backlog_header {
+    height: 0.44rem;
+    font-size: 0.18rem;
+    background: #0F1322;
+    color: white;
+    text-align: center;
+    line-height: 0.44rem;
+    position: relative;
+}
+
+.backlog_header span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0.1rem;
+}
+
+/* 底部 */
+.backlog_foot {
+    position: fixed;
+    bottom: 0.2rem;
+    font-size: 0.14rem;
+    color: white;
+}
+
+.backlog_foot span:nth-child(1) {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.3rem;
+    background: #65C0C6;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 0.14rem 0.14rem 0.14rem 0px;
+    margin: 0 0.78rem 0 0.2rem;
+}
+
+.backlog_foot span:nth-child(2) {
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.36rem;
+    background: #65C0C6;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    text-align: center;
+    line-height: 0.36rem;
+}
+
+/* main */
+.backlog_main {
+    padding: 0.1rem 0.15rem 0;
+}
+
+.main_one {
+    width: 3.19rem;
+    height: 0.6rem;
+    background: #fff;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 0.04rem;
+    font-size: 0.16rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0.1rem 0 0.16rem;
+    margin-bottom: 0.1rem;
+}
+
+.main_left {
+    width: 0.28rem;
+    height: 0.35rem;
+}
+
+.main_left img {
+    width: 100%;
+    height: 100%;
+}
+
+.main_mid {
+    margin: 0 1.08rem 0 0.16rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+}
+
+.main_mid p:nth-child(1) {
+    font-size: 0.16rem;
+    color: #000;
+    line-height: 0.22rem;
+}
+
+.main_mid p:nth-child(2) {
+    font-size: 0.12rem;
+    color: #888888;
+    line-height: 0.17rem;
+    margin-top: 0.03rem;
+}
+
+.main_right span:nth-child(1) {
+    font-size: 0.14rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #65C0C6;
+    line-height: 0.2rem;
+}

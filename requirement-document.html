@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scale=no,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>需求文件</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body>
+    <div id="app" class="container">
+        <cp-tabbar :bar-list="barList" @get-list="getList"></cp-tabbar>
+        <cp-itemlist icon="./img/file.png" :item-list="itemList" @scroll-to-top="scrollEvent($event)"></cp-itemlist>
+        <cp-back></cp-back>
+    </div>
+    <script src="js/development/vue.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/requirement-documen.js"></script>
+</body>
+
+</html>

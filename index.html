@@ -125,9 +125,54 @@
         },
         xAxis: {
             data: ["需求", "原型", "设计", "前端", "后台", "测试", "验收"],
-            nameLocation: "center",
+            axisTick: {
+                show: false
+            },
+            axisLine: {
+                color: {
+                    type: 'linear',
+                    x: 0,
+                    y: 0,
+                    x2: 0,
+                    y2: 1,
+                    colorStops: [{
+                        offset: 0,
+                        color: 'red' // 0% 处的颜色
+                    }, {
+                        offset: 1,
+                        color: 'blue' // 100% 处的颜色
+                    }],
+                    global: false // 缺省为 false
+                }
+            },
+
         },
-        yAxis: {},
+        yAxis: {
+            type: 'value',
+
+            axisLabel: {
+                color: "#65C0C6",
+                show: true,
+                formatter: '{value} kg',
+                lineStyle: {
+                    color: "#65C0C6",
+                }
+            },
+
+            axisTick: {
+                show: false,
+            },
+            axisLabel: {
+                show: true,
+            },
+            splitLine: {
+                show: false
+            },
+            splitNumber: 1,
+
+
+
+        },
         series: [{
             name: '销量',
             type: 'bar',

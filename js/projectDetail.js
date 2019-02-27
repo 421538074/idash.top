@@ -2,7 +2,6 @@ var xm = new Vue({
     el: "#app",
     data: {
         isshow: true,
-        isfile: false,
         list: [{},
             {},
             {},
@@ -15,25 +14,28 @@ var xm = new Vue({
         ]
     },
     methods: {
-        goback(){
+        goback() {
             window.history.back()
         },
-        goRequire(){
-            window.location.href="requirement.html"
+        goRequire() {
+            window.location.href = "requirement.html"
         },
-        upChange(){
-            window.location.href="backlog.html"
+        upChange() {
+            window.location.href = "backlog.html"
+        },
+        goProject() {
+            this.isshow = !this.isshow
         }
     },
 
 })
 
 
-$(function() {
-    $(".project_banner ul li").each(function(index) {
-        $(this).click(function() {
-            $("li.blue").removeClass("blue"); 
-            $(this).addClass("blue"); 
+$(function () {
+    $(".project_banner ul li").each(function (index) {
+        $(this).click(function () {
+            $("li.blue").removeClass("blue");
+            $(this).addClass("blue");
             // $(".tab-content div.active-txt").removeClass("active-txt");
             // $(".tab-content div").eq(index).addClass("active-txt");
         });

@@ -44,7 +44,7 @@
 .require_foot_two {
     border-left: 1px solid #424B6A;
     height: 0.22rem;
-    width: 76%;
+    width: 62%;
     font-size: 0;
 }
 
@@ -59,12 +59,18 @@
 }
 
 .require_foot_three {
-    width: 0.24rem;
-    height: 0.22rem;
-    margin-right: 0.15rem;
+    width: 0.7rem;
+    height: 0.3rem;
+    margin-right: 0.1rem;
+    border-radius: 0.04rem;
     float: right;
-    background: url(../img/file.png)no-repeat;
-    background-size: 100% 100%;
+    background: #65C0C6;
+    text-align: center;
+    line-height: 0.3rem;
+    font-size: 0.14rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
 }
 
 

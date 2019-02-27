@@ -16,10 +16,9 @@
 
 /* main */
 .up_main {
-    width: 100px;
     background: white;
     width: 100%;
-    padding: 0.2rem 0;
+    padding-top: 0.2rem;
 }
 
 .up_main_top {
@@ -67,9 +66,10 @@
 
 .up_main_bot {
     width: 3.45rem;
-    height: 5.05rem;
+    /* height: 5.05rem; */
     background: #ECECEC;
     margin: 0 auto;
+    height: calc(100vh - 1.62rem);
 }
 
 .up_foot {

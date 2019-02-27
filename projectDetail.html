@@ -47,13 +47,13 @@
         </div>
         <div class="back">
             <span @click="goback"></span>
-            <span></span>
+            <span @click="goProject"></span>
         </div>
 
 
 
         <!-- 文件 -->
-        <div class="project_file" v-show="isfile"> 
+        <div class="project_file" v-show="!isshow"> 
             <ul class="uu">
                 <li v-for="item in title" @click="upChange">
                     <img src="img/file.png" alt="">

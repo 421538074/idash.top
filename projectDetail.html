@@ -14,7 +14,6 @@
     <div id="app">
         <div class="project_header">
             <span>某某项目</span>
-            <!-- <span>×</span> -->
         </div>
 
 
@@ -56,8 +55,8 @@
         <!-- 文件 -->
         <div class="project_file" v-show="isfile"> 
             <ul class="uu">
-                <li v-for="item in title" >
-                    <img src="img/文件.png" alt="">
+                <li v-for="item in title" @click="upChange">
+                    <img src="img/file.png" alt="">
                     <span>待办事项标题</span>
                     <span></span>
                 </li>

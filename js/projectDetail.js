@@ -21,6 +21,9 @@ var xm = new Vue({
         goRequire(){
             window.location.href="requirement.html"
         },
+        upChange(){
+            window.location.href="backlog.html"
+        }
     },
 
 })

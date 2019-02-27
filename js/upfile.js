@@ -7,5 +7,8 @@ var xm =new Vue({
         editNickname() {
             this.isName = false;
         },
+        goback(){
+            window.history.back()
+        },
     },
 })

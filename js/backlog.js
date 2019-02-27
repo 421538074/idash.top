@@ -8,6 +8,13 @@ var xm =new Vue({
             {},
         ]
     },
-    methods:{},
+    methods:{
+        goback(){
+            window.history.back()
+        },
+        loadChange(){
+            window.location.href="upfile.html"
+        }
+    },
     
 })

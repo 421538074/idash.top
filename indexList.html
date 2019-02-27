@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/indexList.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="index_header">
+            <span>首页</span>
+        </div>
+
+        <div class="index_main">
+            <div class="index_main_one" v-for="item in list" @click="goStudy(item.id)">
+                <div class="index_main_left">
+                </div>
+                <span class="divde"></span>
+                <div class="index_main_mid">
+                    <span class="one">需求</span>
+                    <p>象棋游戏项目</p>
+                    <div class="process_wrap">
+                        <div class="process">
+                            <span class="bar"></span>
+                        </div>
+                        <span class="per">20%</span>
+                    </div>
+
+                </div>
+                <div class="index_main_right">
+                    2019.2.15-2019.5.23
+                </div>
+            </div>
+        </div>
+
+        <div class="index_btn">
+            <p @click="indexDetail()"></p>
+            <p @click="goUser"></p>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/vue.min.js"></script>
+<script src="js/indexList.js"></script>

@@ -14,17 +14,16 @@
     <div id="app">
         <div class="backlog_header">
             <span>待办事项文件</span>
-            <span>×</span>
         </div>
 
         <div class="backlog_foot">
-            <span></span>
+            <span @click="goback"></span>
             <span>上传文件</span>
         </div>
 
 
         <div class="backlog_main">
-            <div class="main_one" v-for="(item,index) in list">
+            <div class="main_one" v-for="(item,index) in list" @click="loadChange">
                 <div class="main_left">
                     <img src="img/书.png" alt="">
                 </div>

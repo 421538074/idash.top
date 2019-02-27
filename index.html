@@ -8,6 +8,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="http://echarts.baidu.com/dist/echarts.min.js"></script>
 </head>
 
 <body>
@@ -16,34 +20,128 @@
             <span>首页</span>
         </div>
 
-        <div class="index_main">
-            <div class="index_main_one" v-for="item in list" @click="goStudy(item.id)">
-                <div class="index_main_left">
-                </div>
-                <span class="divde"></span>
-                <div class="index_main_mid">
-                    <span class="one">需求</span>
-                    <p>象棋游戏项目</p>
-                    <div class="process_wrap">
-                        <div class="process">
-                            <span class="bar"></span>
-                        </div>
-                        <span class="per">20%</span>
-                    </div>
 
+        <!-- 图表 -->
+        <div id="main" class="sheet"></div>
+
+
+        <div class="nav">
+            <div class="nav_top">
+                <p>待办事项</p>
+                <div class="nav_top_more" @click="projectDetail">
+                    <span>全部</span>
+                    <img src="img/右.png" alt="">
                 </div>
-                <div class="index_main_right">
-                    2019.2.15-2019.5.23
-                </div>
+            </div>
+            <div class="nav_bot">
+                <ul>
+                    <li>
+                        <span></span>
+                        <span>显示待办事项内容</span>
+                    </li>
+                    <li>
+                        <span></span>
+                        <span>点击【这里】查看任务描述</span>
+                    </li>
+                </ul>
             </div>
         </div>
 
-        <div class="index_btn" @click="goUser">
+        <div class="content">
+            <div class="content_logo">
+                <img src="img/logo.png" alt="">
+                <span>v 1.0</span>
+            </div>
+            <p>显示项目名称大标题</p>
+            <p>2019.2.15-2019.5.23</p>
+            <div class="content_bot">
+                <div class="content_pre">
+                    <div class="content_bar"></div>
+                </div>
+                <span>30%</span>
+            </div>
+
+
+        </div>
+
+
+        <div class="content_title" @click="requireChange">
+        </div>
+        <div class="content_btn">
+            <p @click="goIndex"></p>
+            <p @click="goUser"></p>
         </div>
     </div>
 </body>
 
 </html>
-<script src="js/jquery.min.js"></script>
-<script src="js/vue.min.js"></script>
-<script src="js/index.js"></script>
+
+<script type="text/javascript">
+    new Vue({
+        el: "#app",
+        data: {},
+        methods: {
+            goUser() {
+                window.location.href = "userInfo.html"
+            },
+            goIndex() {
+                window.location.href = "indexList.html"
+            },
+            projectDetail() {
+                window.location.href = "projectDetail.html"
+            },
+            requireChange() {
+                window.location.href = "projectDetail.html"
+            }
+        },
+
+    })
+
+
+
+
+
+
+
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        color: "#65C0C6",
+        title: {
+            text: ''
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '11%',
+            containLabel: true
+
+        },
+        tooltip: {},
+        legend: {
+            data: []
+        },
+        xAxis: {
+            data: ["需求", "原型", "设计", "前端", "后台", "测试", "验收"],
+            nameLocation: "center",
+        },
+        yAxis: {},
+        series: [{
+            name: '销量',
+            type: 'bar',
+            barWidth: '60%',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'top'
+                }
+            },
+            data: [100, 100, 60, 10, 40, 20, 30]
+        }, ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>

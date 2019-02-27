@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 html,body{
     font-size: calc(100vw / 25);
     background-color: #FFFFFF;
@@ -94,4 +97,108 @@ p.item-title {
     line-height: 1.5rem;
     white-space: nowrap;
     padding-right: 1rem;
+}
+/**
+*柱形图
+*/
+.cp-cylind {
+    width: 100%;
+    height: 18rem;
+    position: relative;
+    border: 0.3rem solid #f6f6f6;
+    border-top: 0;
+    border-right: 0;
+    border-color: #f6f6f6;
+}
+.cp-cylind-bottom {
+    position: absolute;
+    line-height: 0;
+    height: 0.3rem;
+    bottom: -0.3rem;
+    width: 100%;
+    font-size: 0;
+}
+.cp-cylind-bottom-thumb {
+    width: 8%;
+    background-color: #e5e5e5;
+    height: 100%;
+    display: inline-block;
+    margin-left: 6%;
+}
+.cp-cylind-left {
+    height: 100%;
+    width: 0.3rem;
+    position: absolute;
+    left: -0.3rem;
+}
+.cp-cylind-left-thumb {
+    width: 100%;
+    height: 1.8rem;
+    margin-bottom: 1.8rem;
+    background: #e5e5e5;
+    display: block;
+}
+span.cp-cylind-per-top {
+    position: absolute;
+    left: -1.2rem;
+    z-index: 999;
+    top: -1rem;
+    color: #48A1A7;
+    font-size: 0.8rem;
+    line-height: 1rem;
+}
+span.cp-cylind-per-bottom {
+    position: absolute;
+    bottom: -2rem;
+    left: -0.8rem;
+    color: #48A1A7;
+    font-size: 0.8rem;
+    line-height: 1rem;
+}
+.cp-cylind-category-group {
+    position: absolute;
+    bottom: -2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 4%;
+}
+p.cp-cylind-item {
+    background: #F6F6F6;
+    padding: 0.4rem;
+    font-size: 1rem;
+    line-height: 1rem;
+    border-radius: 0.1rem;
+    color: #000;
+}
+.cp-cylind-chart-group {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 0.2rem);
+    bottom: 0.2rem;
+    display: flex;
+    align-items: flex-end;
+}
+.cp-cylind-chart-item {
+    position: relative;
+    height: 0%;
+    width: 8%;
+    background: #65C0C6;
+    margin-left: 6%;
+    border-radius: 0.2rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+span.cp-cylind-chart-item-percent {
+    color: #AAAAAA;
+    position: absolute;
+    top: -1rem;
+    left: -0.1rem;
+    font-size: 0.8rem;
+    text-align: center;
+    width: 100%;
+}
+span.cp-cylind-chart-item-percent.not-full {
+    color: #333;
 }

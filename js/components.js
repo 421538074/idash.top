@@ -42,7 +42,7 @@ const itemList = {
         <ul class="cp-list">
             <li @click="getDetail(item.id,$event)" v-for="(item,index) in itemList" class="cp-list-item arrow-right">
                 <img :src="icon" class="item-icon"/>
-                <p class="item-title">{{item.title}}</p>
+                <p v-cloak class="item-title">{{item.title}}</p>
             </li>
         </ul>
     `,
@@ -75,7 +75,7 @@ const cylindricalGraph = {
             </div>
             <div class="cp-cylind-chart-group">
                 <div v-for="item in dataList" class="cp-cylind-chart-item" :style="item | filterHeight">
-                    <span class="cp-cylind-chart-item-percent" :class="{'not-full':parseInt(item) < 100}">{{item}}</span>
+                    <span v-cloak class="cp-cylind-chart-item-percent" :class="{'not-full':parseInt(item) < 100}">{{item}}</span>
                 </div>
             </div>
             <div class="cp-cylind-left">

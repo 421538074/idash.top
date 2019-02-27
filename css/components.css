@@ -1,6 +1,9 @@
 *{
     box-sizing: border-box;
 }
+[v-cloak] {
+    display: none;
+}
 html,body{
     font-size: calc(100vw / 25);
     background-color: #FFFFFF;

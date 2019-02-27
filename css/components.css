@@ -8,7 +8,7 @@ html,body{
 /**
 *根组件app
 */
-div#app{
+.container{
     padding: 1rem;
     line-height: 1rem;
 }

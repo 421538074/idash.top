@@ -152,6 +152,6 @@ body {
 
 body,
 html {
-	font-size: calc(100vw/3.75);
+	font-size: calc(100vw / 3.75);
 }
 

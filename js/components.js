@@ -63,6 +63,47 @@ const itemList = {
     },
 }
 
+//柱形图
+const cylindricalGraph = {
+    name:'cp-cylind',
+    props:['percentList'],
+    template:`
+        <div class="cp-cylind">
+            <span class="cp-cylind-per-top">100%</span>
+            <div class="cp-cylind-bottom">
+                <div v-for="n in 7" class="cp-cylind-bottom-thumb"></div>
+            </div>
+            <div class="cp-cylind-chart-group">
+                <div v-for="item in dataList" class="cp-cylind-chart-item" :style="item | filterHeight">
+                    <span class="cp-cylind-chart-item-percent" :class="{'not-full':parseInt(item) < 100}">{{item}}</span>
+                </div>
+            </div>
+            <div class="cp-cylind-left">
+                <div v-for="n in 5" class="cp-cylind-left-thumb"></div>
+            </div>
+            <div class="cp-cylind-category-group">  
+                <p class="cp-cylind-item" v-for="item in showList" v-cloak>{{item}}</p>
+            </div>
+            <span class="cp-cylind-per-bottom">0%</span>
+        </div>
+    `,
+    data() {
+        return {
+            showList:['需求','原型','设计','前端','后台','测试','验收'],
+            dataList:this.percentList
+        }
+    },
+    filters:{
+        filterHeight(chartHeight) {
+            if(chartHeight == '0%') {
+                chartHeight = '2%';
+            }
+            return {
+                height:`${chartHeight}`
+            }
+        }
+    }
+} 
 
 
 

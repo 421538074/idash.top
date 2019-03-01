@@ -98,8 +98,6 @@
 }
 
 .require_main_title p:nth-child(2) {
-    width: 1.7rem;
-    height: 0.2rem;
     background: rgba(49, 57, 84, 1);
     border-radius: 0.04rem;
     font-size: 0.12rem;
@@ -108,6 +106,7 @@
     color: rgba(255, 148, 49, 1);
     text-align: center;
     line-height: 0.2rem;
+    padding: 0.02rem 0.06rem 0.01rem 0.07rem;
 }
 
 .require_main_banner span {
@@ -125,6 +124,7 @@
     background: white;
     border-radius: 0.3rem 0.3rem 0 0;
     padding: 0.2rem 0.1rem 0;
+    overflow: scroll;
 }
 
 .chat_one {

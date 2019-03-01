@@ -8,7 +8,9 @@ var vm = new Vue({
             window.location.href = "userInfo.html"
         },
         goStudy(id) {
-            window.location.href = "index.html"
+            // console.log(id)
+            // window.location.href = `index.html=${id}`
+            window.location.href ="index.html"
         },
         indexDetail() {
             window.location.href = ""

@@ -21,24 +21,19 @@ var xm = new Vue({
                 url: `${api}/index/api/backlogReplay`,
                 async: true,
                 data: {
-                    backlog_id: 5,
-                    content:this.text
+                    backlog_id: 1,
+                    content: this.text
                 },
                 dataType: 'json',
                 success: res => {
                     console.log(res)
-                   
+                    
                 },
                 error: res => {
                     console.log(res)
                 }
             });
 
-            // this.arr.push({
-            //     text: this.text
-            // });
-            // this.text = "";
-            // console.log(this.arr)
         },
         backChange() {
             window.location.href = "backlog.html"
@@ -67,9 +62,7 @@ var xm = new Vue({
                 this.log_name = res.data.descr.log_name
 
                 this.Garr = res.data.detail
-                this.arr =res.data.detail
-                
-
+                this.arr = res.data.detail
             },
             error: res => {
                 console.log(res)

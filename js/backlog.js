@@ -48,8 +48,10 @@ var xm = new Vue({
                 processData: false,
                 async: false,
                 contentType: false,
+                dataType:"json",
                 success: res => {
                     console.log(res)
+                    sessionStorage.setItem('img', res.data);
                     window.location.href = "upfile.html"
                 },
                 error: res => {

@@ -2,6 +2,7 @@ var xm = new Vue({
     el: "#app",
     data: {
         isName: true,
+        avtar: '',
         file_name: '',
     },
     methods: {
@@ -34,7 +35,9 @@ var xm = new Vue({
         }
     },
     created() {
-        // var file_name = sessionStorage.getItem("img");
-        
+        var image = sessionStorage.getItem("img");
+        image = image.replace(".",""); 
+        this.avtar=`${api}${image}`
+
     }
 })

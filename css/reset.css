@@ -155,3 +155,7 @@ html {
 	font-size: calc(100vw / 3.75);
 }
 
+
+[v-cloak] {
+	display: none;
+}

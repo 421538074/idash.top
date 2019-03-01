@@ -9,12 +9,6 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
-
-    <!-- <link rel="import" href="project-progress.html" id="project-progress"> -->
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/vue.min.js"></script>
-    <script src="http://echarts.baidu.com/dist/echarts.min.js"></script>
 </head>
 
 <body>
@@ -23,7 +17,7 @@
             <span>首页</span>
         </div>
 
-        
+
         <div class="sheet">
             <h4>项目阶段进度</h4>
             <div id="project-progress">
@@ -61,19 +55,15 @@
                 <img src="img/logo.png" alt="">
                 <span>v 1.0</span>
             </div>
-            <p>显示项目名称大标题</p>
-            <p>2019.2.15-2019.5.23</p>
+            <p>{{title}}</p>
+            <p>{{start_time | filterTime}}-{{end_time | filterTime}}</p>
             <div class="content_bot">
                 <div class="content_pre">
                     <div class="content_bar"></div>
                 </div>
                 <span>30%</span>
             </div>
-
-
         </div>
-
-
         <div class="content_title" @click="requireChange">
         </div>
         <div class="content_btn">
@@ -82,131 +72,10 @@
         </div>
     </div>
 </body>
-
+<script src="js/jquery.min.js"></script>
+<script src="js/vue.min.js"></script>
 <script src="js/components.js"></script>
+<script src="js/api.js"></script>
+<script src="js/index.js"></script>
 
 </html>
-
-<script type="text/javascript">
-    new Vue({
-        el: "#app",
-        data() {
-            return {
-                percentList: ['100%', '100%', '90%', '75%', '10%', '5%', '0%']
-            }
-        },
-        methods: {
-            goUser() {
-                window.location.href = "userInfo.html"
-            },
-            goIndex() {
-                window.location.href = "indexList.html"
-            },
-            projectDetail() {
-                window.location.href = "projectDetail.html"
-            },
-            requireChange() {
-                window.location.href = "projectDetail.html"
-            }
-        },
-        components: {
-            [cylindricalGraph.name]: cylindricalGraph
-        }
-
-    })
-
-
-    // $("#project-progress").load("project-progress.html");
-    // $(".content_logo").click(function () {
-    //     console.log(111)
-    // })
-
-
-
-    // // 基于准备好的dom，初始化echarts实例
-    // var myChart = echarts.init(document.getElementById('main'));
-
-    // // 指定图表的配置项和数据
-    // var option = {
-    //     color: "#65C0C6",
-    //     title: {
-    //         text: ''
-    //     },
-    //     grid: {
-    //         left: '3%',
-    //         right: '4%',
-    //         bottom: '11%',
-    //         containLabel: true
-
-    //     },
-    //     tooltip: {},
-    //     legend: {
-    //         data: []
-    //     },
-    //     xAxis: {
-    //         data: ["需求", "原型", "设计", "前端", "后台", "测试", "验收"],
-    //         axisTick: {
-    //             show: false
-    //         },
-    //         axisLine: {
-    //             color: {
-    //                 type: 'linear',
-    //                 x: 0,
-    //                 y: 0,
-    //                 x2: 0,
-    //                 y2: 1,
-    //                 colorStops: [{
-    //                     offset: 0,
-    //                     color: 'red' // 0% 处的颜色
-    //                 }, {
-    //                     offset: 1,
-    //                     color: 'blue' // 100% 处的颜色
-    //                 }],
-    //                 global: false // 缺省为 false
-    //             }
-    //         },
-
-    //     },
-    //     yAxis: {
-    //         type: 'value',
-
-    //         axisLabel: {
-    //             color: "#65C0C6",
-    //             show: true,
-    //             formatter: '{value} kg',
-    //             lineStyle: {
-    //                 color: "#65C0C6",
-    //             }
-    //         },
-
-    //         axisTick: {
-    //             show: false,
-    //         },
-    //         axisLabel: {
-    //             show: true,
-    //         },
-    //         splitLine: {
-    //             show: false
-    //         },
-    //         splitNumber: 1,
-
-
-
-    //     },
-    //     series: [{
-    //         name: '销量',
-    //         type: 'bar',
-    //         barWidth: '60%',
-    //         label: {
-    //             normal: {
-    //                 show: true,
-    //                 position: 'top'
-    //             }
-    //         },
-    //         data: [100, 100, 60, 10, 40, 20, 30]
-    //     }, ]
-    // };
-
-    // // 使用刚指定的配置项和数据显示图表。
-    // myChart.setOption(option);
-</script>

@@ -49,9 +49,10 @@
 }
 
 .index_main_mid .one {
-    display: inline-block;
+    /* display: inline-block;
     width: 0.4rem;
-    height: 0.18rem;
+    height: 0.18rem; */
+    padding: 0.02rem 0.1rem;
     background: #A5DA85;
     border-radius: 0.09rem 0.09rem 0.09rem 0px;
     font-size: 0.1rem;
@@ -99,7 +100,7 @@
 }
 
 .index_main_right {
-    width: 1.3rem;
+    width: 1.4rem;
     height: 0.18rem;
     background: rgba(246, 246, 246, 1);
     border-radius: 0.02rem;
@@ -109,12 +110,9 @@
     font-weight: 400;
     color: rgba(136, 136, 136, 1);
     line-height: 0.18rem;
-    margin-left: 0.1rem;
+    margin-left: 0.01rem;
     margin-top: -0.55rem;
 }
-
-
-
 .index_btn {
     position: fixed;
     right: 0.2rem;

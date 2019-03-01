@@ -34,6 +34,8 @@ const tabBar = {
         }
     }
 }
+
+
 //列表
 const itemList = {
     name:'cp-itemlist',

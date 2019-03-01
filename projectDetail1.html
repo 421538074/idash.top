@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/projectDetail.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="project_header">
+            <span>某某项目</span>
+        </div>
+
+
+        <div class="project_scoll">
+            <div class="project_banner">
+                <ul>
+                    <li class="blue" @click="lisTbar(1)">需求</li>
+                    <li @click="lisTbar(2)">原型</li>
+                    <li @click="lisTbar(3)">设计</li>
+                    <li @click="lisTbar(4)">前端</li>
+                    <li @click="lisTbar(5)">后台</li>
+                    <li @click="lisTbar(6)">调试</li>
+                    <li @click="lisTbar(7)">验收</li>
+                </ul>
+            </div>
+        </div>
+        <!-- 文件 -->
+        <div class="project_file" v-show="isshow"> 
+            <ul class="uu">
+                <li v-for="item in title" @click="upChange">
+                    <img src="img/file.png" alt="">
+                    <span>{{item.question}}</span>
+                    <span></span>
+                </li>
+            </ul>
+        </div>
+        <div class="back">
+                <span @click="goback"></span>
+                <!-- <span @click="goProject"></span> -->
+            </div>
+    </div>
+</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/vue.min.js"></script>
+<script src="js/api.js"></script>
+<script src="js/projectDetail.js"></script>

@@ -22,18 +22,18 @@
                 </div>
                 <span class="divde"></span>
                 <div class="index_main_mid">
-                    <span class="one">需求</span>
-                    <p>象棋游戏项目</p>
+                    <span class="one">{{item.name}}</span>
+                    <p>{{item.title}}</p>
                     <div class="process_wrap">
                         <div class="process">
                             <span class="bar"></span>
                         </div>
-                        <span class="per">20%</span>
+                        <span class="per">{{item.rate}}</span>
                     </div>
 
                 </div>
                 <div class="index_main_right">
-                    2019.2.15-2019.5.23
+                    {{item.start_time | filterTime}}-{{item.end_time | filterTime}}
                 </div>
             </div>
         </div>
@@ -48,4 +48,5 @@
 </html>
 <script src="js/jquery.min.js"></script>
 <script src="js/vue.min.js"></script>
+<script src="js/api.js"></script>
 <script src="js/indexList.js"></script>

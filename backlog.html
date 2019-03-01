@@ -18,18 +18,22 @@
 
         <div class="backlog_foot">
             <span @click="goback"></span>
-            <span>上传文件</span>
+
+            <div @click="upChange($event)">
+                上传文件
+                <input id="file" ref="image" @change="add_img" hidden type="file" accept="image/*" class="invisible">
+            </div>
         </div>
 
 
         <div class="backlog_main">
-            <div class="main_one" v-for="(item,index) in list" @click="loadChange">
+            <div class="main_one" v-for="(item,index) in titleList" @click="loadChange">
                 <div class="main_left">
                     <img src="img/书.png" alt="">
                 </div>
                 <div class="main_mid">
-                    <p>需求1</p>
-                    <p>2019.12.12. 12:23:34</p>
+                    <p>{{item.data_title}}</p>
+                    <p>{{item.create_at | filterTime}}</p>
                 </div>
                 <div class="main_right">
                     <span>下载</span>
@@ -43,4 +47,5 @@
 </html>
 <script src="js/jquery.min.js"></script>
 <script src="js/vue.min.js"></script>
+<script src="js/api.js"></script>
 <script src="js/backlog.js"></script>

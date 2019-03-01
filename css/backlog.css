@@ -20,6 +20,7 @@
     bottom: 0.2rem;
     font-size: 0.14rem;
     color: white;
+    display: flex;
 }
 
 .backlog_foot span:nth-child(1) {
@@ -32,8 +33,8 @@
     vertical-align: bottom;
 }
 
-.backlog_foot span:nth-child(2) {
-    display: inline-block;
+.backlog_foot div {
+    /* display: inline-block; */
     width: 0.8rem;
     height: 0.36rem;
     background: #48A1A7;
@@ -72,6 +73,7 @@
 }
 
 .main_mid {
+    width: 1.16rem;
     margin: 0 1.05rem 0 0.16rem;
     font-family: PingFangSC-Regular;
     font-weight: 400;

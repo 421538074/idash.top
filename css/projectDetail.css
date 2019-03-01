@@ -38,7 +38,7 @@
 }
 
 .project_banner ul {
-    width: 120%;
+    width: 163%;
     display: flex;
 }
 
@@ -124,10 +124,8 @@
     margin-bottom: 0.04rem;
 }
 
-.work_one_right p:nth-child(2) {
-    display: inline-block;
-    width: 1.76rem;
-    height: 0.2rem;
+.work_one_right span {
+    padding: 0.02rem 0.08rem;
     background: #F0F0F0;
     border-radius: 0.04rem;
     font-size: 0.12rem;
@@ -194,7 +192,8 @@
 }
 
 .uu li span:nth-child(2) {
-    margin: 0 1.74rem 0 0.1rem;
+    width: 1.6rem;
+    margin: 0 1rem 0 0.1rem;
 }
 
 .uu li span:nth-child(3) {
@@ -204,3 +203,23 @@
     background: url(../img/右1.png)no-repeat;
     background-size: 100% 100%;
 }
+
+.work_one:nth-child(2) .work_one_right span {
+    color: #65C0C6;
+}
+
+.work_one:nth-child(3) .work_one_right span {
+    color: #888888;
+}
+
+.work_one:nth-child(4) .work_one_right span {
+    color: red;
+}
+
+.work_one:nth-child(5) .work_one_right p i {
+    color: red;
+    font-weight: 600;
+    margin-right: 0.05rem;
+}
+
+

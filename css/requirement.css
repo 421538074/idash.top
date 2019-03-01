@@ -166,6 +166,7 @@
     line-height: 0.2rem;
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 0.2rem;
 }
 
 .chat_two span:nth-child(2) {

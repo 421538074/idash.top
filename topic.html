@@ -15,7 +15,7 @@
         <div class="header">
             <div class="index_banner">
                 <div class="index_logo">
-                    <span><img src="img/logo.png" alt=""></span> 
+                    <span><img src="img/logo.png" alt=""></span>
                     <span>v 1.0</span>
                 </div>
                 <div class="index_title">
@@ -28,3 +28,40 @@
 </body>
 
 </html>
+<script src="js/jquery.min.js"></script>
+<script src="js/api.js"></script>
+<script>
+    enter();
+    userInfo();
+    function enter() {
+        $.ajax({
+            type: "post",
+            url: `${api}/index/api/wxLogin`,
+            async: true,
+            data: {},
+            dataType: 'json',
+            success: res => {
+                console.log(res)
+            },
+            error: res => {
+                console.log(res)
+            }
+        });
+    }
+
+    function userInfo() {
+        $.ajax({
+            type: "post",
+            url: `${api}/index/api/getUserInfo`,
+            async: true,
+            data: {},
+            dataType: 'json',
+            success: res => {
+                console.log(res)
+            },
+            error: res => {
+                console.log(res)
+            }
+        });
+    }
+</script>

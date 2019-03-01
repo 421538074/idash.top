@@ -23,7 +23,8 @@ const vm = new Vue({
                     name: '后台'
                 }
             ],
-            itemList: [{
+            itemList: [
+                {
                     id: 0,
                     title: '待办事项标题'
                 },

@@ -76,7 +76,7 @@ const cylindricalGraph = {
                 <div v-for="n in 7" class="cp-cylind-bottom-thumb"></div>
             </div>
             <div class="cp-cylind-chart-group">
-                <div v-for="item in dataList" class="cp-cylind-chart-item" :style="item | filterHeight">
+                <div v-for="item in percentList" class="cp-cylind-chart-item" :style="item | filterHeight">
                     <span v-cloak class="cp-cylind-chart-item-percent" :class="{'not-full':parseInt(item) < 100}">{{item}}</span>
                 </div>
             </div>
@@ -91,8 +91,7 @@ const cylindricalGraph = {
     `,
     data() {
         return {
-            showList:['需求','原型','设计','前端','后台','测试','验收'],
-            dataList:this.percentList
+            showList:['需求','原型','设计','前端','后台','测试','验收']
         }
     },
     filters:{

@@ -30,7 +30,7 @@
 
         <div class="nav">
             <div class="nav_top">
-                <p>待办事项</p>
+                <p v-cloak>{{question}}</p>
                 <div class="nav_top_more" @click="projectDetail">
                     <span>全部</span>
                     <img src="img/右.png" alt="">
@@ -40,7 +40,7 @@
                 <ul>
                     <li>
                         <span></span>
-                        <span>显示待办事项内容</span>
+                        <span v-cloak>{{content}}</span>
                     </li>
                     <li>
                         <span></span>
@@ -55,8 +55,8 @@
                 <img src="img/logo.png" alt="">
                 <span>v 1.0</span>
             </div>
-            <p>{{title}}</p>
-            <p>{{start_time | filterTime}}-{{end_time | filterTime}}</p>
+            <p v-cloak>{{title}}</p>
+            <p v-cloak>{{start_time | filterTime}}-{{end_time | filterTime}}</p>
             <div class="content_bot">
                 <div class="content_pre">
                     <div class="content_bar"></div>

@@ -17,7 +17,7 @@ var xm = new Vue({
         backer: '',
         test: '',
         check: '',
-        percentList: ['100%', '100%', '90%', '75%', '10%', '5%', '0%'],
+        percentList: [],
         // percentList:[],
     },
     methods: {
@@ -71,11 +71,11 @@ var xm = new Vue({
                 this.backer = res.data.backer
                 this.test = res.data.test
                 this.check = res.data.check
-                // this.percentList = [this.demand + "%",
-                //     this.graph + "%", this.design + "%",
-                //     this.fronted + "%", this.backer + "%",
-                //     this.test + "%", this.check + "%"
-                // ]
+                this.percentList = [this.demand + "%",
+                    this.graph + "%", this.design + "%",
+                    this.fronted + "%", this.backer + "%",
+                    this.test + "%", this.check + "%"
+                ]
           
             },
             error: res => {

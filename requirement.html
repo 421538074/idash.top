@@ -13,12 +13,12 @@
 <body>
 
     <div id="app">
-            <div class="require_header">
-                    <span>{{log_name}}</span>
-                    <!-- <span>×</span> -->
-                </div>
+        <div class="require_header">
+            <span>{{log_name}}</span>
+            <!-- <span>×</span> -->
+        </div>
         <div class="require_banner">
-         
+
             <div class="require_main">
                 <div class="require_process">
                     <div class="bar">
@@ -33,18 +33,23 @@
                     <span @click="backChange"></span>
                 </div>
                 <div class="require_chat">
-                    <div class="chat_one" v-for="item in Garr" >
-                        <span>
-                            <img src="" alt="">
-                        </span>
-                        <span>{{item.content}}</span>
-                    </div>
-                    <div class="chat_two" v-for="item in arr">
-                        <span>{{item.content}}</span>
-                        <span>
-                            <img src="" alt="">
-                        </span>
-                    </div>
+                    <template v-if="item.user_type == 2" v-for="item in Garr">
+                        <div class="chat_one">
+                            <span>
+                                <img src="" alt="">
+                            </span>
+                            <span>{{item.content}}</span>
+                        </div>
+                    </template>
+                    <template  v-if="item.user_type == 1" v-for="item in Garr">
+                        <div class="chat_two">
+                            <span>{{item.content}}</span>
+                            <span>
+                                <img src="" alt="">
+                            </span>
+                        </div>
+                    </template>
+
                 </div>
             </div>
         </div>
@@ -65,6 +70,6 @@
 
 </html>
 <script src="js/jquery.min.js"></script>
-<script src="js/vue.min.js"></script>
+<script src="js/development/vue.js"></script>
 <script src="js/api.js"></script>
 <script src="js/requirement.js"></script>

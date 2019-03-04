@@ -26,10 +26,10 @@ const tabBar = {
         }
     },
     methods: {
-        switchTab (index,id) {
-            if(index != this.currentIndex) {
+        switchTab(index, id) {
+            if (index != this.currentIndex) {
                 this.currentIndex = index;
-                this.$emit('get-list',id);
+                this.$emit('get-list', id);
             }
         }
     }
@@ -38,9 +38,9 @@ const tabBar = {
 
 //列表
 const itemList = {
-    name:'cp-itemlist',
-    props:['item-list','icon'],
-    template:`
+    name: 'cp-itemlist',
+    props: ['item-list', 'icon'],
+    template: `
         <ul class="cp-list">
             <li @click="getDetail(item.id,$event)" v-for="(item,index) in itemList" class="cp-list-item arrow-right">
                 <img :src="icon" class="item-icon"/>
@@ -50,26 +50,26 @@ const itemList = {
     `,
     data() {
         return {
-            tempList:this.itemList
+            tempList: this.itemList
         }
     },
     methods: {
         getDetail(itemId) {
-            
+
         }
     },
     watch: {
         tempList() {
-            this.$emit('scroll-to-top',document.querySelector('.cp-list'));
+            this.$emit('scroll-to-top', document.querySelector('.cp-list'));
         }
     },
 }
 
 //柱形图
 const cylindricalGraph = {
-    name:'cp-cylind',
-    props:['percentList'],
-    template:`
+    name: 'cp-cylind',
+    props: ['percentList'],
+    template: `
         <div class="cp-cylind">
             <span class="cp-cylind-per-top">100%</span>
             <div class="cp-cylind-bottom">
@@ -91,20 +91,79 @@ const cylindricalGraph = {
     `,
     data() {
         return {
-            showList:['需求','原型','设计','前端','后台','测试','验收']
+            showList: ['需求', '原型', '设计', '前端', '后台', '测试', '验收']
         }
     },
-    filters:{
+    filters: {
         filterHeight(chartHeight) {
-            if(chartHeight == '0%') {
+            if (chartHeight == '0%') {
                 chartHeight = '2%';
             }
             return {
-                height:`${chartHeight}`
+                height: `${chartHeight}`
             }
         }
     }
-} 
+}
+
+
+
+
+
+// 进度条
+const projectBar = {
+    name: 'cy-bar',
+    props: ['num'],
+    template: `
+    <div class="content_bot">
+        <div class="content_pre" v-for="item in num">
+            <div class="content_bar"  :style="item | filterWidth"></div>
+            <span>{{item}}</span>
+        </div> 
+    </div>
+    `,
+    data() {
+        return {}
+    },
+    filters: {
+        filterWidth(chartWidth) {
+            if (chartWidth == '0%') {
+                chartWidth = '2%';
+            }
+            return {
+                width: `${chartWidth}`
+            }
+        }
+    }
+}
+
+
+// indexList 
+const Bar = {
+    name: 'cy-bar',
+    props: ['bar'],
+    template: `
+    <div class="process_wrap">
+        <div class="process" v-for="item in bar">
+            <div class="bar"  :style="item | filterWidth"></div>
+            <span class="per">{{item}}</span>
+        </div> 
+    </div>
+    `,
+    data() {
+        return {}
+    },
+    filters: {
+        filterWidth(chartWidth) {
+            if (chartWidth == '0%') {
+                chartWidth = '2%';
+            }
+            return {
+                width: `${chartWidth}`
+            }
+        }
+    }
+}
 
 
 
@@ -170,7 +229,7 @@ const cylindricalGraph = {
  */
 function scrollToTop(e) {
     const scrollTop = e.scrollTop;
-    const interval = setInterval(function(){
+    const interval = setInterval(function () {
         if (e.scrollTop <= 0) {
             clearInterval(interval);
             return;

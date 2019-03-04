@@ -1,7 +1,8 @@
 var vm = new Vue({
     el: "#app",
     data: {
-        list: []
+        list: [],
+        bar:['20%']
     },
     methods: {
         goUser() {
@@ -15,6 +16,9 @@ var vm = new Vue({
         indexDetail() {
             window.location.href = ""
         }
+    },
+    components: {
+        [Bar.name]: Bar,
     },
     filters: {
         filterTime(time) {
@@ -32,6 +36,7 @@ var vm = new Vue({
             success: res => {
                 console.log(res)
                 this.list = res.data
+                
             },
             error: res => {
                 console.log(res)

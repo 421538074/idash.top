@@ -32,27 +32,10 @@
 <script src="js/api.js"></script>
 <script>
     enter();
-    userInfo();
     function enter() {
         $.ajax({
             type: "post",
             url: `${api}/index/api/wxLogin`,
-            async: true,
-            data: {},
-            dataType: 'json',
-            success: res => {
-                console.log(res)
-            },
-            error: res => {
-                console.log(res)
-            }
-        });
-    }
-
-    function userInfo() {
-        $.ajax({
-            type: "post",
-            url: `${api}/index/api/getUserInfo`,
             async: true,
             data: {},
             dataType: 'json',

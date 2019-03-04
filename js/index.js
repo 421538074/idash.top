@@ -1,9 +1,6 @@
 var xm = new Vue({
     el: "#app",
     data: {
-        title: '',
-    },
-    data: {
         id: '',
         title: '',
         start_time: '',
@@ -18,6 +15,7 @@ var xm = new Vue({
         test: '',
         check: '',
         percentList: [],
+        num:['20%']
     },
     methods: {
         goUser() {
@@ -38,7 +36,8 @@ var xm = new Vue({
         }
     },
     components: {
-        [cylindricalGraph.name]: cylindricalGraph
+        [cylindricalGraph.name]: cylindricalGraph,
+        [projectBar.name]: projectBar,
     },
     filters: {
         filterTime(time) {
@@ -52,7 +51,7 @@ var xm = new Vue({
             url: `${api}/index/api/myProgram`,
             async: true,
             data: {
-                program_id:5,
+                program_id: 5,
             },
             dataType: 'json',
             success: res => {
@@ -74,7 +73,7 @@ var xm = new Vue({
                     this.fronted + "%", this.backer + "%",
                     this.test + "%", this.check + "%"
                 ]
-          
+
             },
             error: res => {
                 console.log(res)

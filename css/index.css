@@ -136,18 +136,17 @@
     height: 0.06rem;
     background: rgba(255, 236, 236, 1);
     border-radius: 0.06rem;
+    position: relative;
 }
 
 .content_bar {
-    width: 0.3rem;
+    width: 0%;
     height: 0.06rem;
     background: rgba(255, 53, 53, 1);
     border-radius: 0.06rem;
 }
 
 .content_bot {
-    display: flex;
-    align-items: center;
     margin-top: 0.1rem;
 }
 
@@ -158,6 +157,9 @@
     color: rgba(255, 53, 53, 1);
     line-height: 0.17rem;
     margin-left: 0.1rem;
+    position: absolute;
+    right: -0.4rem;
+    top: -0.06rem;
 }
 
 .content_btn {

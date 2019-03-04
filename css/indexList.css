@@ -8,6 +8,7 @@
     background: #0F1322;
     position: fixed;
     top: 0;
+    z-index: 11;
 }
 
 
@@ -79,12 +80,11 @@
     height: 0.06rem;
     background: #E2F2F3;
     border-radius: 0.06rem;
-    font-size: 0;
+    position: relative;
 }
 
 .process .bar {
-    display: inline-block;
-    width: 0.2rem;
+    width: 0;
     height: 0.06rem;
     background: #65C0C6;
     border-radius: 0.06rem;
@@ -97,6 +97,9 @@
     color: rgba(101, 192, 198, 1);
     line-height: 0.17rem;
     margin-left: 0.1rem;
+    position: absolute;
+    right: -0.45rem;
+    top:-0.06rem;
 }
 
 .index_main_right {
@@ -110,7 +113,7 @@
     font-weight: 400;
     color: rgba(136, 136, 136, 1);
     line-height: 0.18rem;
-    margin-left: 0.01rem;
+    margin-left: 0.3rem;
     margin-top: -0.55rem;
 }
 .index_btn {

@@ -6,17 +6,8 @@ var xm = new Vue({
         titleList: []
     },
     methods: {
-        // great: function () {
-        //     document.getElementById('file').onchange = function () {
-        //         var imgFile = this.files[0];
-        //         console.log(imgFile)
-        //     }
-        // },
         goback() {
             window.history.back()
-        },
-        loadChange() {
-            window.location.href = "upfile.html"
         },
         add_img(event) {
             let img1 = event.target.files[0];
@@ -31,14 +22,6 @@ var xm = new Vue({
                 alert('请选择3M以内的图片！');
                 return false;
             }
-            // var fr = new FileReader();
-            // fr.onload = function () {
-            //     document.getElementById('portrait').src = fr.result;
-            // };
-            // fr.readAsDataURL(img1);
-
-
-            // sessionStorage.setItem('img', JSON.stringify(img1));
             let formData = new FormData();
             formData.append('file', img1);
             $.ajax({

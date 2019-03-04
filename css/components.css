@@ -1,5 +1,6 @@
 *{
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 [v-cloak] {
     display: none;
@@ -24,9 +25,15 @@ button.cp-back {
     background-size: 100%;
     width: 4rem;
     height: 4rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     position: fixed;
     left: 1rem;
     bottom: 1rem;
@@ -74,8 +81,12 @@ ul.cp-list {
     padding: 0.2rem;
 }
 li.cp-list-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 img.item-icon {
     width: 2.5em;
@@ -85,7 +96,8 @@ li.cp-list-item.arrow-right {
     background-position: 98%;
     background-size: 0.8em;
     padding: 1em 0.5em;
-    box-shadow: 0 0 4px 0 rgba(0,0,0,0.20);
+    -webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,0.20);
+            box-shadow: 0 0 4px 0 rgba(0,0,0,0.20);
     border-radius: 0.5em;
     margin-top: 1em;
 }
@@ -161,9 +173,15 @@ span.cp-cylind-per-bottom {
 .cp-cylind-category-group {
     position: absolute;
     bottom: -2.5em;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     width: 100%;
     padding-left: 4%;
 }
@@ -180,8 +198,12 @@ p.cp-cylind-item {
     width: 100%;
     height: calc(100% - 0.2em);
     bottom: 0.2em;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
 }
 .cp-cylind-chart-item {
     position: relative;
@@ -191,6 +213,7 @@ p.cp-cylind-item {
     margin-left: 6%;
     border-radius: 0.2em;
     display: inline-block;
+    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 span.cp-cylind-chart-item-percent {

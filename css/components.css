@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-* {
-    box-sizing: border-box;
-=======
 *{
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
->>>>>>> 87077a230f95705d213e117a24b28a11a1c2a82c
 }
 
 [v-cloak] {

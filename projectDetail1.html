@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>客户查询系统</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/projectDetail.css">
 </head>
@@ -31,18 +31,18 @@
             </div>
         </div>
         <!-- 文件 -->
-        <div class="project_file" v-show="isshow"> 
+        <div class="project_file" > 
             <ul class="uu">
                 <li v-for="item in title" @click="upChange">
                     <img src="img/file.png" alt="">
-                    <span>{{item.question}}</span>
+                    <span>{{item.log_name}}</span>
                     <span></span>
                 </li>
             </ul>
         </div>
         <div class="back">
                 <span @click="goback"></span>
-                <!-- <span @click="goProject"></span> -->
+                <span @click="goProject"></span>
             </div>
     </div>
 </body>
@@ -51,4 +51,4 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/vue.min.js"></script>
 <script src="js/api.js"></script>
-<script src="js/projectDetail.js"></script>
+<script src="js/projectDetail1.js"></script>

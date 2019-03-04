@@ -42,7 +42,7 @@
     align-items: center;
 }
 
-.up_main_right .up_main_title span {
+.up_main_right .up_main_title div {
     font-size: 0.18rem;
     font-family: PingFangSC-Medium;
     font-weight: 500;

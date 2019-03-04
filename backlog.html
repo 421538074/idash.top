@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>客户查询系统</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/backlog.css">
 </head>
@@ -27,7 +27,7 @@
 
 
         <div class="backlog_main">
-            <div class="main_one" v-for="(item,index) in titleList" @click="loadChange">
+            <div class="main_one" v-for="(item,index) in titleList">
                 <div class="main_left">
                     <img src="img/书.png" alt="">
                 </div>

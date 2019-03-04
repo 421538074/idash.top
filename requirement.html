@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>客户查询系统</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/requirement.css">
 </head>
@@ -60,9 +60,9 @@
             <div class="require_foot_two">
                 <input type="text" v-model="text" placeholder="发信息">
             </div>
-            <div class="require_foot_three" @click="upChange">
-                <span>上传文件</span>
-                <!-- <span>发送</span> -->
+            <div class="require_foot_three" @click="upChange($event)">
+                上传文件
+                <input id="file" ref="image" @change="add_img" hidden type="file" accept="image/*" class="invisible">
             </div>
         </div>
     </div>

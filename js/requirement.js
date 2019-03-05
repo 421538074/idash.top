@@ -1,15 +1,14 @@
 var xm = new Vue({
     el: "#app",
     data: {
-        arr: [{
-            text: ""
-        }],
+        arr: [],
         Garr: [],
         text: "",
         create_at: '',
         log_content: '',
         log_name: '',
-        content: ''
+        content: '',
+        isshow: true,
     },
     methods: {
         goback() {
@@ -54,6 +53,60 @@ var xm = new Vue({
         backChange() {
             this.program_id = getUrlKey('program_id')
             window.location.href = `projectDetail1.html?program_id=${this.program_id}`
+        },
+        focus() {
+            var myInput = document.getElementById('myInput');
+            if (myInput == document.activeElement) {
+                this.isshow = false
+            }
+        },
+        send() {
+            if (this.text) {
+                $.ajax({
+                    type: "post",
+                    url: `${api}/index/api/backlogReplay`,
+                    data: {
+                        backlog_id: 1,
+                        content: this.text,
+                    },
+                    async: true,
+                    dataType: 'json',
+                    success: res => {
+                        console.log(res)
+                        // this.arr.push({
+                        //     content: this.text,
+                        // })
+                        this.text = '',
+                            $.ajax({
+                                type: "post",
+                                url: `${api}/index/api/backlogDetail`,
+                                async: true,
+                                data: {
+                                    backlog_id: 1,
+                                },
+                                dataType: 'json',
+                                success: res => {
+                                    this.create_at = res.data.descr.create_at
+                                    this.log_content = res.data.descr.log_content
+                                    this.log_name = res.data.descr.log_name
+
+                                    this.Garr = res.data.detail
+                                    this.arr = res.data.detail
+                                },
+                                error: res => {
+                                    console.log(res)
+                                }
+                            });
+                        this.isshow = true
+                    },
+                    error: res => {
+                        console.log(res)
+                    }
+                });
+            } else {
+                alert('请输入内容')
+            }
+
         }
 
     },
@@ -86,6 +139,10 @@ var xm = new Vue({
             }
         });
     }
+})
 
 
+
+$(".require_chat").click(function () {
+    $("#myInput").blur()
 })

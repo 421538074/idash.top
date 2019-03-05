@@ -64,7 +64,6 @@ var xm = new Vue({
     },
     created() {
         this.program_id = getUrlKey('program_id')
-        console.log()
         //待办事项 
         $.ajax({
             type: "post",
@@ -96,8 +95,6 @@ $(function () {
         $(this).click(function () {
             $("li.blue").removeClass("blue");
             $(this).addClass("blue");
-            // $(".tab-content div.active-txt").removeClass("active-txt");
-            // $(".tab-content div").eq(index).addClass("active-txt");
         });
     })
 });

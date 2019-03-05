@@ -55,6 +55,7 @@ var xm = new Vue({
             },
             dataType: 'json',
             success: res => {
+                console.log(res)
                 this.id = res.data.id
                 this.title = res.data.title
                 this.start_time = res.data.start_time

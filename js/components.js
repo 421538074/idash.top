@@ -156,7 +156,7 @@ const Bar = {
     filters: {
         filterWidth(chartWidth) {
             if (chartWidth == '0%') {
-                chartWidth = '2%';
+                chartWidth = '0%';
             }
             return {
                 width: `${chartWidth}`

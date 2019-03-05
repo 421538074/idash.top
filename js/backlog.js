@@ -3,7 +3,8 @@ var xm = new Vue({
     data: {
         create_at: '',
         program_id: '',
-        titleList: []
+        titleList: [],
+        imgUrl:"",
     },
     methods: {
         goback() {
@@ -31,7 +32,7 @@ var xm = new Vue({
                 processData: false,
                 async: false,
                 contentType: false,
-                dataType:"json",
+                dataType: "json",
                 success: res => {
                     console.log(res)
                     sessionStorage.setItem('img', res.data);
@@ -44,7 +45,20 @@ var xm = new Vue({
         },
         upChange(event) {
             $(event.target).find('input.invisible').click();
-        }
+        },
+        downloadCodeImg(index) {
+            console.log(index)
+            console.log(this.titleList)
+            var img=this.titleList
+            console.log(img)
+            var codeIMG =img[index].data_url
+            // console.log('下载图片')
+            var a = document.createElement('a')
+            a.download = name || 'pic'
+            // 设置图片地址
+            a.href = codeIMG;
+            a.click();
+        },
     },
     filters: {
         filterTime(time) {
@@ -61,7 +75,7 @@ var xm = new Vue({
             async: true,
             data: {
                 program_id: this.program_id,
-                process_id: this.process_id,
+                process_id: 1,
             },
             dataType: 'json',
             success: res => {

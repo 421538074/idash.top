@@ -27,7 +27,7 @@
 
 
         <div class="backlog_main">
-            <div class="main_one" v-for="(item,index) in titleList">
+            <div class="main_one" v-for="(item,index) in titleList" :key="index">
                 <div class="main_left">
                     <img src="img/书.png" alt="">
                 </div>
@@ -36,7 +36,7 @@
                     <p>{{item.create_at | filterTime}}</p>
                 </div>
                 <div class="main_right">
-                    <span>下载</span>
+                    <span @click="downloadCodeImg(index)">下载</span>
                     <span></span>
                 </div>
             </div>

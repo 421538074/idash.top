@@ -147,6 +147,7 @@
 }
 
 .content_bot {
+    display: flex;
     margin-top: 0.1rem;
 }
 

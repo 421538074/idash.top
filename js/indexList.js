@@ -2,7 +2,7 @@ var vm = new Vue({
     el: "#app",
     data: {
         list: [],
-        bar:['20%']
+        bar:['0%']
     },
     methods: {
         goUser() {
@@ -36,7 +36,8 @@ var vm = new Vue({
             success: res => {
                 console.log(res)
                 this.list = res.data
-                
+            
+              
             },
             error: res => {
                 console.log(res)

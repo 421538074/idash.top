@@ -3,6 +3,7 @@
     background: linear-gradient(360deg,
         rgba(39, 45, 70, 1) 0%,
         rgba(17, 21, 37, 1) 100%);
+    position: fixed;
 }
 
 .require_header {
@@ -119,11 +120,11 @@
 
 .require_chat {
     width: 3.35rem;
-    height: 5.1rem;
+    height: 4.19rem;
     margin: 0 auto;
     background: white;
     border-radius: 0.3rem 0.3rem 0 0;
-    padding: 0.2rem 0.1rem 0;
+    padding: 0.2rem 0.1rem 0.8rem;
     overflow: scroll;
 }
 
@@ -148,13 +149,10 @@
 }
 
 .chat_one span:nth-child(2) {
-    display: inline-block;
-    width: 1.29rem;
-    height: 0.4rem;
+    padding: 0.1rem 0.21rem;
     background: #F0F0F0;
     border-radius: 0px 0.16rem 0.16rem 0.16rem;
     text-align: center;
-    line-height: 0.4rem;
 }
 
 
@@ -180,13 +178,10 @@
 }
 
 .chat_two span:nth-child(1) {
-    display: inline-block;
-    width: 1.29rem;
-    height: 0.4rem;
+    padding: 0.1rem 0.21rem;
     background: #87B5ED;
     border-radius: 0px 0.2rem 0.2rem 0.2rem;
     text-align: center;
-    line-height: 0.4rem;
 }
 
 

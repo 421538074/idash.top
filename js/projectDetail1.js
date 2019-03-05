@@ -57,6 +57,7 @@ var xm = new Vue({
         }
     },
     created() {
+        
         this.program_id = getUrlKey('program_id')
         $.ajax({
             type: "post",
@@ -70,6 +71,7 @@ var xm = new Vue({
             success: res => {
                 console.log(res)
                 this.title = res.data
+                sessionStorage.setItem('key', JSON.stringify(1));
             },
             error: res => {
                 console.log(res)

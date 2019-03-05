@@ -41,7 +41,7 @@
                             <span>{{item.content}}</span>
                         </div>
                     </template>
-                    <template  v-if="item.user_type == 1" v-for="item in Garr">
+                    <template  v-if="item.user_type == 1" v-for="item in arr">
                         <div class="chat_two">
                             <span>{{item.content}}</span>
                             <span>
@@ -57,10 +57,13 @@
         <div class="require_foot">
             <div class="require_foot_one" @click="goback">
             </div>
-            <div class="require_foot_two">
-                <input type="text" v-model="text" placeholder="发信息">
+            <div class="require_foot_two" @click="focus">
+                <input type="text" v-model="text" placeholder="发信息" id="myInput" >
             </div>
-            <div class="require_foot_three" @click="upChange($event)">
+            <div class="require_foot_three" v-show="!isshow" @click="send">
+                发送
+            </div>
+            <div class="require_foot_three" id="two" v-show="isshow" @click="upChange($event)">
                 上传文件
                 <input id="file" ref="image" @change="add_img" hidden type="file" accept="image/*" class="invisible">
             </div>

@@ -28,12 +28,11 @@ var xm = new Vue({
                     process_id: 1,
                 },
                 dataType: 'json',
-                success: res => {
-                    console.log(res)
+                success:function(res) {
                     window.history.back();
                     sessionStorage.clear();
                 },
-                error: res => {
+                error: function(res) {
                     console.log(res)
                 }
             });
@@ -50,26 +49,5 @@ var xm = new Vue({
         var image = sessionStorage.getItem("img");
         image = image.replace(".", "");
         this.avtar = `${api}${image}`
-
-
-
-
-        // $.ajax({
-        //     type: "post",
-        //     url: `${api}/index/api/file_list`,
-        //     async: true,
-        //     data: {
-        //         program_id: this.program_id,
-        //         process_id: this.process_id,
-        //     },
-        //     dataType: 'json',
-        //     success: res => {
-        //         console.log(res)
-        //         this.titleList = res.data
-        //     },
-        //     error: res => {
-        //         console.log(res)
-        //     }
-        // });
     }
 })

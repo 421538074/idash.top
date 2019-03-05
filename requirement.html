@@ -15,41 +15,21 @@
     <div id="app">
         <div class="require_header">
             <span>{{log_name}}</span>
-            <!-- <span>×</span> -->
         </div>
-        <div class="require_banner">
-
-            <div class="require_main">
-                <div class="require_process">
-                    <div class="bar">
-                        <span>80%</span>
-                    </div>
+        <div class="require_main">
+            <div class="require_main_banner">
+                <div class="require_main_title">
+                    <p>{{log_content}}</p>
+                    <p>待处理 {{create_at | filterTime}}</p>
                 </div>
-                <div class="require_main_banner">
-                    <div class="require_main_title">
-                        <p>{{log_content}}</p>
-                        <p>待处理 {{create_at | filterTime}}</p>
-                    </div>
-                    <span @click="backChange"></span>
-                </div>
-                <div class="require_chat">
-                    <template v-if="item.user_type == 2" v-for="item in Garr">
-                        <div class="chat_one">
-                            <span>
-                                <img src="" alt="">
-                            </span>
-                            <span>{{item.content}}</span>
-                        </div>
-                    </template>
-                    <template  v-if="item.user_type == 1" v-for="item in arr">
-                        <div class="chat_two">
-                            <span>{{item.content}}</span>
-                            <span>
-                                <img src="" alt="">
-                            </span>
-                        </div>
-                    </template>
-
+                <span @click="backChange"></span>
+            </div>
+            <div class="require_chat">
+                <div :class="item.user_type == 2?'chat_one':'chat_two'" v-for="item in Garr">
+                    <span>
+                        <img src="img/床.jpg" alt="">
+                    </span>
+                    <span>{{item.content}}</span>
                 </div>
             </div>
         </div>
@@ -58,7 +38,7 @@
             <div class="require_foot_one" @click="goback">
             </div>
             <div class="require_foot_two" @click="focus">
-                <input type="text" v-model="text" placeholder="发信息" id="myInput" >
+                <input type="text" v-model="text" placeholder="发信息" id="myInput">
             </div>
             <div class="require_foot_three" v-show="!isshow" @click="send">
                 发送

@@ -71,6 +71,8 @@
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
     border-radius: 0.05rem;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .project_per .bar {
@@ -93,9 +95,10 @@
     color: white;
     text-align: center;
     line-height: 0.2rem;
-    position: absolute;
-    left: 22%;
-    top: -0.06rem;
+    margin-left: 0.05rem;
+    /* position: absolute; */
+    /* left: 2%; */
+    /* top: -0.06rem; */
 }
 
 

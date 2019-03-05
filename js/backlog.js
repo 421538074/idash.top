@@ -4,7 +4,7 @@ var xm = new Vue({
         create_at: '',
         program_id: '',
         titleList: [],
-        imgUrl:"",
+        imgUrl: "",
     },
     methods: {
         goback() {
@@ -33,12 +33,12 @@ var xm = new Vue({
                 async: false,
                 contentType: false,
                 dataType: "json",
-                success: res => {
+                success: function (res) {
                     console.log(res)
                     sessionStorage.setItem('img', res.data);
                     window.location.href = "upfile.html"
                 },
-                error: res => {
+                error: function (res) {
                     console.log(res)
                 }
             });
@@ -49,9 +49,9 @@ var xm = new Vue({
         downloadCodeImg(index) {
             console.log(index)
             console.log(this.titleList)
-            var img=this.titleList
+            var img = this.titleList
             console.log(img)
-            var codeIMG =img[index].data_url
+            var codeIMG = img[index].data_url
             // console.log('下载图片')
             var a = document.createElement('a')
             a.download = name || 'pic'
@@ -69,6 +69,7 @@ var xm = new Vue({
     created() {
         this.program_id = getUrlKey('program_id')
         this.process_id = getUrlKey('process_id')
+        var that =this
         $.ajax({
             type: "post",
             url: `${api}/index/api/file_list`,
@@ -78,11 +79,11 @@ var xm = new Vue({
                 process_id: 1,
             },
             dataType: 'json',
-            success: res => {
+            success: function (res) {
                 console.log(res)
-                this.titleList = res.data
+                that.titleList = res.data
             },
-            error: res => {
+            error: function (res) {
                 console.log(res)
             }
         });

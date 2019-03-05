@@ -116,37 +116,9 @@ const projectBar = {
     props: ['num'],
     template: `
     <div class="content_bot">
-        <div class="content_pre" v-for="item in num">
-            <div class="content_bar"  :style="item | filterWidth"></div>
-            <span>{{item}}</span>
-        </div> 
-    </div>
-    `,
-    data() {
-        return {}
-    },
-    filters: {
-        filterWidth(chartWidth) {
-            if (chartWidth == '0%') {
-                chartWidth = '2%';
-            }
-            return {
-                width: `${chartWidth}`
-            }
-        }
-    }
-}
-
-
-// indexList 
-const Bar = {
-    name: 'cy-bar',
-    props: ['bar'],
-    template: `
-    <div class="process_wrap">
-        <div class="process" v-for="item in bar">
-            <div class="bar"  :style="item | filterWidth"></div>
-            <span class="per">{{item}}</span>
+        <div class="content_pre">
+            <div class="content_bar"  :style="num | filterWidth"></div>
+            <span>{{num}}</span>
         </div> 
     </div>
     `,
@@ -163,6 +135,61 @@ const Bar = {
             }
         }
     }
+}
+
+
+// indexList 
+const Bar = {
+    name: 'cy-bar',
+    props: ['bar'],
+    template: `
+    <div class="process_wrap">
+        <div class="process">
+            <div class="bar"  :style="bar | filterWidth"></div>
+            <span class="per">{{bar}}</span>
+        </div> 
+    </div>
+    `,
+    data() {
+        return {}
+    },
+    filters: {
+        filterWidth(chartWidth) {
+            if (chartWidth == '0%') {
+                chartWidth = '0%';
+            }
+            return {
+                width: `${chartWidth}`
+            }
+        }
+    },
+}
+
+
+
+// projectDetail
+const project = {
+    name: 'cy-project',
+    props: ['bar'],
+    template: `
+    <div class="project_per">
+            <div class="bar"  :style="bar | filterWidth"></div>
+            <span >{{bar}}</span>
+    </div>
+    `,
+    data() {
+        return {}
+    },
+    filters: {
+        filterWidth(chartWidth) {
+            if (chartWidth == '0%') {
+                chartWidth = '0%';
+            }
+            return {
+                width: `${chartWidth}`
+            }
+        }
+    },
 }
 
 

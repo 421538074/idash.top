@@ -10,6 +10,7 @@ var xm = new Vue({
         delayList: [],
         firstList: [],
         List: [],
+        rate: '',
     },
     methods: {
         goback() {
@@ -26,11 +27,12 @@ var xm = new Vue({
         goProject() {
             this.program_id = getUrlKey('program_id')
             window.location.href = `projectDetail.html?program_id=${this.program_id}`
-      
+
         },
         lisTbar(index) {
             sessionStorage.setItem('key', JSON.stringify(index));
             this.program_id = getUrlKey('program_id')
+            var that =this
             $.ajax({
                 type: "post",
                 url: `${api}/index/api/feedback_list`,
@@ -40,11 +42,11 @@ var xm = new Vue({
                     process_id: index,
                 },
                 dataType: 'json',
-                success: res => {
-                    this.title = res.data
+                success: function (res) {
+                    that.title = res.data
 
                 },
-                error: res => {
+                error: function (res) {
                     console.log(res)
                 }
             });
@@ -57,7 +59,7 @@ var xm = new Vue({
         }
     },
     created() {
-        
+        var that =this
         this.program_id = getUrlKey('program_id')
         $.ajax({
             type: "post",
@@ -68,12 +70,13 @@ var xm = new Vue({
                 process_id: 1,
             },
             dataType: 'json',
-            success: res => {
+            success: function (res) {
                 console.log(res)
-                this.title = res.data
+                that.title = res.data
+                that.rate = res.data.rate
                 sessionStorage.setItem('key', JSON.stringify(1));
             },
-            error: res => {
+            error: function (res) {
                 console.log(res)
             }
         });

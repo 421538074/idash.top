@@ -27,7 +27,7 @@
 
         <div class="nav">
             <div class="nav_top">
-                <p v-cloak>{{question}}</p>
+                <p v-cloak>待办事项</p>
                 <div class="nav_top_more" @click="projectDetail">
                     <span>全部</span>
                     <img src="img/右.png" alt="">
@@ -41,7 +41,7 @@
                     </li>
                     <li>
                         <span></span>
-                        <span>点击【这里】查看任务描述</span>
+                        <span>{{question}}</span>
                     </li>
                 </ul>
             </div>
@@ -54,7 +54,7 @@
             </div>
             <p v-cloak>{{title}}</p>
             <p v-cloak>{{start_time | filterTime}}-{{end_time | filterTime}}</p>
-            <cy-bar :num="num"></cy-bar>
+            <cy-bar :num="rate +'%'"></cy-bar>
         </div>
 
         <div class="content_title" @click="requireChange">

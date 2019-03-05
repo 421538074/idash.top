@@ -15,7 +15,8 @@ var xm = new Vue({
         test: '',
         check: '',
         percentList: [],
-        num:['20%']
+        rate: '',
+        // program_id: 5,
     },
     methods: {
         goUser() {
@@ -25,14 +26,20 @@ var xm = new Vue({
             window.location.href = "indexList.html"
         },
         projectDetail() {
-            var program_id = this.id
-            console.log(program_id)
-            window.location.href = `projectDetail.html?program_id=${program_id}`
+            if (getUrlKey('program_id') == null) {
+                this.program_id = 5
+            } else {
+                this.program_id = getUrlKey('program_id')
+            }
+            window.location.href = `projectDetail.html?program_id=${this.program_id}`
         },
         requireChange() {
-            var program_id = this.id
-            console.log(program_id)
-            window.location.href = `projectDetail1.html?program_id=${program_id}`
+            if (getUrlKey('program_id') == null) {
+                this.program_id = 5
+            } else {
+                this.program_id = getUrlKey('program_id')
+            }
+            window.location.href = `projectDetail1.html?program_id=${this.program_id}`
         }
     },
     components: {
@@ -46,37 +53,58 @@ var xm = new Vue({
         }
     },
     created() {
+        console.log(getUrlKey('id'))
+        if (getUrlKey('program_id') == null) {
+            this.program_id = 5
+        } else {
+            this.program_id = getUrlKey('program_id')
+        }
+        var that = this
         $.ajax({
             type: "post",
             url: `${api}/index/api/myProgram`,
             async: true,
             data: {
-                program_id: 5,
+                program_id: this.program_id,
             },
             dataType: 'json',
-            success: res => {
+            success: function (res) {
                 console.log(res)
-                this.id = res.data.id
-                this.title = res.data.title
-                this.start_time = res.data.start_time
-                this.end_time = res.data.end_time
-                this.question = res.data.question
-                this.content = res.data.content
-                this.demand = res.data.demand
-                this.graph = res.data.graph
-                this.design = res.data.design
-                this.fronted = res.data.fronted
-                this.backer = res.data.backer
-                this.test = res.data.test
-                this.check = res.data.check
-                this.percentList = [this.demand + "%",
-                    this.graph + "%", this.design + "%",
-                    this.fronted + "%", this.backer + "%",
-                    this.test + "%", this.check + "%"
+                // this.id = res.data.id
+                that.title = res.data.title
+                that.start_time = res.data.start_time
+                that.end_time = res.data.end_time
+                that.question = res.data.question
+                that.content = res.data.content
+                that.demand = res.data.demand
+                that.graph = res.data.graph
+                that.design = res.data.design
+                that.fronted = res.data.fronted
+                that.backer = res.data.backer
+                that.test = res.data.test
+                that.check = res.data.check
+                if (that.demand == null && that.graph == null &&
+                    that.design == null && that.fronted == null &&
+                    that.backer == null && that.test == null &&
+                    that.check == null
+                ) {
+                    that.demand = 0
+                    that.graph = 0
+                    that.design = 0
+                    that.fronted = 0
+                    that.backer = 0
+                    that.test = 0
+                    that.check = 0
+                }
+                that.percentList = [that.demand + "%",
+                    that.graph + "%", that.design + "%",
+                    that.fronted + "%", that.backer + "%",
+                    that.test + "%", that.check + "%"
                 ]
+                that.rate = res.data.rate
 
             },
-            error: res => {
+            error: function (res) {
                 console.log(res)
             }
         });

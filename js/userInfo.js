@@ -1,8 +1,8 @@
 var xm = new Vue({
     el: "#app",
     data: {
-        avatar:'',
-        name:''
+        avatar: '',
+        name: ''
     },
     methods: {
         goback() {
@@ -10,18 +10,19 @@ var xm = new Vue({
         },
     },
     created() {
+        var that =this
         $.ajax({
             type: "post",
             url: `${api}/index/api/getUserInfo`,
             async: true,
             data: {},
             dataType: 'json',
-            success: res => {
+            success: function (res) {
                 console.log(res)
-                this.avatar = res.data.avatar
-                this.name = res.data.nickname
+                that.avatar = res.data.avatar
+                that.name = res.data.nickname
             },
-            error: res => {
+            error: function (res) {
                 console.log(res)
             }
         });

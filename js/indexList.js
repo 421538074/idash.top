@@ -9,9 +9,8 @@ var vm = new Vue({
             window.location.href = "userInfo.html"
         },
         goStudy(id) {
-            // console.log(id)
-            // window.location.href = `index.html=${id}`
-            window.location.href ="index.html"
+            console.log(id)
+            window.location.href = `index.html?program_id=${id}`
         },
         indexDetail() {
             window.location.href = ""
@@ -27,19 +26,18 @@ var vm = new Vue({
         }
     },
     created() {
+        var that =this
         $.ajax({
             type: "post",
             url: `${api}/index/api/get_info`,
             async: true,
             data: {},
             dataType: 'json',
-            success: res => {
+            success: function(res) {
                 console.log(res)
-                this.list = res.data
-            
-              
+                that.list = res.data
             },
-            error: res => {
+            error: function(res) {
                 console.log(res)
             }
         });

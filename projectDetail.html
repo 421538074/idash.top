@@ -31,10 +31,11 @@
             </div>
         </div>
         <div class="project_main" v-show="isshow">
-            <div class="project_per">
+            <!-- <div class="project_per">
                 <div class="bar"></div>
                 <span>20%</span>
-            </div>
+            </div> -->
+            <cy-project :bar="rate +'%'"></cy-project>
             <div class="project_work">
                 <div class="work_one" v-for="item in feedList" @click="goRequire">
                     <div class="work_one_left">
@@ -110,4 +111,5 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/vue.min.js"></script>
 <script src="js/api.js"></script>
+<script src="js/components.js"></script>
 <script src="js/projectDetail.js"></script>

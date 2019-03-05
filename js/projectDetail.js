@@ -10,6 +10,7 @@ var xm = new Vue({
         delayList: [],
         firstList: [],
         List: [],
+        rate: ''
     },
     methods: {
         goback() {
@@ -27,12 +28,12 @@ var xm = new Vue({
         goProject() {
             this.program_id = getUrlKey('program_id')
             window.location.href = `projectDetail1.html?program_id=${this.program_id}`
-      
+
         },
         lisTbar(index) {
             sessionStorage.setItem('key', JSON.stringify(index));
             this.program_id = getUrlKey('program_id')
-     
+            var that =this
             //待办事项 
             $.ajax({
                 type: "post",
@@ -43,14 +44,14 @@ var xm = new Vue({
                     process_id: index,
                 },
                 dataType: 'json',
-                success: res => {
-                    this.feedList = res.data.normal
+                success: function (res) {
+                    that.feedList = res.data.normal
                     // this.List = res.data.normal
-                    this.startList = res.data.complete
-                    this.delayList = res.data.delay
-                    this.firstList = res.data.first
+                    that.startList = res.data.complete
+                    that.delayList = res.data.delay
+                    that.firstList = res.data.first
                 },
-                error: res => {
+                error: function (res) {
                     console.log(res)
                 }
             });
@@ -62,8 +63,12 @@ var xm = new Vue({
             return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
         }
     },
+    components: {
+        [project.name]: project,
+    },
     created() {
         this.program_id = getUrlKey('program_id')
+        var that =this
         //待办事项 
         $.ajax({
             type: "post",
@@ -74,14 +79,15 @@ var xm = new Vue({
                 process_id: 1,
             },
             dataType: 'json',
-            success: res => {
-                this.feedList = res.data.normal
+            success: function (res) {
+                that.feedList = res.data.normal
                 // this.List = res.data.normal
-                this.startList = res.data.complete
-                this.delayList = res.data.delay
-                this.firstList = res.data.first
+                that.startList = res.data.complete
+                that.delayList = res.data.delay
+                that.firstList = res.data.first
+                that.rate = res.data.rate
             },
-            error: res => {
+            error: function (res) {
                 console.log(res)
             }
         });

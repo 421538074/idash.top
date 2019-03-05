@@ -32,6 +32,7 @@
 <script src="js/api.js"></script>
 <script>
     enter();
+
     function enter() {
         $.ajax({
             type: "post",
@@ -39,16 +40,16 @@
             async: true,
             data: {},
             dataType: 'json',
-            success: res => {
+            success: function (res) {
                 console.log(res)
             },
-            error: res => {
+            error: function (res) {
                 console.log(res)
             }
         });
     }
 
-    $(".header").click(function(){
-        window.location.href="index.html"
+    $(".header").click(function () {
+        window.location.href = "index.html"
     })
 </script>

@@ -1,11 +1,3 @@
-.require_banner {
-    width: 100%;
-    background: linear-gradient(360deg,
-        rgba(39, 45, 70, 1) 0%,
-        rgba(17, 21, 37, 1) 100%);
-    position: fixed;
-}
-
 .require_header {
     width: 100%;
     height: 0.44rem;
@@ -32,6 +24,7 @@
     padding: 0.13rem 0;
     display: flex;
     align-items: center;
+    z-index: 11;
 }
 
 .require_foot_one {
@@ -78,7 +71,10 @@
 /* main */
 .require_main {
     width: 100%;
-    padding-top: 0.59rem;
+    padding-top: 0.44rem;
+    background: linear-gradient(360deg,
+        rgba(39, 45, 70, 1) 0%,
+        rgba(17, 21, 37, 1) 100%);
 }
 
 .require_main_banner {
@@ -87,7 +83,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 0.15rem;
-    margin: 0.25rem 0 0.21rem 0;
+    margin: 0 0 0.2rem 0;
 }
 
 .require_main_title p:nth-child(1) {
@@ -148,6 +144,13 @@
     margin-right: 0.1rem;
 }
 
+.chat_one span:nth-child(1) img {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 0.12rem;
+}
+
 .chat_one span:nth-child(2) {
     padding: 0.1rem 0.21rem;
     background: #F0F0F0;
@@ -155,34 +158,54 @@
     text-align: center;
 }
 
-
 .chat_two {
+    height: 0.4rem;
     font-size: 0.14rem;
     font-family: PingFangSC-Regular;
     font-weight: 400;
     color: rgba(15, 19, 34, 1);
     line-height: 0.2rem;
     display: flex;
-    justify-content: flex-end;
     margin-bottom: 0.2rem;
+    position: relative;
 }
 
-.chat_two span:nth-child(2) {
+.chat_two span:nth-child(1) {
     display: inline-block;
     width: 0.4rem;
     height: 0.4rem;
     background: white;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
     border-radius: 0.12rem;
-    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+    position: absolute;
+    right: -0.09rem;
 }
 
-.chat_two span:nth-child(1) {
-    padding: 0.1rem 0.21rem;
-    background: #87B5ED;
-    border-radius: 0px 0.2rem 0.2rem 0.2rem;
-    text-align: center;
+.chat_two span:nth-child(1) img {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 0.12rem;
 }
+
+.chat_two span:nth-child(2) {
+    padding: 0.1rem 0.21rem;
+    background: #F0F0F0;
+    border-radius: 0px 0.16rem 0.16rem 0.16rem;
+    text-align: center;
+    position: absolute;
+    right: 0.55rem;
+}
+
+
+
+
+
+
+
+
+
 
 
 .require_process {

@@ -9,6 +9,8 @@ var xm = new Vue({
         log_name: '',
         content: '',
         isshow: true,
+        ischat: false,
+        ischat1: false,
     },
     methods: {
         goback() {
@@ -40,12 +42,12 @@ var xm = new Vue({
                 async: false,
                 contentType: false,
                 dataType: "json",
-                success: res => {
+                success: function (res) {
                     console.log(res)
                     sessionStorage.setItem('img', res.data);
                     window.location.href = "upfile.html"
                 },
-                error: res => {
+                error: function (res) {
                     console.log(res)
                 }
             });
@@ -62,6 +64,7 @@ var xm = new Vue({
         },
         send() {
             if (this.text) {
+                var that = this
                 $.ajax({
                     type: "post",
                     url: `${api}/index/api/backlogReplay`,
@@ -71,11 +74,12 @@ var xm = new Vue({
                     },
                     async: true,
                     dataType: 'json',
-                    success: res => {
+                    success: function (res) {
                         console.log(res)
                         // this.arr.push({
                         //     content: this.text,
                         // })
+
                         this.text = '',
                             $.ajax({
                                 type: "post",
@@ -86,12 +90,8 @@ var xm = new Vue({
                                 },
                                 dataType: 'json',
                                 success: res => {
-                                    this.create_at = res.data.descr.create_at
-                                    this.log_content = res.data.descr.log_content
-                                    this.log_name = res.data.descr.log_name
-
-                                    this.Garr = res.data.detail
-                                    this.arr = res.data.detail
+                                    that.Garr = res.data.detail
+                                    that.arr = res.data.detail
                                 },
                                 error: res => {
                                     console.log(res)
@@ -99,7 +99,7 @@ var xm = new Vue({
                             });
                         this.isshow = true
                     },
-                    error: res => {
+                    error: function (res) {
                         console.log(res)
                     }
                 });
@@ -107,8 +107,7 @@ var xm = new Vue({
                 alert('请输入内容')
             }
 
-        }
-
+        },
     },
     filters: {
         filterTime(time) {
@@ -117,6 +116,7 @@ var xm = new Vue({
         }
     },
     created() {
+        var that = this
         $.ajax({
             type: "post",
             url: `${api}/index/api/backlogDetail`,
@@ -125,16 +125,16 @@ var xm = new Vue({
                 backlog_id: 1,
             },
             dataType: 'json',
-            success: res => {
+            success: function (res) {
                 console.log(res)
-                this.create_at = res.data.descr.create_at
-                this.log_content = res.data.descr.log_content
-                this.log_name = res.data.descr.log_name
+                // that.create_at = res.data.descr.create_at
+                // that.log_content = res.data.descr.log_content
+                // that.log_name = res.data.descr.log_name
 
-                this.Garr = res.data.detail
-                this.arr = res.data.detail
+                that.Garr = res.data.detail
+                that.arr = res.data.detail
             },
-            error: res => {
+            error: function (res) {
                 console.log(res)
             }
         });
@@ -143,6 +143,7 @@ var xm = new Vue({
 
 
 
-$(".require_chat").click(function () {
+$(".require_main").click(function () {
     $("#myInput").blur()
+    // $(".require_main").css("position", "fixed")
 })

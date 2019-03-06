@@ -19,10 +19,12 @@ var xm = new Vue({
         goRequire() {
             window.location.href = "requirement.html"
         },
-        upChange() { //跳转待办事项文件
-            var process_id = sessionStorage.getItem("key");
-            var program_id = this.program_id
-            window.location.href = `backlog.html?program_id=${program_id}&process_id=${process_id}`
+        upChange(index) { //跳转待办事项文件
+            var arr = this.title
+            var backlog_id = arr[index].id
+            console.log(backlog_id)
+            this.program_id = getUrlKey('program_id')
+            window.location.href = `backlog.html?program_id=${this.program_id}&backlog_id=${backlog_id}`
         },
         goProject() {
             this.program_id = getUrlKey('program_id')
@@ -32,7 +34,7 @@ var xm = new Vue({
         lisTbar(index) {
             sessionStorage.setItem('key', JSON.stringify(index));
             this.program_id = getUrlKey('program_id')
-            var that =this
+            var that = this
             $.ajax({
                 type: "post",
                 url: `${api}/index/api/feedback_list`,
@@ -59,7 +61,7 @@ var xm = new Vue({
         }
     },
     created() {
-        var that =this
+        var that = this
         this.program_id = getUrlKey('program_id')
         $.ajax({
             type: "post",
@@ -73,7 +75,6 @@ var xm = new Vue({
             success: function (res) {
                 console.log(res)
                 that.title = res.data
-                that.rate = res.data.rate
                 sessionStorage.setItem('key', JSON.stringify(1));
             },
             error: function (res) {

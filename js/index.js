@@ -27,7 +27,7 @@ var xm = new Vue({
         },
         projectDetail() {
             if (getUrlKey('program_id') == null) {
-                this.program_id = 5
+                this.program_id = 10
             } else {
                 this.program_id = getUrlKey('program_id')
             }
@@ -35,16 +35,16 @@ var xm = new Vue({
         },
         requireChange() {
             if (getUrlKey('program_id') == null) {
-                this.program_id = 5
+                this.program_id = 10
             } else {
                 this.program_id = getUrlKey('program_id')
             }
             window.location.href = `projectDetail1.html?program_id=${this.program_id}`
-        }
+        },
     },
     components: {
-        [cylindricalGraph.name]: cylindricalGraph,
-        [projectBar.name]: projectBar,
+        "cp-cylind": cylindricalGraph,
+        "cy-bar": projectBar,
     },
     filters: {
         filterTime(time) {
@@ -53,9 +53,8 @@ var xm = new Vue({
         }
     },
     created() {
-        console.log(getUrlKey('id'))
         if (getUrlKey('program_id') == null) {
-            this.program_id = 5
+            this.program_id = 10
         } else {
             this.program_id = getUrlKey('program_id')
         }
@@ -103,11 +102,19 @@ var xm = new Vue({
                 ]
                 that.rate = res.data.rate
 
+
+                if (that.content == '' && null) {
+                    $('.lis').css("display", "none")
+                }
+                if (that.question == '' && null) {
+                    $('.lis1').css("display", "none")
+                }
+
             },
             error: function (res) {
                 console.log(res)
             }
         });
     }
-
 })
+

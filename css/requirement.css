@@ -65,6 +65,22 @@
     font-family: PingFangSC-Regular;
     font-weight: 400;
     color: rgba(255, 255, 255, 1);
+    display: none;
+}
+
+.foot_require {
+    width: 0.7rem;
+    height: 0.3rem;
+    margin-right: 0.1rem;
+    border-radius: 0.04rem;
+    float: right;
+    background: #65C0C6;
+    text-align: center;
+    line-height: 0.3rem;
+    font-size: 0.14rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
 }
 
 
@@ -197,12 +213,6 @@
     position: absolute;
     right: 0.55rem;
 }
-
-
-
-
-
-
 
 
 

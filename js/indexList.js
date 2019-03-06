@@ -17,7 +17,7 @@ var vm = new Vue({
         }
     },
     components: {
-        [Bar.name]: Bar,
+        "cy-bar": Bar,
     },
     filters: {
         filterTime(time) {

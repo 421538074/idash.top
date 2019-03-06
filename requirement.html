@@ -12,7 +12,7 @@
 
 <body>
 
-    <div id="app">
+    <div id="app" v-cloak>
         <div class="require_header">
             <span>{{log_name}}</span>
         </div>
@@ -40,10 +40,10 @@
             <div class="require_foot_two" @click="focus">
                 <input type="text" v-model="text" placeholder="发信息" id="myInput">
             </div>
-            <div class="require_foot_three" v-show="!isshow" @click="send">
+            <div class="require_foot_three" v-if="" @click="send">
                 发送
             </div>
-            <div class="require_foot_three" id="two" v-show="isshow" @click="upChange($event)">
+            <div class="foot_require" id="two" v-if="" @click="upChange($event)">
                 上传文件
                 <input id="file" ref="image" @change="add_img" hidden type="file" accept="image/*" class="invisible">
             </div>
@@ -52,7 +52,12 @@
 </body>
 
 </html>
+
 <script src="js/jquery.min.js"></script>
 <script src="js/development/vue.js"></script>
 <script src="js/api.js"></script>
-<script src="js/requirement.js"></script>
+
+<script src="js/traceur.js"></script>
+<script type="text/babel" src="js/requirement.js"></script>
+
+<!-- <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->

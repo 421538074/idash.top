@@ -16,9 +16,30 @@ var xm = new Vue({
         goback() {
             window.history.back()
         },
-        goRequire() {
+        goRequire(index) {
+            var arr = this.feedList
+            var id = arr[index].id
+            console.log(id)
             this.program_id = getUrlKey('program_id')
-            window.location.href = `requirement.html?program_id=${this.program_id}`
+            window.location.href = `requirement.html?program_id=${this.program_id}&id=${id}`
+        },
+        goTwo(index) {
+            var arr = this.startList
+            var id = arr[index].id
+            this.program_id = getUrlKey('program_id')
+            window.location.href = `requirement.html?program_id=${this.program_id}&id=${id}`
+        },
+        goThree(index) {
+            var arr = this.delayList
+            var id = arr[index].id
+            this.program_id = getUrlKey('program_id')
+            window.location.href = `requirement.html?program_id=${this.program_id}&id=${id}`
+        },
+        goFour(index) {
+            var arr = this.firstList
+            var id = arr[index].id
+            this.program_id = getUrlKey('program_id')
+            window.location.href = `requirement.html?program_id=${this.program_id}&id=${id}`
         },
         upChange() { //跳转待办事项文件
             var process_id = sessionStorage.getItem("key");
@@ -33,7 +54,7 @@ var xm = new Vue({
         lisTbar(index) {
             sessionStorage.setItem('key', JSON.stringify(index));
             this.program_id = getUrlKey('program_id')
-            var that =this
+            var that = this
             //待办事项 
             $.ajax({
                 type: "post",
@@ -46,7 +67,6 @@ var xm = new Vue({
                 dataType: 'json',
                 success: function (res) {
                     that.feedList = res.data.normal
-                    // this.List = res.data.normal
                     that.startList = res.data.complete
                     that.delayList = res.data.delay
                     that.firstList = res.data.first
@@ -64,11 +84,11 @@ var xm = new Vue({
         }
     },
     components: {
-        [project.name]: project,
+        "cy-project": project,
     },
     created() {
         this.program_id = getUrlKey('program_id')
-        var that =this
+        var that = this
         //待办事项 
         $.ajax({
             type: "post",
@@ -81,11 +101,12 @@ var xm = new Vue({
             dataType: 'json',
             success: function (res) {
                 that.feedList = res.data.normal
-                // this.List = res.data.normal
                 that.startList = res.data.complete
                 that.delayList = res.data.delay
                 that.firstList = res.data.first
                 that.rate = res.data.rate
+
+
             },
             error: function (res) {
                 console.log(res)

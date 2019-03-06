@@ -3,6 +3,7 @@ var xm = new Vue({
     data: {
         create_at: '',
         program_id: '',
+        backlog_id:'',
         titleList: [],
         imgUrl: "",
     },
@@ -11,6 +12,9 @@ var xm = new Vue({
             window.history.back()
         },
         add_img(event) {
+            this.program_id = getUrlKey('program_id')
+            this.backlog_id = getUrlKey('backlog_id')
+            var that = this
             let img1 = event.target.files[0];
             console.log(img1)
             let type = img1.type; //文件的类型，判断是否是图片
@@ -36,7 +40,7 @@ var xm = new Vue({
                 success: function (res) {
                     console.log(res)
                     sessionStorage.setItem('img', res.data);
-                    window.location.href = "upfile.html"
+                    window.location.href = `upfile.html?program_id=${that.program_id}&backlog_id=${that.backlog_id}`
                 },
                 error: function (res) {
                     console.log(res)
@@ -48,15 +52,14 @@ var xm = new Vue({
         },
         downloadCodeImg(index) {
             console.log(index)
-            console.log(this.titleList)
             var img = this.titleList
-            console.log(img)
             var codeIMG = img[index].data_url
-            // console.log('下载图片')
+            console.log(codeIMG)
             var a = document.createElement('a')
             a.download = name || 'pic'
             // 设置图片地址
-            a.href = codeIMG;
+            a.href = `${api}${codeIMG}`;
+            console.log(a)
             a.click();
         },
     },
@@ -68,15 +71,15 @@ var xm = new Vue({
     },
     created() {
         this.program_id = getUrlKey('program_id')
-        this.process_id = getUrlKey('process_id')
-        var that =this
+        this.backlog_id = getUrlKey('backlog_id')
+        var that = this
         $.ajax({
             type: "post",
             url: `${api}/index/api/file_list`,
             async: true,
             data: {
                 program_id: this.program_id,
-                process_id: 1,
+                backlog_id: this.backlog_id,
             },
             dataType: 'json',
             success: function (res) {

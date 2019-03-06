@@ -5,6 +5,9 @@ var xm = new Vue({
         avtar: '',
         file_name: '',
         Username: "编辑名称",
+        program_id: '',
+        process_id: ''
+
     },
     methods: {
         editNickname() {
@@ -14,6 +17,8 @@ var xm = new Vue({
             window.history.back()
         },
         keepChange() {
+            this.program_id = getUrlKey('program_id')
+            this.backlog_id = getUrlKey('backlog_id')
             var title = $("#up_text").text()
             console.log(title)
             var image = sessionStorage.getItem("img");
@@ -24,15 +29,15 @@ var xm = new Vue({
                 data: {
                     title: title,
                     file_name: image,
-                    program_id: 5,
-                    process_id: 1,
+                    program_id: this.program_id,
+                    backlog_id: this.backlog_id,
                 },
                 dataType: 'json',
-                success:function(res) {
+                success: function (res) {
                     window.history.back();
                     sessionStorage.clear();
                 },
-                error: function(res) {
+                error: function (res) {
                     console.log(res)
                 }
             });

@@ -1,7 +1,6 @@
 var xm = new Vue({
     el: "#app",
     data: {
-        arr: [],
         Garr: [],
         text: "",
         create_at: '',
@@ -9,8 +8,7 @@ var xm = new Vue({
         log_name: '',
         content: '',
         isshow: true,
-        ischat: false,
-        ischat1: false,
+        backlog_id: ''
     },
     methods: {
         goback() {
@@ -22,7 +20,7 @@ var xm = new Vue({
         add_img(event) {
             let img1 = event.target.files[0];
             console.log(img1)
-            let type = img1.type; //文件的类型，判断是否是图片
+            // let type = img1.type; //文件的类型，判断是否是图片
             let size = img1.size; //文件的大小，判断图片的大小
             // if (this.imgData.accept.indexOf(type) == -1) {
             //     alert('请选择我们支持的图片格式！');
@@ -59,41 +57,41 @@ var xm = new Vue({
         focus() {
             var myInput = document.getElementById('myInput');
             if (myInput == document.activeElement) {
-                this.isshow = false
+                // this.isshow = false
+                $(".foot_require").hide();
+                $(".require_foot_three").show();
             }
         },
         send() {
+            this.backlog_id = getUrlKey('id')
+            console.log(this.backlog_id)
+            var that = this
             if (this.text) {
                 var that = this
                 $.ajax({
                     type: "post",
                     url: `${api}/index/api/backlogReplay`,
                     data: {
-                        backlog_id: 1,
+                        backlog_id: this.backlog_id,
                         content: this.text,
                     },
                     async: true,
                     dataType: 'json',
                     success: function (res) {
                         console.log(res)
-                        // this.arr.push({
-                        //     content: this.text,
-                        // })
-
-                        this.text = '',
+                        that.text = '',
                             $.ajax({
                                 type: "post",
                                 url: `${api}/index/api/backlogDetail`,
                                 async: true,
                                 data: {
-                                    backlog_id: 1,
+                                    backlog_id: that.backlog_id,
                                 },
                                 dataType: 'json',
-                                success: res => {
+                                success: function (res) {
                                     that.Garr = res.data.detail
-                                    that.arr = res.data.detail
                                 },
-                                error: res => {
+                                error: function (res) {
                                     console.log(res)
                                 }
                             });
@@ -116,27 +114,24 @@ var xm = new Vue({
         }
     },
     created() {
+        this.backlog_id = getUrlKey('id')
+        console.log(this.backlog_id)
         var that = this
         $.ajax({
             type: "post",
             url: `${api}/index/api/backlogDetail`,
             async: true,
             data: {
-                backlog_id: 1,
+                backlog_id: this.backlog_id,
             },
             dataType: 'json',
             success: function (res) {
                 console.log(res)
-                // that.create_at = res.data.descr.create_at
-                // that.log_content = res.data.descr.log_content
-                // that.log_name = res.data.descr.log_name
-
+                that.create_at = res.data.descr.create_at
+                that.log_content = res.data.descr.log_content
+                that.log_name = res.data.descr.log_name
                 that.Garr = res.data.detail
-                that.arr = res.data.detail
             },
-            error: function (res) {
-                console.log(res)
-            }
         });
     }
 })
@@ -145,5 +140,7 @@ var xm = new Vue({
 
 $(".require_main").click(function () {
     $("#myInput").blur()
+    $(".require_foot_three").hide();
+    $(".foot_require").show();
     // $(".require_main").css("position", "fixed")
 })

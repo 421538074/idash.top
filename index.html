@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" v-cloak>
         <div class="index_header">
             <span>首页</span>
         </div>
@@ -34,14 +34,14 @@
                 </div>
             </div>
             <div class="nav_bot">
-                <ul>
-                    <li>
+                <ul class="uu">
+                    <li class="lis">
                         <span></span>
-                        <span v-cloak>{{content}}</span>
+                        <span class="liSpan" v-cloak>{{content}}</span>
                     </li>
-                    <li>
+                    <li class="lis1">
                         <span></span>
-                        <span>{{question}}</span>
+                        <span class="liSpan1" v-cloak>{{question}}</span>
                     </li>
                 </ul>
             </div>

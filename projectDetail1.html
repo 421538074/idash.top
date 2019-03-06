@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" v-cloak>
         <div class="project_header">
             <span>某某项目</span>
         </div>
@@ -33,7 +33,7 @@
         <!-- 文件 -->
         <div class="project_file" > 
             <ul class="uu">
-                <li v-for="item in title" @click="upChange">
+                <li v-for="(item,index) in title" @click="upChange(index)">
                     <img src="img/file.png" alt="">
                     <span>{{item.log_name}}</span>
                     <span></span>

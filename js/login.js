@@ -3,11 +3,11 @@ var xm = new Vue({
     data: {
         phone: '',
         psw: '',
-        info: ''
+        info: '',
     },
     methods: {
         gain() {
-            var that =this
+            var that = this
             $.ajax({
                 type: "post",
                 url: `${api}/index/api/sendSms`,
@@ -25,19 +25,68 @@ var xm = new Vue({
             });
         },
         enter() {
-            console.log(this.info)
             if (this.psw !== '') {
-                if (this.psw == this.info && this.psw !== '') {
-                    window.location.href = "topic.html"
-                } else {
-                    alert("验证码有误")
-                }
-            } else {
-                alert("请输入手机号")
-            }
-
+                $.ajax({
+                    type: "post",
+                    url: `${api}/index/api/login`,
+                    async: true,
+                    data: {
+                        phone: this.phone,
+                        code: this.info
+                    },
+                    dataType: 'json',
+                    success: function (res) {
+                        console.log(res)
+                        window.location.href = "topic.html"
+                    },
+                    error: function (res) {
+                        console.log(res)
+                    }
+                });
+            } else {}
+        },
+        onfocus() {
+            var body = document.querySelector('#app')
+            body.scrollTop = body.scrollHeight
+        },
+        onblur() {
+            window.scroll(0, 0)
+            console.log(window.scroll)
         }
     },
     created() {}
 
+})
+
+
+var countdown = 60;
+$('#numbtn').on('click', function () {
+    var obj = $("#numbtn");
+    settime(obj);
+})
+
+function settime(obj) { //发送验证码倒计时
+    if (countdown == 0) {
+        obj.attr('disabled', false);
+        obj.html("获取验证码");
+        countdown = 60;
+        return;
+    } else {
+        obj.attr('disabled', true);
+        obj.html("重新发送(" + countdown + ")");
+        countdown--;
+    }
+    setTimeout(function () {
+        settime(obj)
+    }, 1000)
+}
+
+
+
+
+const inputItems = document.querySelectorAll("input");
+inputItems.forEach(function (ele) {
+    ele.addEventListener("blur", function () {
+        window.scrollTo(0, 0)
+    })
 })

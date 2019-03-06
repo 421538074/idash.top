@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" v-cloak>
         <div class="project_header">
             <span>叠石桥项目</span>
         </div>
@@ -37,7 +37,7 @@
             </div> -->
             <cy-project :bar="rate +'%'"></cy-project>
             <div class="project_work">
-                <div class="work_one" v-for="item in feedList" @click="goRequire">
+                <div class="work_one" v-for="(item,index) in feedList" @click="goRequire(index)">
                     <div class="work_one_left">
                     </div>
                     <div class="work_one_right">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
 
-                <div class="work_one" v-for="item in List" @click="goRequire">
+                <div class="work_one" v-for="(item,index) in List" @click="goOne(index)">
                         <div class="work_one_left">
                         </div>
                         <div class="work_one_right">
@@ -55,7 +55,7 @@
                         </div>
                     </div>
 
-                <div class="work_one" v-for="item in startList" @click="goRequire">
+                <div class="work_one" v-for="(item,index) in startList" @click="goTwo(index)">
                     <div class="work_one_left">
                     </div>
                     <div class="work_one_right">
@@ -64,7 +64,7 @@
                     </div>
                 </div>
 
-                <div class="work_one" v-for="item in delayList" @click="goRequire">
+                <div class="work_one" v-for="(item,index) in delayList" @click="goThree(index)">
                     <div class="work_one_left">
                     </div>
                     <div class="work_one_right">
@@ -74,7 +74,7 @@
                 </div>
 
 
-                <div class="work_one" v-for="item in firstList" @click="goRequire">
+                <div class="work_one" v-for="(item,index) in firstList" @click="goFour(index)">
                     <div class="work_one_left">
                     </div>
                     <div class="work_one_right">

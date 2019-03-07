@@ -29,13 +29,13 @@
                 </div>
 
                 <div class="index_main_right">
-                    {{item.start_time | filterTime}}-{{item.end_time | filterTime}}
+                    {{item.end_time | filterTime}}
                 </div>
             </div>
         </div>
 
         <div class="index_btn">
-            <p @click="indexDetail()"></p>
+            <!-- <p @click="indexDetail()"></p> -->
             <p @click="goUser"></p>
         </div>
     </div>

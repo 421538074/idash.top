@@ -10,7 +10,38 @@ var xm = new Vue({
         delayList: [],
         firstList: [],
         List: [],
-        rate: ''
+        rate: '',
+        currentIndex:0,
+        barList: [
+            {
+            id: 0,
+            name: '需求'
+        },
+        {
+            id: 1,
+            name: '原型'
+        },
+        {
+            id: 2,
+            name: '设计'
+        },
+        {
+            id: 3,
+            name: '前台'
+        },
+        {
+            id: 4,
+            name: '后台'
+        },
+        {
+            id: 5,
+            name: '测试'
+        },
+        {
+            id: 6,
+            name: '调试'
+        },
+    ],
     },
     methods: {
         goback() {
@@ -51,7 +82,9 @@ var xm = new Vue({
             window.location.href = `projectDetail1.html?program_id=${this.program_id}`
 
         },
-        lisTbar(index) {
+        getList(id) {
+            var index =id+1
+            console.log(index)
             sessionStorage.setItem('key', JSON.stringify(index));
             this.program_id = getUrlKey('program_id')
             var that = this
@@ -70,6 +103,7 @@ var xm = new Vue({
                     that.startList = res.data.complete
                     that.delayList = res.data.delay
                     that.firstList = res.data.first
+                    that.rate = res.data.rate
                 },
                 error: function (res) {
                     console.log(res)
@@ -80,14 +114,25 @@ var xm = new Vue({
     filters: {
         filterTime(time) {
             var date = new Date(time * 1000);
-            return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            if (month < 10) {
+                month = "0" + month;
+            }
+            if (day < 10) {
+                day = "0" + day;
+            }
+            return year + "-" + month + "-" + day;
         }
     },
     components: {
         "cy-project": project,
+        "cp-tabbar": tabBar,
     },
     created() {
-        this.program_id = getUrlKey('program_id')
+        var program_id = getUrlKey('program_id')
+        var process_id = getUrlKey('process_id')
         var that = this
         //待办事项 
         $.ajax({
@@ -95,8 +140,8 @@ var xm = new Vue({
             url: `${api}/index/api/feedbackList`,
             async: true,
             data: {
-                program_id: this.program_id,
-                process_id: 1,
+                program_id: program_id,
+                process_id: process_id,
             },
             dataType: 'json',
             success: function (res) {
@@ -108,9 +153,9 @@ var xm = new Vue({
 
 
             },
-            error: function (res) {
-                console.log(res)
-            }
+            // error: function (res) {
+            //     console.log(res)
+            // }
         });
     },
 

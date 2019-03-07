@@ -16,25 +16,9 @@
             <span>叠石桥项目</span>
         </div>
 
+        <cp-tabbar :bar-list="barList" @get-list="getList"></cp-tabbar>
 
-        <div class="project_scoll">
-            <div class="project_banner">
-                <ul>
-                    <li class="blue" @click="lisTbar(1)">需求</li>
-                    <li @click="lisTbar(2)">原型</li>
-                    <li @click="lisTbar(3)">设计</li>
-                    <li @click="lisTbar(4)">前端</li>
-                    <li @click="lisTbar(5)">后台</li>
-                    <li @click="lisTbar(6)">调试</li>
-                    <li @click="lisTbar(7)">验收</li>
-                </ul>
-            </div>
-        </div>
         <div class="project_main" v-show="isshow">
-            <!-- <div class="project_per">
-                <div class="bar"></div>
-                <span>20%</span>
-            </div> -->
             <cy-project :bar="rate +'%'"></cy-project>
             <div class="project_work">
                 <div class="work_one" v-for="(item,index) in feedList" @click="goRequire(index)">
@@ -42,25 +26,25 @@
                     </div>
                     <div class="work_one_right">
                         <p>{{item.log_content}}</p>
-                        <span>待处理 {{item.create_at | filterTime}}-{{item.end_time | filterTime}} </span>
+                        <span>待处理 {{item.end_time | filterTime}} </span>
                     </div>
                 </div>
 
                 <div class="work_one" v-for="(item,index) in List" @click="goOne(index)">
-                        <div class="work_one_left">
-                        </div>
-                        <div class="work_one_right">
-                            <p>{{item.log_content}}</p>
-                            <span>待反馈 {{item.create_at | filterTime}}-{{item.end_time | filterTime}} </span>
-                        </div>
+                    <div class="work_one_left">
                     </div>
+                    <div class="work_one_right">
+                        <p>{{item.log_content}}</p>
+                        <span>待反馈 {{item.end_time | filterTime}} </span>
+                    </div>
+                </div>
 
                 <div class="work_one" v-for="(item,index) in startList" @click="goTwo(index)">
                     <div class="work_one_left">
                     </div>
                     <div class="work_one_right">
                         <p>{{item.log_content}}</p>
-                        <span>已结束 {{item.create_at | filterTime}}-{{item.end_time | filterTime}} </span>
+                        <span>已结束 {{item.end_time | filterTime}} </span>
                     </div>
                 </div>
 
@@ -69,7 +53,7 @@
                     </div>
                     <div class="work_one_right">
                         <p>已延误:{{item.log_content}}</p>
-                        <span>待处理 {{item.create_at | filterTime}}-{{item.end_time | filterTime}} </span>
+                        <span>待处理 {{item.end_time | filterTime}} </span>
                     </div>
                 </div>
 
@@ -79,7 +63,7 @@
                     </div>
                     <div class="work_one_right">
                         <p><i>[加急]</i>{{item.log_content}}</p>
-                        <span>待处理 {{item.create_at | filterTime}}-{{item.end_time | filterTime}} </span>
+                        <span>待处理 {{item.end_time | filterTime}} </span>
                     </div>
                 </div>
 

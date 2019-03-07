@@ -101,16 +101,24 @@
     padding: 0 0.15rem;
     margin: 0 0 0.2rem 0;
 }
-
-.require_main_title p:nth-child(1) {
+.require_main_title {
+    font-size: 0.12rem;
+}
+.require_main_title i:nth-child(1) {
     font-size: 0.18rem;
     font-family: PingFangSC-Medium;
     font-weight: 500;
     color: rgba(255, 255, 255, 1);
     line-height: 0.25rem;
+    /*width: 2rem;*/
+  /*  overflow: hidden;;
+    text-overflow: ellipsis;
+    white-space: nowrap;*/
+    display: inline-block;;
 }
 
 .require_main_title p:nth-child(2) {
+    width: 1.1rem;
     background: rgba(49, 57, 84, 1);
     border-radius: 0.04rem;
     font-size: 0.12rem;

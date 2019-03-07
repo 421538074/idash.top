@@ -63,7 +63,11 @@
 }
 
 .index_main_mid p {
-    font-size: 0.18rem;
+    width: 1.2rem;
+    font-size: 0.16rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-family: PingFangSC-Regular;
     font-weight: 400;
     color: rgba(0, 0, 0, 1);
@@ -100,11 +104,11 @@
     margin-left: 0.1rem;
     position: absolute;
     right: -0.45rem;
-    top:-0.06rem;
+    top: -0.06rem;
 }
 
 .index_main_right {
-    width: 1.4rem;
+    padding:0.01rem 0.08rem;
     height: 0.18rem;
     background: rgba(246, 246, 246, 1);
     border-radius: 0.02rem;
@@ -114,23 +118,24 @@
     font-weight: 400;
     color: rgba(136, 136, 136, 1);
     line-height: 0.18rem;
-    margin-left: 0.3rem;
+    margin-left: 0.5rem;
     margin-top: -0.55rem;
 }
+
 .index_btn {
     position: fixed;
     right: 0.2rem;
     bottom: 0.2rem;
 }
 
-.index_btn p:nth-child(1) {
+/*.index_btn p:nth-child(1) {
     width: 0.44rem;
     height: 0.44rem;
     background: url(../img/视频.png)no-repeat;
     background-size: 100% 100%;
-}
+}*/
 
-.index_btn p:nth-child(2) {
+.index_btn p:nth-child(1) {
     width: 0.44rem;
     height: 0.44rem;
     background: url(../img/个人信息.png)no-repeat;

@@ -83,10 +83,13 @@ function settime(obj) { //发送验证码倒计时
 
 
 
-
 const inputItems = document.querySelectorAll("input");
 inputItems.forEach(function (ele) {
     ele.addEventListener("blur", function () {
         window.scrollTo(0, 0)
     })
+})
+
+$(".login_main").click(function () {
+    inputItems.blur()
 })

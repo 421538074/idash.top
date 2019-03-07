@@ -5,8 +5,6 @@ var xm = new Vue({
         title: '',
         start_time: '',
         end_time: '',
-        question: '',
-        content: '',
         demand: '',
         graph: '',
         design: '',
@@ -16,7 +14,8 @@ var xm = new Vue({
         check: '',
         percentList: [],
         rate: '',
-        // program_id: 5,
+        arr: '',
+        staus: ['需求', '原型', '设计', '前端', '后台', '测试', '验收']
     },
     methods: {
         goUser() {
@@ -31,7 +30,7 @@ var xm = new Vue({
             } else {
                 this.program_id = getUrlKey('program_id')
             }
-            window.location.href = `projectDetail.html?program_id=${this.program_id}`
+            window.location.href = `projectDetail.html?program_id=${this.program_id}&process_id=1`
         },
         requireChange() {
             if (getUrlKey('program_id') == null) {
@@ -41,6 +40,14 @@ var xm = new Vue({
             }
             window.location.href = `projectDetail1.html?program_id=${this.program_id}`
         },
+
+        goDetail(id) {
+            // this.$emit("goDetail", id)
+            var process_id = id + 1
+            console.log(process_id)
+            // sessionStorage.setItem('process_id', JSON.stringify(process_id));
+            window.location.href = `projectDetail.html?program_id=${this.program_id}&process_id=${process_id}`
+        }
     },
     components: {
         "cp-cylind": cylindricalGraph,
@@ -49,7 +56,16 @@ var xm = new Vue({
     filters: {
         filterTime(time) {
             var date = new Date(time * 1000);
-            return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            if (month < 10) {
+                month = "0" + month;
+            }
+            if (day < 10) {
+                day = "0" + day;
+            }
+            return year + "-" + month + "-" + day;
         }
     },
     created() {
@@ -69,12 +85,10 @@ var xm = new Vue({
             dataType: 'json',
             success: function (res) {
                 console.log(res)
-                // this.id = res.data.id
+                that.arr = res.data.backlog
                 that.title = res.data.title
                 that.start_time = res.data.start_time
                 that.end_time = res.data.end_time
-                that.question = res.data.question
-                that.content = res.data.content
                 that.demand = res.data.demand
                 that.graph = res.data.graph
                 that.design = res.data.design
@@ -102,11 +116,11 @@ var xm = new Vue({
                 ]
                 that.rate = res.data.rate
 
-
-                if (that.content == '' && null) {
+                console.log(res.data.content)
+                if (that.content == '' || null) {
                     $('.lis').css("display", "none")
                 }
-                if (that.question == '' && null) {
+                if (that.question == '' || null) {
                     $('.lis1').css("display", "none")
                 }
 
@@ -117,4 +131,3 @@ var xm = new Vue({
         });
     }
 })
-

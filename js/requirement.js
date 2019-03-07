@@ -110,7 +110,17 @@ var xm = new Vue({
     filters: {
         filterTime(time) {
             var date = new Date(time * 1000);
-            return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+            // var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            if (month < 10) {
+                month = "0" + month;
+            }
+            if (day < 10) {
+                day = "0" + day;
+            }
+            return  year + "-" + month + "-" + day;
         }
     },
     created() {
@@ -142,5 +152,12 @@ $(".require_main").click(function () {
     $("#myInput").blur()
     $(".require_foot_three").hide();
     $(".foot_require").show();
-    // $(".require_main").css("position", "fixed")
+})
+
+
+const inputItems = document.querySelectorAll("input");
+inputItems.forEach(function (ele) {
+    ele.addEventListener("blur", function () {
+        window.scrollTo(0, 0)
+    })
 })

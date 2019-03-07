@@ -22,7 +22,7 @@ const tabBar = {
     `,
     data() {
         return {
-            currentIndex: 0
+            currentIndex: 0,
         }
     },
     methods: {
@@ -32,6 +32,10 @@ const tabBar = {
                 this.$emit('get-list', id);
             }
         }
+    },
+    created() {
+        var process_id = getUrlKey('process_id')
+        this.currentIndex = process_id-1
     }
 }
 
@@ -84,7 +88,7 @@ const cylindricalGraph = {
                 <div v-for="n in 5" class="cp-cylind-left-thumb"></div>
             </div>
             <div class="cp-cylind-category-group">  
-                <p class="cp-cylind-item" v-for="item in showList" v-cloak>{{item}}</p>
+                <p class="cp-cylind-item" v-for="(item,id) in showList" v-cloak @click="goDetail(id)">{{item}}</p>
             </div>
             <span class="cp-cylind-per-bottom">0%</span>
         </div>
@@ -92,6 +96,11 @@ const cylindricalGraph = {
     data() {
         return {
             showList: ['需求', '原型', '设计', '前端', '后台', '测试', '验收']
+        }
+    },
+    methods: {
+        goDetail(id) {
+            this.$emit("go-detail",id)
         }
     },
     filters: {

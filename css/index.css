@@ -115,7 +115,7 @@
 }
 
 .content p:nth-child(2) {
-    font-size: 0.18rem;
+    font-size: 0.16rem;
     font-family: PingFangSC-Regular;
     font-weight: 400;
     color: rgba(0, 0, 0, 1);
@@ -207,4 +207,15 @@ div#project-progress {
     color: rgba(0, 0, 0, 1);
     line-height: 0.22rem;
     margin: 0.2rem 0 0.2rem 0.15rem;
+}
+
+.uu .lis .liSpan i {
+    color: red;
+}
+
+.liSpan {
+    width: 2.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

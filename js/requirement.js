@@ -112,13 +112,13 @@ var xm = new Vue({
             bodyFontSize = bodyFontSize.substring(0,bodyFontSize.length - 2);
             let textareaHeight = getComputedStyle(event.target).height;
             textareaHeight = textareaHeight.substring(0,textareaHeight.length - 2);
-            if(parseInt(bodyFontSize)*0.4 == parseInt(textareaHeight) && event.target.style.height.substring(0,event.target.style.height.length - 2) >= bodyFontSize*1.5) {
+            if(parseInt(bodyFontSize)*0.4 == parseInt(textareaHeight) && event.target.style.height.substring(0,event.target.style.height.length - 2) >= bodyFontSize*1) {
                 return false;
             }
             event.target.style.height = 'auto';
             event.target.style.height = event.target.scrollHeight + 'px';
-            if(event.target.style.height.substring(0,event.target.style.height.length - 2) >= bodyFontSize*1.5) {
-                event.target.style.height = bodyFontSize*1.5 +'px';
+            if(event.target.style.height.substring(0,event.target.style.height.length - 2) >= bodyFontSize*1) {
+                event.target.style.height = bodyFontSize*1 +'px';
             }
         }
     },

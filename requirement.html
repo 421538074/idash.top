@@ -27,7 +27,7 @@
             <div class="require_chat">
                 <div :class="item.user_type == 2?'chat_one':'chat_two'" v-for="item in Garr">
                     <span class="one_box">
-                        <img src="img/床.jpg" alt="">
+                        <img src="item.user_type == 1?'img/logo1.png':avatar" alt="">
                     </span>
                     <div class="chat_box">
                         <div class="dv_box">

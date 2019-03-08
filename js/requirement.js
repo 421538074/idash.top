@@ -183,4 +183,4 @@ inputItems.forEach(function (ele) {
     ele.addEventListener("blur", function () {
         window.scrollTo(0, 0)
     })
-})
+});

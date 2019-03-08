@@ -84,7 +84,10 @@ var xm = new Vue({
                     async: true,
                     dataType: 'json',
                     success: function (res) {
-                        sessionStorage.setItem('replay_id', JSON.stringify(res.data.replay_id));
+                        $(".require_foot_three").hide();
+                        $(".foot_require").show();
+                        // var replay_id =res.data.replay_id
+                        sessionStorage.setItem('replay_id', res.data.replay_id);
                         that.text = '',
                             $.ajax({
                                 type: "post",
@@ -112,21 +115,7 @@ var xm = new Vue({
             }
 
         },
-        setHeight(event) {
-            console.log(event.target.scrollHeight);
-            let bodyFontSize = getComputedStyle(document.querySelector('body')).fontSize;
-            bodyFontSize = bodyFontSize.substring(0,bodyFontSize.length - 2);
-            let textareaHeight = getComputedStyle(event.target).height;
-            textareaHeight = textareaHeight.substring(0,textareaHeight.length - 2);
-            if(parseInt(bodyFontSize)*0.4 == parseInt(textareaHeight) && event.target.style.height.substring(0,event.target.style.height.length - 2) >= bodyFontSize*1) {
-                return false;
-            }
-            event.target.style.height = 'auto';
-            event.target.style.height = event.target.scrollHeight + 'px';
-            if(event.target.style.height.substring(0,event.target.style.height.length - 2) >= bodyFontSize*1) {
-                event.target.style.height = bodyFontSize*1 +'px';
-            }
-        }
+        
     },
     filters: {
         filterTime(time) {

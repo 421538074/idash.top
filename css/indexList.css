@@ -142,3 +142,12 @@
     background-size: 100% 100%;
     margin-top: 0.1rem;
 }
+
+
+
+.index_banner {
+    font-size: 0.2rem;
+    margin: 1.3rem auto;
+    text-align: center;
+    color: gray;
+}

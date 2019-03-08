@@ -38,8 +38,11 @@
                     <li class="lis" v-for="(item,index) in arr">
                         <span></span>
                         <span class="liSpan" v-cloak>【{{staus[item.process_id-1]}}】<i>{{item.handle_status==1?"待处理":"完成"}}</i>-{{item.question}}</span>
+                       
                     </li>
+                   
                 </ul>
+                <div class="index_one" v-if="isOne">暂无待办事项</div>
             </div>
         </div>
 

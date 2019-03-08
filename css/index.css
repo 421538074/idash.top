@@ -219,3 +219,14 @@ div#project-progress {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+
+
+
+
+.index_one {
+    font-size: 0.16rem;
+    color: gray;
+    text-align: center;
+    margin-top: 0.22rem;
+}

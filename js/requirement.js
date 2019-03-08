@@ -8,7 +8,9 @@ var xm = new Vue({
         log_name: '',
         content: '',
         isshow: true,
-        backlog_id: ''
+        backlog_id: '',
+        avatar:'',
+        handle_status:'',
     },
     methods: {
         goback() {
@@ -18,6 +20,8 @@ var xm = new Vue({
             $(event.target).find('input.invisible').click();
         },
         add_img(event) {
+            this.backlog_id = getUrlKey('id')
+            var that =this
             let img1 = event.target.files[0];
             console.log(img1)
             // let type = img1.type; //文件的类型，判断是否是图片
@@ -43,7 +47,8 @@ var xm = new Vue({
                 success: function (res) {
                     console.log(res)
                     sessionStorage.setItem('img', res.data);
-                    window.location.href = "upfile.html"
+                    window.location.href = `upfile.html?backlog_id=${that.backlog_id}`
+                    // window.location.href ="upfile.html"
                 },
                 error: function (res) {
                     console.log(res)
@@ -61,6 +66,7 @@ var xm = new Vue({
                 $(".foot_require").hide();
                 $(".require_foot_three").show();
             }
+
         },
         send() {
             this.backlog_id = getUrlKey('id')
@@ -78,7 +84,7 @@ var xm = new Vue({
                     async: true,
                     dataType: 'json',
                     success: function (res) {
-                        console.log(res)
+                        sessionStorage.setItem('replay_id', JSON.stringify(res.data.replay_id));
                         that.text = '',
                             $.ajax({
                                 type: "post",
@@ -137,6 +143,8 @@ var xm = new Vue({
             dataType: 'json',
             success: function (res) {
                 console.log(res)
+                that.avatar =res.data.descr.avatar
+                that.handle_status=res.data.descr.handle_status
                 that.create_at = res.data.descr.create_at
                 that.log_content = res.data.descr.log_content
                 that.log_name = res.data.descr.log_name

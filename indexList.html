@@ -16,7 +16,7 @@
             <span>首页</span>
         </div>
 
-        <div class="index_main">
+        <div class="index_main" id="main">
             <div class="index_main_one" v-for="item in list" @click="goStudy(item.id)">
                 <div class="index_main_left">
                 </div>
@@ -24,8 +24,8 @@
                 <div class="index_main_mid">
                     <span class="one">{{item.name}}</span>
                     <p>{{item.title}}</p>
-                   
-                    <cy-bar :bar="item.rate +'%'" ></cy-bar>
+
+                    <cy-bar :bar="item.rate +'%'"></cy-bar>
                 </div>
 
                 <div class="index_main_right">
@@ -34,9 +34,14 @@
             </div>
         </div>
 
+
         <div class="index_btn">
             <!-- <p @click="indexDetail()"></p> -->
             <p @click="goUser"></p>
+        </div>
+
+        <div class="index_banner" v-if="show">
+            暂无项目
         </div>
     </div>
 

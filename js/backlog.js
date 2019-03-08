@@ -54,6 +54,10 @@ var xm = new Vue({
             console.log(index)
             var img = this.titleList
             var codeIMG = img[index].data_url
+
+            if(codeIMG==""){
+                $(".backlogBtn").addClass()
+            }
             console.log(codeIMG)
             var a = document.createElement('a')
             a.download = name || 'pic'

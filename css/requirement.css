@@ -101,9 +101,11 @@
     padding: 0 0.15rem;
     margin: 0 0 0.2rem 0;
 }
+
 .require_main_title {
     font-size: 0.12rem;
 }
+
 .require_main_title i:nth-child(1) {
     font-size: 0.18rem;
     font-family: PingFangSC-Medium;
@@ -111,10 +113,11 @@
     color: rgba(255, 255, 255, 1);
     line-height: 0.25rem;
     /*width: 2rem;*/
-  /*  overflow: hidden;;
+    /*  overflow: hidden;;
     text-overflow: ellipsis;
     white-space: nowrap;*/
-    display: inline-block;;
+    display: inline-block;
+    ;
 }
 
 .require_main_title p:nth-child(2) {
@@ -155,10 +158,11 @@
     color: rgba(15, 19, 34, 1);
     line-height: 0.2rem;
     display: flex;
+    align-items: flex-start;
     margin-bottom: 0.2rem;
 }
 
-.chat_one span:nth-child(1) {
+.chat_one .one_box {
     display: inline-block;
     width: 0.4rem;
     height: 0.4rem;
@@ -168,33 +172,83 @@
     margin-right: 0.1rem;
 }
 
-.chat_one span:nth-child(1) img {
+.chat_one .one_box img {
     width: 100%;
     height: 100%;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
     border-radius: 0.12rem;
 }
 
-.chat_one span:nth-child(2) {
+.chat_one .box1 {
     padding: 0.1rem 0.21rem;
     background: #F0F0F0;
     border-radius: 0px 0.16rem 0.16rem 0.16rem;
+    display: inline-block;
+    text-align: left;
+     max-width: 1.8rem;
+    word-wrap: break-word;
+}
+
+.chat_box .box {
+    width: 0.6rem;
+    height: 0.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0.01rem 0.05rem;
+    background: rgba(101, 192, 198, 1);
+    border-radius: 0.1rem 0.1rem 0.1rem 0px;
+    font-size: 0.14rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 0.2rem;
+    margin-bottom: 0.08rem;
+    text-align: center;
+}
+
+.chat_two .chat_box {
+    position: absolute;
+    right: 0.55rem;
+}
+
+.chat_two .chat_box .dv_box {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.chat_two .chat_box .box {
+    width: 0.6rem;
+    height: 0.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0.01rem 0.05rem;
+    background: rgba(101, 192, 198, 1);
+    border-radius: 0.1rem 0.1rem 0 0.1rem;
+    font-size: 0.14rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 0.2rem;
+    margin-bottom:0.08rem;
     text-align: center;
 }
 
 .chat_two {
-    height: 0.4rem;
+    height: 0.7rem;
     font-size: 0.14rem;
     font-family: PingFangSC-Regular;
     font-weight: 400;
     color: rgba(15, 19, 34, 1);
     line-height: 0.2rem;
     display: flex;
+    align-items: flex-start;
     margin-bottom: 0.2rem;
     position: relative;
 }
 
-.chat_two span:nth-child(1) {
+.chat_two .one_box {
     display: inline-block;
     width: 0.4rem;
     height: 0.4rem;
@@ -206,24 +260,27 @@
     right: -0.09rem;
 }
 
-.chat_two span:nth-child(1) img {
+.chat_two .one_box img {
     width: 100%;
     height: 100%;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
     border-radius: 0.12rem;
 }
 
-.chat_two span:nth-child(2) {
+
+
+.chat_two .box1 {
     padding: 0.1rem 0.21rem;
     background: #F0F0F0;
-    border-radius: 0px 0.16rem 0.16rem 0.16rem;
-    text-align: center;
-    position: absolute;
-    right: 0.55rem;
+    border-radius: 0.16rem 0px 0.16rem 0.16rem;
+    text-align: left;
+    display: inline-block;
+    max-width: 1.8rem;
+    word-wrap: break-word;
+    word-break: break-all;
+    /*position: absolute;*/
+    /*right: 0;*/
 }
-
-
-
 
 
 .require_process {

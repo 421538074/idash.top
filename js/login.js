@@ -37,10 +37,13 @@ var xm = new Vue({
                     dataType: 'json',
                     success: function (res) {
                         console.log(res)
-                        window.location.href = "topic.html"
+                        if (res.status == -1) {
+                            alert(res.msg)
+                        } else {
+                            window.location.href = "topic.html"
+                        }
                     },
                     error: function (res) {
-                        console.log(res)
                     }
                 });
             } else {}
@@ -51,7 +54,6 @@ var xm = new Vue({
         },
         onblur() {
             window.scroll(0, 0)
-            console.log(window.scroll)
         }
     },
     created() {}
@@ -90,6 +92,6 @@ inputItems.forEach(function (ele) {
     })
 })
 
-$(".login_main").click(function () {
-    inputItems.blur()
-})
+// $(".login_main").click(function () {
+//     inputItems.blur()
+// })

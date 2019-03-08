@@ -15,6 +15,7 @@ var xm = new Vue({
         percentList: [],
         rate: '',
         arr: '',
+        isOne: false,
         staus: ['需求', '原型', '设计', '前端', '后台', '测试', '验收']
     },
     methods: {
@@ -119,9 +120,14 @@ var xm = new Vue({
                 console.log(res.data.content)
                 if (that.content == '' || null) {
                     $('.lis').css("display", "none")
+                    that.isOne = true
+
                 }
                 if (that.question == '' || null) {
                     $('.lis1').css("display", "none")
+                }
+                if (res.data.backlog.length==0) {
+                    that.isOne = true
                 }
 
             },

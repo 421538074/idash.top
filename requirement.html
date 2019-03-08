@@ -27,11 +27,11 @@
             <div class="require_chat">
                 <div :class="item.user_type == 2?'chat_one':'chat_two'" v-for="item in Garr">
                     <span class="one_box">
-                        <img src="item.user_type == 1?'img/logo1.png':avatar" alt="">
+                        <img :src="item.user_type == 2?'img/logo1.png':avatar" alt="">
                     </span>
                     <div class="chat_box">
                         <div class="dv_box">
-                             <p class="box" v-if="item.data_url==null?isshow:isshow">文件</p>
+                             <p class="box" v-if="item.data_url==null?!isshow:isshow">文件</p>
                         </div>
                         <span class="box1">{{item.content}}</span>
                     </div>
@@ -41,19 +41,17 @@
         </div>
 
         <div class="require_foot">
-            <div class="require_foot_two send-msg">
-                <textarea @input="setHeight($event)" v-model="text" rows="2" id="myInput" class="input-area" placeholder="发信息"></textarea>
+            <div class="require_foot_one" @click="goback">
             </div>
-            <div class="btn-group">
-                <div class="require_foot_one" @click="goback">
-                </div>
-                <div class="require_foot_three" v-if="" @click="send">
-                    发送
-                </div>
-                <div class="foot_require" id="two" v-if="" @click="upChange($event)">
-                    上传文件
-                    <input id="file" ref="image" @change="add_img" hidden type="file" accept="image/*" class="invisible">
-                </div>
+            <div class="require_foot_two" @click="focus">
+                <input type="text" v-model="text" placeholder="发信息" id="myInput">
+            </div>
+            <div class="require_foot_three" v-if="" @click="send">
+                发送
+            </div>
+            <div class="foot_require" id="two" v-if="" @click="upChange($event)">
+                上传文件
+                <input id="file" ref="image" @change="add_img" hidden type="file" accept="image/*" class="invisible">
             </div>
         </div>
     </div>

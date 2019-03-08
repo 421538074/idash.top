@@ -112,6 +112,21 @@ var xm = new Vue({
             }
 
         },
+        setHeight(event) {
+            console.log(event.target.scrollHeight);
+            let bodyFontSize = getComputedStyle(document.querySelector('body')).fontSize;
+            bodyFontSize = bodyFontSize.substring(0,bodyFontSize.length - 2);
+            let textareaHeight = getComputedStyle(event.target).height;
+            textareaHeight = textareaHeight.substring(0,textareaHeight.length - 2);
+            if(parseInt(bodyFontSize)*0.4 == parseInt(textareaHeight) && event.target.style.height.substring(0,event.target.style.height.length - 2) >= bodyFontSize*1) {
+                return false;
+            }
+            event.target.style.height = 'auto';
+            event.target.style.height = event.target.scrollHeight + 'px';
+            if(event.target.style.height.substring(0,event.target.style.height.length - 2) >= bodyFontSize*1) {
+                event.target.style.height = bodyFontSize*1 +'px';
+            }
+        }
     },
     filters: {
         filterTime(time) {

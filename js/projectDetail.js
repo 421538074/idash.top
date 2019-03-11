@@ -44,8 +44,8 @@ var xm = new Vue({
     ],
     },
     methods: {
-        goback() {
-            window.history.back()
+        goIndex() {
+            window.location.href ="index.html"
         },
         goRequire(index) {
             var arr = this.feedList

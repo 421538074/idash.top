@@ -20,7 +20,7 @@
             <div class="require_main_banner">
                 <div class="require_main_title">
                     <i>{{log_content}}</i>
-                    <p>待处理 {{create_at | filterTime}}</p>
+                    <p>待处理 {{create_at | filterTime1}}</p>
                 </div>
                 <span @click="backChange"></span>
             </div>
@@ -30,15 +30,16 @@
                         <img :src="item.user_type == 2?'img/logo1.png':avatar" alt="">
                     </span>
                     <div class="chat_box">
-                        <div class="dv_box" @click="downloadCodeImg(index)">
+                        <div class="dv_box" @click="goLog">
                             <p class="box" v-if="item.data_url==null?!isshow:isshow">文件</p>
                         </div>
                         <span class="box1">{{item.content}}</span>
                     </div>
-
+                    <p class="time">{{item.create_at | filterTime}}</p>
                 </div>
             </div>
         </div>
+
         <div class="require_foot">
             <div class="require_foot_two send-msg">
                 <textarea @input="setHeight($event)" v-model="text" rows="2" id="myInput" class="input-area"
@@ -66,4 +67,4 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/development/vue.js"></script>
 <script src="js/api.js"></script>
-<script  src="js/requirement.js"></script>
+<script src="js/requirement.js"></script>

@@ -76,27 +76,23 @@ var xm = new Vue({
 })
 
 
-// var countdown = 60;
-// $('#numbtn').on('click', function () {
-//     var obj = $("#numbtn");
-//     settime(obj);
-// })
+enter();
 
-// function settime(obj) { //发送验证码倒计时
-//     if (countdown == 0) {
-//         obj.attr('disabled', false);
-//         obj.html("获取验证码");
-//         countdown = 60;
-//         return;
-//     } else {
-//         obj.attr('disabled', true);
-//         obj.html("重新发送(" + countdown + ")");
-//         countdown--;
-//     }
-//     setTimeout(function () {
-//         settime(obj)
-//     }, 1000)
-// }
+function enter() {
+    $.ajax({
+        type: "post",
+        url: `${api}/index/api/wxLogin`,
+        async: true,
+        data: {},
+        dataType: 'json',
+        success: function (res) {
+            console.log(res)
+        },
+        error: function (res) {
+            console.log(res)
+        }
+    });
+}
 
 
 

@@ -155,7 +155,8 @@
     line-height: 0.2rem;
     display: flex;
     align-items: flex-start;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.6rem;
+    position: relative;
 }
 
 .chat_one .one_box {
@@ -181,7 +182,7 @@
     border-radius: 0px 0.16rem 0.16rem 0.16rem;
     display: inline-block;
     text-align: left;
-     max-width: 1.8rem;
+    max-width: 1.8rem;
     word-wrap: break-word;
 }
 
@@ -213,6 +214,7 @@
     display: flex;
     justify-content: flex-end;
 }
+
 .chat_two .chat_box .box {
     width: 0.6rem;
     height: 0.2rem;
@@ -240,7 +242,7 @@
     line-height: 0.2rem;
     display: flex;
     align-items: flex-start;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.6rem;
     position: relative;
 }
 
@@ -325,6 +327,7 @@ textarea.input-area {
     border-radius: 0.02rem;
     height: 0.4rem;
 }
+
 .btn-group {
     display: flex;
     align-items: center;
@@ -346,8 +349,27 @@ textarea.input-area {
     height: 0.4rem;
     resize: none;
 }
+
 .btn-group {
     display: flex;
     align-items: center;
     justify-content: space-between;
-} 
+}
+
+
+
+
+.time {
+    width: 1.24rem;
+    height: 0.18rem;
+    font-size: 0.1rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: rgba(162, 162, 162, 1);
+    line-height: 0.18rem;
+    text-align: center;
+    background: #F0F0F0;
+    position: absolute;
+    bottom: -0.4rem;
+    left: 30%;
+}

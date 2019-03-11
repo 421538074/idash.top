@@ -12,7 +12,7 @@ var xm = new Vue({
         isshow: true,
         backlog_id: '',
         avatar: '',
-        handle_status: ''
+        handle_status: '',
     },
     methods: {
         goback: function goback() {
@@ -51,29 +51,17 @@ var xm = new Vue({
                 success: function success(res) {
                     console.log(res);
                     sessionStorage.setItem('img', res.data);
-                    window.location.href = "upfile.html?backlog_id=".concat(that.backlog_id); // window.location.href ="upfile.html"
+                    window.location.href = "upfile.html?backlog_id=".concat(that.backlog_id);
                 },
                 error: function error(res) {
                     console.log(res);
                 }
             });
         },
-        downloadCodeImg: function downloadCodeImg(index) {
-            console.log(index);
-            var img = this.Garr;
-            var codeIMG = img[index].data_url;
-            console.log(codeIMG);
-
-            if (codeIMG == "") {
-                alert("暂无文件");
-            } else {
-                var a = document.createElement('a');
-                a.download = name || 'pic'; // 设置图片地址
-
-                a.href = "".concat(api).concat(codeIMG);
-                console.log(a);
-                a.click();
-            }
+        goLog: function () {
+            this.program_id = getUrlKey('program_id');
+            this.backlog_id = getUrlKey('id');
+            window.location.href = `backlog.html?program_id=${this.program_id}&backlog_id=${this.backlog_id}`
         },
         backChange: function backChange() {
             this.program_id = getUrlKey('program_id');
@@ -92,7 +80,6 @@ var xm = new Vue({
             this.backlog_id = getUrlKey('id');
             console.log(this.backlog_id);
             var that = this;
-
             if (this.text) {
                 var that = this;
                 $.ajax({
@@ -155,7 +142,32 @@ var xm = new Vue({
     },
     filters: {
         filterTime: function filterTime(time) {
-            var date = new Date(time * 1000); 
+            var date = new Date(time * 1000);
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var hours = date.getHours();
+            var min = date.getMinutes(); //获取当前分钟数(0-59)
+            var sce = date.getSeconds(); //获取当前秒数(0-59)
+            if (month < 10) {
+                month = "0" + month;
+            }
+            if (day < 10) {
+                day = "0" + day;
+            }
+            if (hours < 10) {
+                hours = "0" + hours;
+            }
+            if (min < 10) {
+                min = "0" + min;
+            }
+            if (sce < 10) {
+                sce = "0" + sce;
+            }
+            return year + "-" + month + "-" + day + "  " + hours + ":" + min + ":" + sce;
+        },
+        filterTime1: function filterTime(time) {
+            var date = new Date(time * 1000);
             var year = date.getFullYear();
             var month = date.getMonth() + 1;
             var day = date.getDate();

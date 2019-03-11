@@ -13,8 +13,8 @@ var xm = new Vue({
         rate: '',
     },
     methods: {
-        goback() {
-            window.history.back()
+        goIndex() {
+            window.location.href = "index.html"
         },
         goRequire() {
             window.location.href = "requirement.html"

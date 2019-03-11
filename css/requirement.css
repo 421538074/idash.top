@@ -345,6 +345,7 @@ textarea.input-area {
     border-radius: 0.02rem;
     height: 0.4rem;
     resize: none;
+    word-break: break-all;
 }
 .btn-group {
     display: flex;

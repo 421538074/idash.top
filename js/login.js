@@ -4,6 +4,7 @@ var xm = new Vue({
         phone: '',
         psw: '',
         info: '',
+        msg: "获取验证码",
     },
     methods: {
         gain() {
@@ -18,9 +19,22 @@ var xm = new Vue({
                 dataType: 'json',
                 success: function (res) {
                     that.info = res.info
+                    if (res.status == 1) {
+                        var countdown = 60;
+                        that.msg = countdown + "s";
+                        var interval = setInterval(function () {
+                            if (countdown == 1) {
+                                countdown = 60;
+                                that.msg = '获取验证码';
+                                clearInterval(interval);
+                                return false;
+                            }
+                            countdown -= 1;
+                            that.msg = countdown + 's';
+                        }, 1000);
+                    }
                 },
                 error: function (res) {
-                    console.log(res)
                 }
             });
         },
@@ -54,6 +68,7 @@ var xm = new Vue({
         },
         onblur() {
             window.scroll(0, 0)
+            console.log(window.scroll)
         }
     },
     created() {}
@@ -61,27 +76,27 @@ var xm = new Vue({
 })
 
 
-var countdown = 60;
-$('#numbtn').on('click', function () {
-    var obj = $("#numbtn");
-    settime(obj);
-})
+// var countdown = 60;
+// $('#numbtn').on('click', function () {
+//     var obj = $("#numbtn");
+//     settime(obj);
+// })
 
-function settime(obj) { //发送验证码倒计时
-    if (countdown == 0) {
-        obj.attr('disabled', false);
-        obj.html("获取验证码");
-        countdown = 60;
-        return;
-    } else {
-        obj.attr('disabled', true);
-        obj.html("重新发送(" + countdown + ")");
-        countdown--;
-    }
-    setTimeout(function () {
-        settime(obj)
-    }, 1000)
-}
+// function settime(obj) { //发送验证码倒计时
+//     if (countdown == 0) {
+//         obj.attr('disabled', false);
+//         obj.html("获取验证码");
+//         countdown = 60;
+//         return;
+//     } else {
+//         obj.attr('disabled', true);
+//         obj.html("重新发送(" + countdown + ")");
+//         countdown--;
+//     }
+//     setTimeout(function () {
+//         settime(obj)
+//     }, 1000)
+// }
 
 
 
@@ -92,6 +107,6 @@ inputItems.forEach(function (ele) {
     })
 })
 
-// $(".login_main").click(function () {
-//     inputItems.blur()
-// })
+$(".login_main").click(function () {
+    inputItems.blur()
+})

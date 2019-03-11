@@ -27,7 +27,7 @@
                 <li class="login_lis">
                     <label for=""><img src="img/钥匙.png" alt=""></label>
                     <input type="text" class="key" v-model="psw" @blur="onblur">
-                    <span id="numbtn" @click="gain">获取验证码</span>
+                    <span id="numbtn" @click="gain">{{msg}}</span>
                 </li>
             </ul>
             <button class="login_btn" @click="enter"></button>

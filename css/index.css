@@ -5,13 +5,18 @@
     text-align: center;
     line-height: 0.44rem;
     background: #0F1322;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 11;
 }
 
 
 /* 图表 */
 .sheet {
     width: 3.6rem;
-    height: 3.31rem;
+    height: 3.95rem;
+    padding-top: 0.64rem;
 }
 
 .nav {
@@ -206,7 +211,7 @@ div#project-progress {
     font-weight: 600;
     color: rgba(0, 0, 0, 1);
     line-height: 0.22rem;
-    margin: 0.2rem 0 0.2rem 0.15rem;
+    margin: 0 0 0.2rem 0.15rem;
 }
 
 .uu .lis .liSpan i {
@@ -221,12 +226,10 @@ div#project-progress {
 }
 
 
-
-
-
 .index_one {
     font-size: 0.16rem;
     color: gray;
     text-align: center;
     margin-top: 0.22rem;
+    display: none;
 }

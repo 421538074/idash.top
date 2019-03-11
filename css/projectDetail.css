@@ -5,7 +5,9 @@
     text-align: center;
     line-height: 0.44rem;
     background: #0F1322;
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .project_header span:nth-child(2) {
@@ -19,6 +21,7 @@
     position: relative;
     overflow: hidden;
     margin-bottom: 0.15rem;
+    padding-top: 0.44rem;
 }
 
 .project_scoll,
@@ -235,7 +238,7 @@ ul.cp-tabbar {
     white-space: nowrap;
     font-size: 0.16rem;
     height: 0.4rem;
-    padding: 0.1rem;
+    padding: 0.54rem 0.1rem 0.1rem;
 }
 
 ul.cp-tabbar::-webkit-scrollbar {

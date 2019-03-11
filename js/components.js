@@ -35,7 +35,12 @@ const tabBar = {
     },
     created() {
         var process_id = getUrlKey('process_id')
-        this.currentIndex = process_id-1
+        if (getUrlKey('process_id') == null) {
+            process_id = 1
+        }else {
+            process_id = getUrlKey('process_id')
+        }
+        this.currentIndex = process_id - 1
     }
 }
 

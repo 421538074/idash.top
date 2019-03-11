@@ -40,7 +40,7 @@ var xm = new Vue({
                 success: function (res) {
                     console.log(res)
                     sessionStorage.setItem('img', res.data);
-                    window.location.href = `upfile.html?program_id=${that.program_id}&backlog_id=${that.backlog_id}`
+                    window.location.href = `upfile.html?backlog_id=${that.backlog_id}`
                 },
                 error: function (res) {
                     console.log(res)
@@ -54,17 +54,18 @@ var xm = new Vue({
             console.log(index)
             var img = this.titleList
             var codeIMG = img[index].data_url
-
-            if(codeIMG==""){
-                $(".backlogBtn").addClass()
-            }
             console.log(codeIMG)
-            var a = document.createElement('a')
-            a.download = name || 'pic'
-            // 设置图片地址
-            a.href = `${api}${codeIMG}`;
-            console.log(a)
-            a.click();
+            if(codeIMG==""){
+                alert("暂无文件")
+            }else{
+                 var a = document.createElement('a')
+                a.download = name || 'pic'
+                // 设置图片地址
+                a.href = `${api}${codeIMG}`;
+                console.log(a)
+                a.click();
+            }
+           
         },
     },
     filters: {

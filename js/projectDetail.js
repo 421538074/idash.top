@@ -84,7 +84,6 @@ var xm = new Vue({
         },
         getList(id) {
             var index =id+1
-            console.log(index)
             sessionStorage.setItem('key', JSON.stringify(index));
             this.program_id = getUrlKey('program_id')
             var that = this
@@ -133,6 +132,11 @@ var xm = new Vue({
     created() {
         var program_id = getUrlKey('program_id')
         var process_id = getUrlKey('process_id')
+        if(getUrlKey('process_id')==null){
+            process_id=1
+        }else {
+            process_id = getUrlKey('process_id')
+        }
         var that = this
         //待办事项 
         $.ajax({
@@ -145,6 +149,7 @@ var xm = new Vue({
             },
             dataType: 'json',
             success: function (res) {
+                console.log(res)
                 that.feedList = res.data.normal
                 that.startList = res.data.complete
                 that.delayList = res.data.delay

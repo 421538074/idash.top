@@ -5,7 +5,9 @@
     text-align: center;
     line-height: 0.44rem;
     background: #0F1322;
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .up_header span:nth-child(2) {
@@ -18,7 +20,7 @@
 .up_main {
     background: white;
     width: 100%;
-    padding-top: 0.2rem;
+    padding-top: 0.64rem;
 }
 
 .up_main_top {

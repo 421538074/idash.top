@@ -5,7 +5,9 @@
     color: white;
     text-align: center;
     line-height: 0.44rem;
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .backlog_header span:nth-child(2) {
@@ -46,7 +48,7 @@
 
 /* main */
 .backlog_main {
-    padding: 0.1rem 0.15rem 0;
+    padding: 0.54rem 0.15rem 0;
 }
 
 .main_one {

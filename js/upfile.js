@@ -17,7 +17,16 @@ var xm = new Vue({
             window.history.back()
         },
         keepChange() {
-            this.program_id = getUrlKey('program_id')
+            if(sessionStorage.getItem("replay_id")){
+                var replay_id =sessionStorage.getItem("replay_id") ;
+
+            }else {
+                 var replay_id =''
+            }
+            console.log(replay_id)
+            var id=parseInt(replay_id)
+            console.log(id)
+
             this.backlog_id = getUrlKey('backlog_id')
             var title = $("#up_text").text()
             console.log(title)
@@ -29,7 +38,7 @@ var xm = new Vue({
                 data: {
                     title: title,
                     file_name: image,
-                    program_id: this.program_id,
+                    replay_id: id,
                     backlog_id: this.backlog_id,
                 },
                 dataType: 'json',

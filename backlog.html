@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div id="app" v-cloak>
+    <div id="app">
         <div class="backlog_header">
             <span>待办事项文件</span>
         </div>
@@ -32,11 +32,11 @@
                     <img src="img/书.png" alt="">
                 </div>
                 <div class="main_mid">
-                    <p>{{item.data_title}}</p>
-                    <p>{{item.create_at | filterTime}}</p>
-                </div>
+                    <p v-cloak>{{item.data_title}}hahahah</p>
+                    <p v-cloak>{{item.create_at | filterTime}}dasdad</p>
+                </div> 
                 <div class="main_right">
-                    <span class="backlogBtn" @click="downloadCodeImg(index)">下载</span>
+                    <span @click="downloadCodeImg(index)">下载</span>
                     <span></span>
                 </div>
             </div>

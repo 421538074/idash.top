@@ -2,8 +2,8 @@ var vm = new Vue({
     el: "#app",
     data: {
         list: [],
-        bar: ['0%'],
-        show: false,
+        bar:['0%'],
+        show:false,
     },
     methods: {
         goUser() {
@@ -15,7 +15,8 @@ var vm = new Vue({
         },
         indexDetail() {
             window.location.href = ""
-        }
+        },
+
     },
     components: {
         "cy-bar": Bar,
@@ -33,29 +34,28 @@ var vm = new Vue({
             if (day < 10) {
                 day = "0" + day;
             }
-            return year + "-" + month + "-" + day;
+            return  year + "-" + month + "-" + day;
         }
     },
     created() {
-        var that = this
+        var that =this
         $.ajax({
             type: "post",
             url: `${api}/index/api/get_info`,
             async: true,
             data: {},
             dataType: 'json',
-            success: function (res) {
-                console.log(res.data)
-                if (res.data.length == 0) {
+            success: function(res) {
+                console.log(res)
+                 if (res.data.length == 0) {
                     that.show = true
                 }
                 that.list = res.data
             },
-            error: function (res) {
+            error: function(res) {
                 console.log(res)
             }
-        })
-
+        });
     }
 
 })

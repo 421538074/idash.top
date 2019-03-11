@@ -26,14 +26,14 @@
         </div>
 
 
-        <div class="backlog_main">
-            <div class="main_one" v-for="(item,index) in titleList" :key="index">
+        <div class="backlog_main" >
+            <div class="main_one" v-for="(item,index) in arr" :key="index" >
                 <div class="main_left">
                     <img src="img/书.png" alt="">
                 </div>
                 <div class="main_mid">
-                    <p v-cloak>{{item.data_title}}hahahah</p>
-                    <p v-cloak>{{item.create_at | filterTime}}dasdad</p>
+                    <p v-cloak>{{item.data_title}}</p>
+                    <p v-cloak>{{item.create_at | filterTime}}</p>
                 </div> 
                 <div class="main_right">
                     <span @click="downloadCodeImg(index)">下载</span>

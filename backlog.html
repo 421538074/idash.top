@@ -36,7 +36,7 @@
                     <p v-cloak>{{item.create_at | filterTime}}</p>
                 </div> 
                 <div class="main_right">
-                    <a class="download-link" :href="item.data_url | filterImg" :download="item.data_title">下载</a>
+                    <a class="download-link" href="javascript:;" @click="downloadCodeImg(item.data_title,item.data_url)" :download="item.data_title">下载</a>
                     <span></span>
                 </div>
             </div>
@@ -48,4 +48,5 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/vue.min.js"></script>
 <script src="js/api.js"></script>
+<script src="js/download.js"></script>
 <script src="js/backlog.js"></script>

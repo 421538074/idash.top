@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文件下载</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        div.content {
+            height: 100%;
+            overflow: hidden;
+            background: #0F1322;
+            padding: 0.2rem;
+        }
+
+        img.user-director-img {
+            width: 100%;
+        }
+        p.tips{
+            color: #FFFFFF;
+            font-size: 0.2rem;
+            padding-top: 60%;
+            line-height: 0.4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content" id="app">
+        <img v-if="!isCanDownload"  src="img/live_weixin.png" class="user-director-img" alt="">
+        <p v-if="isCanDownload"  class="tips">如果没有自动开始下载，请刷新页面重试</p>
+    </div>
+    <script src="js/vue.min.js"></script>
+    <script src="js/download.js"></script>
+    <script>
+        var isCanDownload = switchPlatform();
+        if (isCanDownload) {
+            getDownload(getParams().href, getParams().title);
+        }
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    isCanDownload: isCanDownload
+                }
+            },
+            methods: {
+
+            },
+        });
+    </script>
+</body>
+
+</html>

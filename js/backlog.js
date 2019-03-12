@@ -56,22 +56,22 @@ var xm = new Vue({
     upChange: function upChange(event) {
       $(event.target).find('input.invisible').click();
     },
-    downloadCodeImg: function downloadCodeImg(index) {
-      console.log(index);
-      var img = this.titleList;
-      var codeIMG = img[index].data_url;
-      console.log(codeIMG);
+    downloadCodeImg(title,url) {
+      // var img = this.titleList;
+      // var codeIMG = img[index].data_url;
+      // console.log(codeIMG);
 
-      if (codeIMG == "") {
-        alert("暂无文件");
-      } else {
-        var a = document.createElement('a');
-        a.download = name || 'pic'; // 设置图片地址
+      // if (codeIMG == "") {
+      //   alert("暂无文件");
+      // } else {
+      //   var a = document.createElement('a');
+      //   a.download = name || 'pic'; // 设置图片地址
 
-        a.href = "".concat(api).concat(codeIMG);
-        console.log(a);
-        a.click();
-      }
+      //   a.href = "".concat(api).concat(codeIMG);
+      //   console.log(a);
+      //   a.click();
+      // }
+      getDownload(url,title);
     }
   },
   filters: {

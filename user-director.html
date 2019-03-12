@@ -47,7 +47,7 @@
     <script>
         var isCanDownload = switchPlatform();
         if (isCanDownload) {
-            getDownload(api+getParams().href, getParams().title);
+            getDownload(api+getParams().href.substring(1), getParams().title);
         }
         new Vue({
             el: '#app',

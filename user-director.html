@@ -42,11 +42,12 @@
         <p v-if="isCanDownload"  class="tips">如果没有自动开始下载，请刷新页面重试</p>
     </div>
     <script src="js/vue.min.js"></script>
+    <script src="js/api.js"></script>
     <script src="js/download.js"></script>
     <script>
         var isCanDownload = switchPlatform();
         if (isCanDownload) {
-            getDownload(getParams().href, getParams().title);
+            getDownload(api+getParams().href, getParams().title);
         }
         new Vue({
             el: '#app',

@@ -6,8 +6,9 @@ var xm = new Vue({
         file_name: '',
         Username: "编辑名称",
         program_id: '',
-        process_id: ''
-
+        process_id: '',
+        name: '',
+        times:'',
     },
     methods: {
         editNickname() {
@@ -17,14 +18,13 @@ var xm = new Vue({
             window.history.back()
         },
         keepChange() {
-            if(sessionStorage.getItem("replay_id")){
-                var replay_id =sessionStorage.getItem("replay_id") ;
+            if (sessionStorage.getItem("replay_id")) {
+                var replay_id = sessionStorage.getItem("replay_id");
 
-            }else {
-                 var replay_id =''
+            } else {
+                var replay_id = ''
             }
-            console.log(replay_id)
-            var id=parseInt(replay_id)
+            var id = replay_id ? parseInt(replay_id) : null
             console.log(id)
 
             this.backlog_id = getUrlKey('backlog_id')
@@ -63,5 +63,14 @@ var xm = new Vue({
         var image = sessionStorage.getItem("img");
         image = image.replace(".", "");
         this.avtar = `${api}${image}`
+
+        this.name = sessionStorage.getItem("imgName");
+
+
+        var myDate = new Date();
+        this.times = myDate.toLocaleTimeString();
     }
 })
+
+
+

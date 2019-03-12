@@ -154,9 +154,6 @@ body {
 body,
 html {
 	font-size: calc(100vw / 3.75);
-	/*position: fixed;
-	top: 0;
-	left: 0;*/
 }
 
 

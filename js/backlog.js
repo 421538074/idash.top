@@ -21,6 +21,18 @@ var xm = new Vue({
       var img1 = event.target.files[0];
       console.log(img1);
       console.log(img1.name)
+      // var type = img1.type; //文件的类型，判断是否是图片
+
+      // var size = img1.size; //文件的大小，判断图片的大小
+      // if (this.imgData.accept.indexOf(type) == -1) {
+      //     alert('请选择我们支持的图片格式！');
+      //     return false;
+      // }
+
+      // if (size > 3145728) {
+      //   alert('请选择3M以内的图片！');
+      //   return false;
+      // }
 
       var formData = new FormData();
       formData.append('file', img1);

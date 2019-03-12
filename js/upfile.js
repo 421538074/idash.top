@@ -7,7 +7,8 @@ var xm = new Vue({
         Username: "编辑名称",
         program_id: '',
         process_id: '',
-        name:'',
+        name: '',
+        times:'',
     },
     methods: {
         editNickname() {
@@ -17,13 +18,13 @@ var xm = new Vue({
             window.history.back()
         },
         keepChange() {
-            if(sessionStorage.getItem("replay_id")){
-                var replay_id =sessionStorage.getItem("replay_id") ;
+            if (sessionStorage.getItem("replay_id")) {
+                var replay_id = sessionStorage.getItem("replay_id");
 
-            }else {
-                 var replay_id =''
+            } else {
+                var replay_id = ''
             }
-            var id=replay_id?parseInt(replay_id):null
+            var id = replay_id ? parseInt(replay_id) : null
             console.log(id)
 
             this.backlog_id = getUrlKey('backlog_id')
@@ -65,5 +66,39 @@ var xm = new Vue({
 
         this.name = sessionStorage.getItem("imgName");
 
+
+        var myDate = new Date();
+        this.times = myDate.toLocaleTimeString();
     }
 })
+
+
+
+
+
+// showTime();
+// function showTime() {
+//     var date = new Date(time * 1000);
+//     var year = date.getFullYear();
+//     var month = date.getMonth() + 1;
+//     var day = date.getDate();
+//     var hours = date.getHours();
+//     var min = date.getMinutes(); //获取当前分钟数(0-59)
+//     var sce = date.getSeconds(); //获取当前秒数(0-59)
+//     if (month < 10) {
+//         month = "0" + month;
+//     }
+//     if (day < 10) {
+//         day = "0" + day;
+//     }
+//     if (hours < 10) {
+//         hours = "0" + hours;
+//     }
+//     if (min < 10) {
+//         min = "0" + min;
+//     }
+//     if (sce < 10) {
+//         sce = "0" + sce;
+//     }
+//     document.getElementById("times").innerText = year + "-" + month + "-" + day + "  " + hours + ":" + min + ":" + sce;
+// }

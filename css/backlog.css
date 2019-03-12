@@ -114,3 +114,12 @@
     background: url(../img/右1.png)no-repeat;
     background-size: 100% 100%;
 }
+
+a.download-link{
+    font-size: 0.14rem;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
+    color: #65C0C6;
+    line-height: 0.2rem;
+    margin-right: 0.1rem;
+}

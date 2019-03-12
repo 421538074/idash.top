@@ -36,7 +36,7 @@
                     <p v-cloak>{{item.create_at | filterTime}}</p>
                 </div> 
                 <div class="main_right">
-                    <span @click="downloadCodeImg(index)">下载</span>
+                    <a class="download-link" :href="item.data_url | filterImg" :download="item.data_title">下载</a>
                     <span></span>
                 </div>
             </div>

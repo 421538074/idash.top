@@ -78,6 +78,10 @@ var xm = new Vue({
     filterTime: function filterTime(time) {
       var date = new Date(time * 1000);
       return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    },
+    filterImg(thumb) {
+      thumb = thumb.substring(1);
+      return `${api}thumb`;
     }
   },
   created: function created() {

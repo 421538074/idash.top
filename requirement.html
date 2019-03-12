@@ -33,7 +33,7 @@
                         <div class="dv_box" @click="goLog">
                             <p class="box" v-if="item.data_url==null?!isshow:isshow">文件</p>
                         </div>
-                        <span class="box1">{{item.content}}</span>
+                        <span class="box1">{{item.content?item.content:'已发送附件'}}</span>
                     </div>
                     <p class="time">{{item.create_at | filterTime}}</p>
                 </div>
@@ -67,4 +67,4 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/development/vue.js"></script>
 <script src="js/api.js"></script>
-<script src="js/requirement.js"></script>
+<script  src="js/requirement.js"></script>

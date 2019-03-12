@@ -76,24 +76,6 @@ var xm = new Vue({
 })
 
 
-enter();
-
-function enter() {
-    $.ajax({
-        type: "post",
-        url: `${api}/index/api/wxLogin`,
-        async: true,
-        data: {},
-        dataType: 'json',
-        success: function (res) {
-            console.log(res)
-        },
-        error: function (res) {
-            console.log(res)
-        }
-    });
-}
-
 
 
 const inputItems = document.querySelectorAll("input");
@@ -103,6 +85,6 @@ inputItems.forEach(function (ele) {
     })
 })
 
-$(".login_main").click(function () {
-    inputItems.blur()
-})
+// $(".login_main").click(function () {
+//     $("").blur()
+// })

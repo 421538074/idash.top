@@ -348,7 +348,6 @@ textarea.input-area {
     border-radius: 0.02rem;
     height: 0.4rem;
     resize: none;
-    word-break: break-all;
 }
 
 .btn-group {
@@ -361,7 +360,7 @@ textarea.input-area {
 
 
 .time {
-    width: 1.24rem;
+    width: 1.12rem;
     height: 0.18rem;
     font-size: 0.1rem;
     font-family: PingFangSC-Regular;

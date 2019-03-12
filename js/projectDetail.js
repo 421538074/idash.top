@@ -45,7 +45,8 @@ var xm = new Vue({
     },
     methods: {
         goIndex() {
-            window.location.href ="index.html"
+             this.program_id = getUrlKey('program_id')
+            window.location.href = `index.html?program_id=${this.program_id}`
         },
         goRequire(index) {
             var arr = this.feedList

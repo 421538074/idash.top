@@ -20,7 +20,7 @@ var xm = new Vue({
       var that = this;
       var img1 = event.target.files[0];
       console.log(img1);
-      // var type = img1.type; //文件的类型，判断是否是图片
+      var type = img1.type; //文件的类型，判断是否是图片
 
       var size = img1.size; //文件的大小，判断图片的大小
       // if (this.imgData.accept.indexOf(type) == -1) {

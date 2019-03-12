@@ -164,13 +164,16 @@ var xm = new Vue({
             if (sce < 10) {
                 sce = "0" + sce;
             }
-            return year + "-" + month + "-" + day + "  " + hours + ":" + min + ":" + sce;
+            return year + "-" + month + "-" + day +"  "+hours+":"+min+":"+sce ;
         },
-        filterTime1: function filterTime(time) {
+         filterTime1: function filterTime(time) {
             var date = new Date(time * 1000);
             var year = date.getFullYear();
             var month = date.getMonth() + 1;
             var day = date.getDate();
+            var hours = date.getHours();
+            var min = date.getMinutes(); //获取当前分钟数(0-59)
+            var sce = date.getSeconds(); //获取当前秒数(0-59)
             if (month < 10) {
                 month = "0" + month;
             }

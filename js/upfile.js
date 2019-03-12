@@ -23,8 +23,7 @@ var xm = new Vue({
             }else {
                  var replay_id =''
             }
-            console.log(replay_id)
-            var id=parseInt(replay_id)
+            var id=replay_id?parseInt(replay_id):null
             console.log(id)
 
             this.backlog_id = getUrlKey('backlog_id')

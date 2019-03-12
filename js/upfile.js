@@ -6,8 +6,8 @@ var xm = new Vue({
         file_name: '',
         Username: "编辑名称",
         program_id: '',
-        process_id: ''
-
+        process_id: '',
+        name:'',
     },
     methods: {
         editNickname() {
@@ -62,5 +62,8 @@ var xm = new Vue({
         var image = sessionStorage.getItem("img");
         image = image.replace(".", "");
         this.avtar = `${api}${image}`
+
+        this.name = sessionStorage.getItem("imgName");
+
     }
 })

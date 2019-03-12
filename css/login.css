@@ -8,6 +8,7 @@
     width: 100%;
     position: fixed;
     top: 0;
+    z-index: 1;
 }
 
 .login_banner {
@@ -24,10 +25,12 @@
 }
 
 .login_main {
-    background: url(../img/banner.png)no-repeat;
-    background-size: 100% 100%;
+    /* background: url(../img/banner.png)no-repeat;
+    background-size: 100% 100%; */
     width: 100%;
     height: 100vh;
+    overflow: scroll;
+    position: relative;
 }
 
 .login_uu {
@@ -35,7 +38,7 @@
     width: 66%;
     text-align: center;
     margin: 0.94rem auto 0;
-    padding-bottom: 1.6rem;
+    /* padding-bottom: 1.6rem; */
 }
 
 .login_lis {
@@ -70,9 +73,11 @@
     width: 100%;
     height: 100%;
 }
+
 .key {
     width: 60%;
 }
+
 .mobile,
 .key {
     outline: none;
@@ -104,4 +109,21 @@
     position: absolute;
     right: 0.53rem;
     top: 3.28rem;
+}
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: url(../img/banner.png) fixed no-repeat;
+    background-size: 100% 100%;
 }

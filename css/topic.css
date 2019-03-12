@@ -1,7 +1,14 @@
+html,
+body {
+    height: 100%;
+}
+
 .header {
     background: #1e2439;
     width: 100vw;
     height: 100vh;
+    position: relative;
+    overflow: scroll;
 }
 
 .index_banner {

@@ -43,19 +43,21 @@ function getDownload(href, title) {
 		document.body.appendChild(elem);
 		elem.click();
 	} else {
-		window.location.href = `user-director.html?title=${title}&href=${href}`;
+		var params = `title=${encodeURI(title)}&href=${encodeURI(href)}`;
+		params = window.btoa(params);
+		window.location.href = `user-director.html?${params}`;
 	}
 }
 
 /**
  * 获得URL参数
  */
-function getParams() {
-    var list = location.search.substring(1).split('&');
+function getParams(list) {
+    list = list.split('&');
     var param = {};
     list.forEach(function (value, index) {
         var temp = value.split('=');
-        param[temp[0]] = temp[1];
+        param[temp[0]] = decodeURI(temp[1]);
     });
     return param;
 }

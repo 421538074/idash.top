@@ -67,6 +67,9 @@
     color: #77f1f9;
     float: right;
     cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .login_lis label img {

@@ -43,8 +43,8 @@ function getDownload(href, title) {
 		document.body.appendChild(elem);
 		elem.click();
 	} else {
-		var params = `title=${encodeURI(title)}&href=${encodeURI(href)}`;
-		params = window.btoa(params);
+		var params = `title=${encodeURIComponent(title)}&href=${encodeURIComponent(href)}`;
+		params = btoa(params);
 		window.location.href = `user-director.html?${params}`;
 	}
 }
@@ -57,7 +57,7 @@ function getParams(list) {
     var param = {};
     list.forEach(function (value, index) {
         var temp = value.split('=');
-        param[temp[0]] = decodeURI(temp[1]);
+        param[temp[0]] = decodeURIComponent(temp[1]);
     });
     return param;
 }

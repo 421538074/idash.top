@@ -1,0 +1,44 @@
+.info_header {
+    height: 0.44rem;
+    font-size: 0.18rem;
+    color: white;
+    text-align: center;
+    line-height: 0.44rem;
+    background: #0F1322;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 111;
+}
+
+.info_main {
+    padding: 0.64rem 0.15rem 0;
+}
+
+.info_main h3 {
+    font-family: PingFangSC-Medium;
+    font-size: 0.3rem;
+    color: #000000;
+    text-align: left;
+    margin-bottom: 0.14rem;
+}
+
+
+.info_main ul li {
+    font-family: PingFangSC-Regular;
+    font-size: 0.16rem;
+    color: #888888;
+    display: flex;
+    justify-content: space-between;
+    height: 0.52rem;
+    line-height: 0.52rem;
+    border-bottom: 1px solid #f6f6f6;
+}
+
+
+.info_main ul li span:nth-child(2) {
+    font-family: PingFangSC-Regular;
+    font-size: 0.16rem;
+    color: #000000;
+    text-align: left;
+}

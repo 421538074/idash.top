@@ -47,6 +47,9 @@ var xm = new Vue({
             console.log(process_id)
             // sessionStorage.setItem('process_id', JSON.stringify(process_id));
             window.location.href = `projectDetail.html?program_id=${this.program_id}&process_id=${process_id}`
+        },
+        goInfo() { //跳转项目信息
+            window.location.href = "info.html"
         }
     },
     components: {
@@ -123,7 +126,7 @@ var xm = new Vue({
                 if (that.question == '' || null) {
                     $('.lis1').css("display", "none")
                 }
-                if (res.data.backlog.length==0) {
+                if (res.data.backlog.length == 0) {
                     $('.index_one').css("display", "block")
                 }
 

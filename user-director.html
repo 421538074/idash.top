@@ -51,7 +51,7 @@
         if (isCanDownload) {
             var list = Base64.decode(location.search.substring(1));
             var result = getParams(list);
-            getDownload(api + result.href.substring(1), result.title);
+            getDownload(result.href.substring(1), result.title);
         }
         new Vue({
             el: '#app',

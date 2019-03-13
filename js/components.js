@@ -100,7 +100,7 @@ const cylindricalGraph = {
     `,
     data() {
         return {
-            showList: ['需求', '原型', '设计', '前端', '后台', '测试', '验收']
+            showList: ['需求', '原型', '设计', '前端', '后台', '测试', '验收','其他']
         }
     },
     methods: {

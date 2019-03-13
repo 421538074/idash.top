@@ -38,7 +38,7 @@ function getDownload(href, title) {
 	var isCanDownload = switchPlatform();
 	if (isCanDownload) {
 		var elem = document.createElement('a');
-		elem.href = api+href;
+		elem.href = href.indexOf('pzhkj.cn') == -1 ? api+href : href;
 		elem.download = title;
 		document.body.appendChild(elem);
 		elem.click();

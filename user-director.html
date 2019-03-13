@@ -45,13 +45,13 @@
     <script src="js/vue.min.js"></script>
     <script src="js/api.js"></script>
     <script src="js/base64.min.js"></script>
-    <script src="js/download.js?v=1.0.0"></script>
+    <script src="js/download.js?v=1.0.1"></script>
     <script>
         var isCanDownload = switchPlatform();
         if (isCanDownload) {
             var list = Base64.decode(location.search.substring(1));
             var result = getParams(list);
-            getDownload(result.href.substring(1), result.title);
+            getDownload(result.href, result.title);
         }
         new Vue({
             el: '#app',

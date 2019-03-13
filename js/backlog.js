@@ -73,7 +73,7 @@ var xm = new Vue({
       //   console.log(a);
       //   a.click();
       // }
-      getDownload(api+url.substring(1),title);
+      getDownload(url.substring(1),title);
     }
   },
   filters: {

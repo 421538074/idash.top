@@ -38,7 +38,7 @@ function getDownload(href, title) {
 	var isCanDownload = switchPlatform();
 	if (isCanDownload) {
 		var elem = document.createElement('a');
-		elem.href = href;
+		elem.href = api+href;
 		elem.download = title;
 		document.body.appendChild(elem);
 		elem.click();

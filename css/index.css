@@ -15,8 +15,7 @@
 /* 图表 */
 .sheet {
     width: 3.6rem;
-    height: 3.95rem;
-    padding-top: 0.64rem;
+    height: 3.31rem;
 }
 
 .nav {
@@ -137,35 +136,42 @@
 }
 
 .content_pre {
-    width: 1rem;
-    height: 0.06rem;
-    background: rgba(255, 236, 236, 1);
-    border-radius: 0.06rem;
-    position: relative;
+    background: #ffffff;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.20);
+    border-radius: 0.27rem;
+    width: 3.45rem;
+    height: 0.1rem;
+    /* position: relative; */
+    /* display: flex; */
+
 }
 
 .content_bar {
     width: 0%;
-    height: 0.06rem;
-    background: rgba(255, 53, 53, 1);
-    border-radius: 0.06rem;
+    height: 0.1rem;
+    border-radius: 0.1rem;
+    background: #86d4d9;
+    border-radius: 0.27rem;
+    float: left;
 }
 
 .content_bot {
     display: flex;
-    margin-top: 0.1rem;
+    margin: 0.59rem 0.15rem 0.31rem 0.15rem;
 }
 
 .content_bot span {
     font-size: 0.12rem;
     font-family: PingFangSC-Medium;
     font-weight: 500;
-    color: rgba(255, 53, 53, 1);
-    line-height: 0.17rem;
-    margin-left: 0.1rem;
-    position: absolute;
-    right: -0.4rem;
-    top: -0.06rem;
+    color: white;
+    margin: 0 0 0 0.1rem;
+    float: left;
+    background: #ffa755;
+    border-radius: 0.04rem;
+    text-align: center;
+    line-height: 0.2rem;
+    padding: 0.02rem 0.06rem 0.01rem 0.06rem;
 }
 
 .content_btn {
@@ -196,7 +202,7 @@
     background-size: 100% 100%;
     position: fixed;
     right: 0.2rem;
-    top: 0.59rem;
+    top: 0.89rem;
 }
 
 
@@ -232,4 +238,16 @@ div#project-progress {
     text-align: center;
     margin-top: 0.22rem;
     display: none;
+}
+
+
+.infor {
+    font-family: PingFangSC-Regular;
+    font-size: 0.12rem;
+    color: #ffffff;
+    text-align: left;
+    background: #ffa755;
+    border-radius: 0.04rem;
+    padding: 0.02rem 0.06rem;
+    margin-right: 0.07rem;
 }

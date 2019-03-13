@@ -16,8 +16,7 @@
         <div class="index_header">
             <span>首页</span>
         </div>
-
-
+        <cy-bar :num="rate +'%'"></cy-bar>
         <div class="sheet">
             <h4>项目阶段进度</h4>
             <div id="project-progress">
@@ -40,7 +39,7 @@
                         <span class="liSpan" v-cloak>【{{staus[item.process_id-1]}}】<i>{{item.handle_status==1?"待处理":"完成"}}</i>-{{item.question}}</span>
                     </li>
                 </ul>
-                <div class="index_one" >暂无待办事项</div>
+                <div class="index_one">暂无待办事项</div>
             </div>
         </div>
 
@@ -50,8 +49,8 @@
                 <span>v 1.0</span>
             </div>
             <p v-cloak>{{title}}</p>
-            <p v-cloak>{{end_time | filterTime}}</p>
-            <cy-bar :num="rate +'%'"></cy-bar>
+            <p v-cloak><span class="infor" @click="goInfo">项目信息</span>{{end_time | filterTime}}</p>
+
         </div>
 
         <div class="content_title" @click="requireChange">

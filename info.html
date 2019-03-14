@@ -18,38 +18,38 @@
 
         <div class="info_main">
             <h3>项目信息</h3>
-            <ul>
+            <ul v-cloak>
                 <li>
                     <span>维护时间</span>
-                    <span>截止到2019年12月15日</span>
+                    <span>截止到{{defend_time | filterTime}}</span>
                 </li>
                 <li>
                     <span>维护费用</span>
-                    <span>1000.00元</span>
+                    <span>{{defend_fee}}元</span>
                 </li>
                 <li>
                     <span>服务器地址</span>
-                    <span>127.0.0.1</span>
+                    <span>{{server_ip}}</span>
                 </li>
                 <li>
                     <span>服务器使用时间</span>
-                    <span>截止到2019年12月15日</span>
+                    <span>截止到{{server_time | filterTime}}</span>
                 </li>
                 <li>
                     <span>域名</span>
-                    <span>www.baidu.com</span>
+                    <span>{{domain}}</span>
                 </li>
                 <li>
                     <span>域名到期时间</span>
-                    <span>截止到2019年12月15日</span>
+                    <span>截止到{{domain_time | filterTime }}</span>
                 </li>
                 <li>
                     <span>公众号</span>
-                    <span>公众号名称</span>
+                    <span>{{wechat}}</span>
                 </li>
                 <li>
                     <span>公众续费时间</span>
-                    <span>公众号名称</span>
+                    <span>{{wechat_time | filterTime }}</span>
                 </li>
             </ul>
         </div>

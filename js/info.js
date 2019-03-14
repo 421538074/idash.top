@@ -44,7 +44,6 @@ var vm = new Vue({
             },
             dataType: 'json',
             success: function (res) {
-                console.log(res)
                 that.title=res.data.title
                 that.defend_fee=res.data.defend_fee
                 that.defend_time=res.data.start_time
@@ -56,7 +55,6 @@ var vm = new Vue({
                 that.server_time=res.data.server_time
             },
             error: function (res) {
-
             }
         });
     }

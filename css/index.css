@@ -172,6 +172,8 @@
     text-align: center;
     line-height: 0.2rem;
     padding: 0.02rem 0.06rem 0.01rem 0.06rem;
+    position: relative;
+    top: -0.05rem;
 }
 
 .content_btn {

@@ -47,7 +47,7 @@ var vm = new Vue({
             success: function (res) {
                 that.title = res.data.title
                 that.defend_fee = res.data.defend_fee
-                that.defend_time = res.data.start_time
+                that.defend_time = res.data.defend_time
                 that.wechat = res.data.wechat
                 that.wechat_time = res.data.wechat_time
                 that.domain_time = res.data.domain_time

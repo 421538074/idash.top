@@ -49,7 +49,7 @@ var xm = new Vue({
             window.location.href = `projectDetail.html?program_id=${this.program_id}&process_id=${process_id}`
         },
         goInfo() { //跳转项目信息
-            window.location.href = "info.html"
+            window.location.href = "info.html?program_id="+getUrlKey('program_id')
         }
     },
     components: {

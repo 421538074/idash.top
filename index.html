@@ -8,7 +8,7 @@
     <title>客户查询系统</title>
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/index.css?v=1.0.0">
 </head>
 
 <body>
@@ -42,14 +42,18 @@
                 <div class="index_one">暂无待办事项</div>
             </div>
         </div>
-
+        <div class="project-info-wrapper">
+            <p class="project-title" v-cloak>{{title}}</p>
+            <a href="javascript:;" @click="goInfo" class="project-detail">详情</a>
+            <img src="img/右.png" class="arrow-right">
+        </div>
         <div class="content">
             <div class="content_logo">
                 <img src="img/logo.png" alt="">
                 <span>v 1.0</span>
             </div>
             <p v-cloak>{{title}}</p>
-            <p v-cloak><span class="infor" @click="goInfo">项目信息</span>{{end_time | filterTime}}</p>
+            <p v-cloak>{{end_time | filterTime}}</p>
 
         </div>
 

@@ -11,6 +11,10 @@ var xm = new Vue({
         firstList: [],
         List: [],
         rate: '',
+        barList: [],
+    },
+    components: {
+        "cp-tabbar": tabBar,
     },
     methods: {
         goIndex() {
@@ -32,7 +36,7 @@ var xm = new Vue({
             window.location.href = `projectDetail.html?program_id=${this.program_id}`
 
         },
-        lisTbar(index) {
+        getList(index) {
             sessionStorage.setItem('key', JSON.stringify(index));
             this.program_id = getUrlKey('program_id')
             var that = this
@@ -77,6 +81,24 @@ var xm = new Vue({
                 console.log(res)
                 that.title = res.data
                 sessionStorage.setItem('key', JSON.stringify(1));
+            },
+            error: function (res) {
+                console.log(res)
+            }
+        });
+
+        // 获取需求
+        $.ajax({
+            type: "post",
+            url: `${api}/index/api/myProgram`,
+            async: true,
+            data: {
+                program_id: this.program_id,
+            },
+            dataType: 'json',
+            success: function (res) {
+                console.log(res)
+                that.barList = res.data.process  //需求
             },
             error: function (res) {
                 console.log(res)

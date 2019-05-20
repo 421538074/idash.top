@@ -20,7 +20,7 @@
         <div class="sheet">
             <h4>项目阶段进度</h4>
             <div id="project-progress">
-                <cp-cylind :percent-list="percentList" @go-detail="goDetail"></cp-cylind>
+                <cp-cylind :percent-list="percentList" @go-detail="goDetail(arguments)"></cp-cylind>
             </div>
         </div>
 
@@ -36,7 +36,7 @@
                 <ul class="uu">
                     <li class="lis" v-for="(item,index) in arr">
                         <span></span>
-                        <span class="liSpan" v-cloak>【{{staus[item.process_id-1]}}】<i>{{item.handle_status==1?"待处理":"完成"}}</i>-{{item.question}}</span>
+                        <span class="liSpan" v-cloak>【{{item.process}}】<i>{{item.handle_status==1?"待处理":"完成"}}</i>-{{item.question}}</span>
                     </li>
                 </ul>
                 <div class="index_one">暂无待办事项</div>
@@ -70,5 +70,5 @@
 <script src="js/components.js"></script>
 <script src="js/api.js"></script>
 <script src="js/index.js"></script>
-
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 </html>

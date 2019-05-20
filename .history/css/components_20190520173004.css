@@ -206,6 +206,7 @@ span.cp-cylind-per-bottom {
 
 .cp-cylind-chart-item {
     display: inline-block;
+    width: 10%;
     margin-left: 6%;
     height: 100%;
     text-align: center;
@@ -233,7 +234,6 @@ span.cp-cylind-per-bottom {
     background: #e5e5e5;
     margin: 0 auto;
     margin-top: 0.2em;
-    max-width: 8vw;
 
 }
 

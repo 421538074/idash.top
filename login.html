@@ -37,6 +37,64 @@
 
 </html>
 <script src="js/jquery.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script src="js/development/vue.js"></script>
 <script src="js/api.js"></script>
 <script src="js/login.js"></script>
+
+<script>
+        $(function () {
+            wx.ready(function () {
+                //微信分享菜单测试
+                wx.onMenuShareAppMessage({//分享给朋友
+                    title: "感恩十五载，我正在参与江苏太平15周年祝福征集活动", // 分享标题
+                    desc: "感恩15周年，快来帮我点亮，并领取属于您的精美大礼！", // 分享描述
+                    link: "http://www.baidu.com", // 分享链接
+                    imgUrl: "http://taiping.pzhkj.cn/img/sharelogo.jpg", // 分享图标
+                    success: function () {
+                        alert("分享成功");
+                        $.ajax({
+                            type: "post",
+                            url: "http://szjm.pzhkj.cn/index/Wechat/WechatShare",
+                            async: true,
+                            data: {
+                                url: "http://szjm.pzhkj.cn/idash.top/index.html"
+                            },
+                            success: function (res) {
+                                console.log(res)
+                            }
+                        });
+                    },
+                    cancel: function () {
+    
+                    }
+                });
+                wx.onMenuShareTimeline({//分享给朋友圈
+                    title: "感恩十五载，我正在参与江苏太平15周年祝福征集活动", // 分享标题
+                    link: "http://www.baidu.com", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                    imgUrl: "http://taiping.pzhkj.cn/img/sharelogo.jpg", // 分享图标
+                    success: function () {
+                        alert("分享成功");
+                        $.ajax({
+                            type: "post",
+                            url: "http://szjm.pzhkj.cn/index/Wechat/WechatShare",
+                            async: true,
+                            data: {
+                                url: "http://szjm.pzhkj.cn/idash.top/index.html"
+                            },
+                            success: function (res) {
+    
+                            }
+                        });
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                    }
+                });
+            });
+            wx.error(function (err) {
+                alert(JSON.stringify(err));
+            });
+        })
+    
+    </script>

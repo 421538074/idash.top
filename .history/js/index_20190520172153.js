@@ -12,7 +12,7 @@ var xm = new Vue({
         backer: '',
         test: '',
         check: '',
-        percentList: [],
+        percentList: ['aaaaaaaa'],
         rate: '',
         arr: '',
         staus: ['需求', '原型', '设计', '前端', '后台', '测试', '验收']

@@ -17,7 +17,7 @@ const tabBar = {
     props: ['bar-list'],
     template: `
         <ul class="cp-tabbar">
-            <li v-for="(item,index) in barList" v-cloak :key="item.id" @click="switchTab(index,item.id)" :class="{'cp-tabbar-item':true,active:index == currentIndex}"> {{item.name}} </li>
+            <li v-for="(item,index) in barList" v-cloak :key="item.id" @click="switchTab(index,item.id)" :class="{'cp-tabbar-item':true,active:index == currentIndex}"> {{item.process}} </li>
         </ul>
     `,
     data() {
@@ -27,6 +27,7 @@ const tabBar = {
     },
     methods: {
         switchTab(index, id) {
+            console.log(index)
             if (index != this.currentIndex) {
                 this.currentIndex = index;
                 this.$emit('get-list', id);
@@ -34,13 +35,12 @@ const tabBar = {
         }
     },
     created() {
-        var process_id = getUrlKey('process_id')
-        if (getUrlKey('process_id') == null) {
-            process_id = 1
-        }else {
-            process_id = getUrlKey('process_id')
+        if (sessionStorage.getItem('numId') == null) {
+            this.currentIndex = 0
+        } else {
+            this.currentIndex = sessionStorage.getItem('numId')
         }
-        this.currentIndex = process_id - 1
+
     }
 }
 
@@ -81,31 +81,30 @@ const cylindricalGraph = {
     template: `
         <div class="cp-cylind">
             <span class="cp-cylind-per-top">100%</span>
-            <div class="cp-cylind-bottom">
-                <div v-for="n in 7" class="cp-cylind-bottom-thumb"></div>
-            </div>
-            <div class="cp-cylind-chart-group">
-                <div v-for="item in percentList" class="cp-cylind-chart-item" :style="item | filterHeight">
-                    <span v-cloak class="cp-cylind-chart-item-percent" :class="{'not-full':parseInt(item) < 100}">{{item}}</span>
+            <div class="cp-cylind-chart-scroll-container">
+                <div class="cp-cylind-chart-item" v-for="(item,index) in percentList">
+                    <div class="cp-cylind-item-container">
+                        <span class="cp-cylind-item-percent-title" :class="{'not-full':parseInt(item.percent) < 100}" v-cloak>{{item.percent+'%'}}</span>
+                        <div class="cp-cylind-item-percent" :style="item.percent+'%' | filterHeight"></div>
+                    </div>
+                    <div class="cp-cylind-thumb"></div>
+                    <div @click="goDetail(item.id,index)" class="cp-cylind-item-title" v-cloak>{{item.process}}</div>
                 </div>
             </div>
             <div class="cp-cylind-left">
                 <div v-for="n in 5" class="cp-cylind-left-thumb"></div>
-            </div>
-            <div class="cp-cylind-category-group">  
-                <p class="cp-cylind-item" v-for="(item,id) in showList" v-cloak @click="goDetail(id)">{{item}}</p>
             </div>
             <span class="cp-cylind-per-bottom">0%</span>
         </div>
     `,
     data() {
         return {
-            showList: ['需求', '原型', '设计', '前端', '后台', '测试', '验收']
+
         }
     },
     methods: {
-        goDetail(id) {
-            this.$emit("go-detail",id)
+        goDetail(id, index) {
+            this.$emit("go-detail", id, index)
         }
     },
     filters: {

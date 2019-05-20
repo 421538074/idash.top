@@ -11,41 +11,12 @@ var xm = new Vue({
         firstList: [],
         List: [],
         rate: '',
-        currentIndex:0,
-        barList: [
-            {
-            id: 0,
-            name: '需求'
-        },
-        {
-            id: 1,
-            name: '原型'
-        },
-        {
-            id: 2,
-            name: '设计'
-        },
-        {
-            id: 3,
-            name: '前台'
-        },
-        {
-            id: 4,
-            name: '后台'
-        },
-        {
-            id: 5,
-            name: '测试'
-        },
-        {
-            id: 6,
-            name: '调试'
-        },
-    ],
+        currentIndex: 0,
+        barList: [],
     },
     methods: {
         goIndex() {
-             this.program_id = getUrlKey('program_id')
+            this.program_id = getUrlKey('program_id')
             window.location.href = `index.html?program_id=${this.program_id}`
         },
         goRequire(index) {
@@ -84,7 +55,7 @@ var xm = new Vue({
 
         },
         getList(id) {
-            var index =id+1
+            var index = id 
             sessionStorage.setItem('key', JSON.stringify(index));
             this.program_id = getUrlKey('program_id')
             var that = this
@@ -133,11 +104,6 @@ var xm = new Vue({
     created() {
         var program_id = getUrlKey('program_id')
         var process_id = getUrlKey('process_id')
-        if(getUrlKey('process_id')==null){
-            process_id=1
-        }else {
-            process_id = getUrlKey('process_id')
-        }
         var that = this
         //待办事项 
         $.ajax({
@@ -159,9 +125,23 @@ var xm = new Vue({
 
 
             },
-            // error: function (res) {
-            //     console.log(res)
-            // }
+        });
+        // 获取需求
+        $.ajax({
+            type: "post",
+            url: `${api}/index/api/myProgram`,
+            async: true,
+            data: {
+                program_id: program_id,
+            },
+            dataType: 'json',
+            success: function (res) {
+                console.log(res)
+                that.barList = res.data.process  //需求
+            },
+            error: function (res) {
+                console.log(res)
+            }
         });
     },
 

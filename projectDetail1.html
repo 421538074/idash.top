@@ -17,19 +17,7 @@
         </div>
 
 
-        <div class="project_scoll">
-            <div class="project_banner">
-                <ul>
-                    <li class="blue" @click="lisTbar(1)">需求</li>
-                    <li @click="lisTbar(2)">原型</li>
-                    <li @click="lisTbar(3)">设计</li>
-                    <li @click="lisTbar(4)">前端</li>
-                    <li @click="lisTbar(5)">后台</li>
-                    <li @click="lisTbar(6)">测试</li>
-                    <li @click="lisTbar(7)">验收</li>
-                </ul>
-            </div>
-        </div>
+        <cp-tabbar :bar-list="barList" @get-list="getList"></cp-tabbar>
         <!-- 文件 -->
         <div class="project_file">
             <ul class="uu">
@@ -50,5 +38,7 @@
 </html>
 <script src="js/jquery.min.js"></script>
 <script src="js/vue.min.js"></script>
+<script src="js/components.js"></script>
 <script src="js/api.js"></script>
 <script src="js/projectDetail1.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
